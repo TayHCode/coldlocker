@@ -1,0 +1,22 @@
+{
+  "id": "inventory-digest",
+  "description": "Summarize the approved hub inventory without changes.",
+  "owner": "agentlocker",
+  "runner": "t3-scheduler",
+  "schedule": {
+    "type": "fixed_time",
+    "time_of_day": "09:00",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "timezone": "UTC",
+  "prompt": "routine-prompt.md",
+  "overlap": "skip",
+  "timeout_seconds": 600,
+  "enabled": false
+}

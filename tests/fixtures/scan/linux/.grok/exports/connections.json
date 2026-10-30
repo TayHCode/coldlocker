@@ -1,0 +1,1 @@
+{"connections": [{"name": "hosted-account", "provider": "example", "url": "https://example.invalid/account", "token": "canary-secret-value-0001"}]}

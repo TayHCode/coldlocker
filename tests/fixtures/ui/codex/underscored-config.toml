@@ -1,0 +1,4 @@
+[mcp_servers.codex_task_local]
+command = "example"
+[mcp_servers.vendor_docs]
+url = "https://example.invalid/docs"

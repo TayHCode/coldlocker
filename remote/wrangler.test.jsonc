@@ -1,0 +1,16 @@
+{
+  "name": "agentlocker-remote-test",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "kv_namespaces": [
+    { "binding": "OAUTH_KV", "id": "oauth-test" },
+    { "binding": "CATALOG_KV", "id": "catalog-test" }
+  ],
+  "vars": {
+    "PUBLIC_ORIGIN": "https://catalog.test",
+    "ACCESS_TEAM_DOMAIN": "https://team.test",
+    "ACCESS_AUD": "test-aud",
+    "OWNER_EMAIL": "owner.test"
+  }
+}

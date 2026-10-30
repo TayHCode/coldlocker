@@ -1,0 +1,3 @@
+[mcp_servers.codex-tool]
+command = "example"
+args = ["codex"]

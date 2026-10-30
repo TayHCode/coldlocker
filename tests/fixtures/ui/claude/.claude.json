@@ -1,0 +1,1 @@
+{"mcpServers":{"fixture-global":{"command":"example","args":[]}},"projects":{"fixture-project":{"mcpServers":{"fixture-project":{"type":"http","url":"https://example.invalid/mcp","headers":{"Authorization":"synthetic-project-value"}}}}}}

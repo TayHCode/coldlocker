@@ -1,0 +1,1 @@
+{"mcpServers":{"fixture-local":{"command":"example","args":["--read-only"],"env":{"API_TOKEN":"synthetic-local-value","MODE":"fixture-mode-value"}}}}

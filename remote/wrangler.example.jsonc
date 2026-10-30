@@ -1,0 +1,17 @@
+{
+  "name": "agentlocker-remote",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "routes": [{ "pattern": "agentlocker.example.com", "custom_domain": true }],
+  "kv_namespaces": [
+    { "binding": "OAUTH_KV", "id": "REPLACE_WITH_OAUTH_NAMESPACE_ID" },
+    { "binding": "CATALOG_KV", "id": "REPLACE_WITH_CATALOG_NAMESPACE_ID" }
+  ],
+  "vars": {
+    "PUBLIC_ORIGIN": "https://agentlocker.example.com",
+    "ACCESS_TEAM_DOMAIN": "https://REPLACE_TEAM.cloudflareaccess.com",
+    "ACCESS_AUD": "REPLACE_WITH_ACCESS_APPLICATION_AUD_TAG",
+    "OWNER_EMAIL": "REPLACE_WITH_OWNER_EMAIL"
+  }
+}

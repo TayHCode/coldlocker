@@ -1,0 +1,5 @@
+# keep this comment
+model = "fixture"
+
+[mcp_servers.other]
+command = "fixture-tool"

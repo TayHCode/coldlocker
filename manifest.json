@@ -1,0 +1,655 @@
+{
+  "schema_version": 1,
+  "name": "agentlocker",
+  "license": "MIT",
+  "skills": [
+    {
+      "name": "architect",
+      "path": "skills/architect",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-48d151cc3639",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "48d151cc3639fc54bf90012e88ae66ae2ce3a92cde4f3820fdd4aa85aee8e61a"
+    },
+    {
+      "name": "arena",
+      "path": "skills/arena",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-77473effbc06",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "a4bb7c9a6663c3073d1a910fc3992abdadfed7c43555a3fe76939a2bc023e3ca"
+    },
+    {
+      "name": "babysit-pr",
+      "path": "skills/babysit-pr",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-52ea88271235",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "52ea88271235a5d2a2fb69588c0e0759178cd6f2fb793ac31205d67bb798b3dd"
+    },
+    {
+      "name": "benchmark-checklist",
+      "path": "skills/benchmark-checklist",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-60fd45ddfda8",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "60fd45ddfda8b82d6747552dd54d9a979c753834c1788c26bb2246a6031a12f2"
+    },
+    {
+      "name": "create-verification-skill",
+      "path": "skills/create-verification-skill",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-3492376f16cd",
+        "origin": "upstream"
+      },
+      "sha256": "5cba5a30d4ad6f014e16bfb5bdf56475c1e824ccb5473e08cca9f4a1c7b3af5b"
+    },
+    {
+      "name": "evidence-before-done",
+      "path": "skills/evidence-before-done",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-02064ac6a696",
+        "origin": "authored"
+      },
+      "sha256": "02064ac6a6961e2014a472735938d384535d9b92dd458103a9c69c1effb36a9a"
+    },
+    {
+      "name": "figure-it-out",
+      "path": "skills/figure-it-out",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-bf9ee2564a48",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "954a16d9a8058ea6bf1765927652136be8a7b2192dfd5b0963b69c367c31a81d"
+    },
+    {
+      "name": "file-pr",
+      "path": "skills/file-pr",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-d5439f17da72",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "d5439f17da72fcd1034691a80618940b0d227029326fc9c488e45f056e6c370d"
+    },
+    {
+      "name": "frontend-design",
+      "path": "skills/frontend-design",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-9c3d9a23968f",
+        "origin": "upstream"
+      },
+      "sha256": "9c3d9a23968f4ba75b96bf7b14ffc95b7e7564da9c4d8a60d8e817bc83553aa5"
+    },
+    {
+      "name": "full-send",
+      "path": "skills/full-send",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-48adff0cf553",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "1a458abef34227dab6a548b3085405a44f3d3224af372079a60555c1142978d5"
+    },
+    {
+      "name": "full-stop",
+      "path": "skills/full-stop",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-e553a9766c89",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "e553a9766c896798ec89a127f5d97173734a6d4abe659a9869e8150297f37b45"
+    },
+    {
+      "name": "hill-climb",
+      "path": "skills/hill-climb",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-b2a7f0852d68",
+        "origin": "authored"
+      },
+      "sha256": "b2a7f0852d68ee2a30708ecc1e95c02ffe610d948ff2b55eb1065a71566ed2d6"
+    },
+    {
+      "name": "how",
+      "path": "skills/how",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-5e96ce51052e",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "58a1116029f4893b105346455400db8d8d55dcac9412d716d4590e5621282eaa"
+    },
+    {
+      "name": "hub-discover",
+      "path": "skills/hub-discover",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-5e8605303eae",
+        "origin": "authored"
+      },
+      "sha256": "5e8605303eaefb1f74e680124e5c5a4d00035e5b8f9954ba7b8341eb61f5afc0"
+    },
+    {
+      "name": "i-have-adhd",
+      "path": "skills/i-have-adhd",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-79dd1afe013d",
+        "origin": "local-import"
+      },
+      "sha256": "79dd1afe013db12c976e1d06f7dfde166b3703b6e77c274975f46ffd5992b8f1"
+    },
+    {
+      "name": "interrogate",
+      "path": "skills/interrogate",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-e690d89955dd",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "47f5547cf90ff2e222c7dc15ecb88c26de651eec606a76e1b5e75ed6843a2ca5"
+    },
+    {
+      "name": "leaving-pr-comments",
+      "path": "skills/leaving-pr-comments",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-a6a2bb97cd1b",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "a6a2bb97cd1b25252326e05f03dead9aaacdfd5623ad64ad7ce1018d2a0db312"
+    },
+    {
+      "name": "maintain-verification-skill",
+      "path": "skills/maintain-verification-skill",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-92a9f9a63cc2",
+        "origin": "upstream"
+      },
+      "sha256": "a1d5ba2e244be550093c1457735c0d147bc8ad8f4b704eeb048965b786c1028e"
+    },
+    {
+      "name": "minimal-diff-review",
+      "path": "skills/minimal-diff-review",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-3c812bf8c03f",
+        "origin": "authored"
+      },
+      "sha256": "3c812bf8c03f52472c41c35442035ff41e366ec7fd7d7fd7d015369d1cf33bf6"
+    },
+    {
+      "name": "no-comments",
+      "path": "skills/no-comments",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-7f163ce4f31a",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "7f163ce4f31aef03906a05566a6974bf33fbd58edc28870d8894d9d89277a32a"
+    },
+    {
+      "name": "p3-mode",
+      "path": "skills/p3-mode",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-ce3e86d3c08d",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "3b441a3b8fe63e922165146e852b440061c162248feae1817348b9850d3758f5"
+    },
+    {
+      "name": "poteto-mode",
+      "path": "skills/poteto-mode",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-e9563b118ca1",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "74a07c727beb5ab69b48aa7c7fa1acea0f6358f35ecd2cee3d41a52f0731c7fb"
+    },
+    {
+      "name": "principle-attack-the-premise",
+      "path": "skills/principle-attack-the-premise",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-294dbffe1e16",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "294dbffe1e16496eba86541efc25c3aa1bacc7c28f90b95e5484e2fa6afccc26"
+    },
+    {
+      "name": "principle-boundary-discipline",
+      "path": "skills/principle-boundary-discipline",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-430d95c99798",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "430d95c99798f8e8ccd820c2a60d05536da8255395d04220ab2b4d84dd321ad6"
+    },
+    {
+      "name": "principle-build-the-lever",
+      "path": "skills/principle-build-the-lever",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-90c5222322be",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "90c5222322be69786a9e83eedbb5f0b2069c73e5947f63f8ece15629912e16c5"
+    },
+    {
+      "name": "principle-encode-lessons-in-structure",
+      "path": "skills/principle-encode-lessons-in-structure",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-3f6c6540764b",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "3f6c6540764bdbb971021cc00de900b723473e7cadd1442b5107227c2bf2d869"
+    },
+    {
+      "name": "principle-exhaust-the-design-space",
+      "path": "skills/principle-exhaust-the-design-space",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-134afbd4bf2b",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "134afbd4bf2b7cdb1f24efe1d568033f39578f6ec14083408cee2a73042b5097"
+    },
+    {
+      "name": "principle-experience-first",
+      "path": "skills/principle-experience-first",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-2da7c654e5ad",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "2da7c654e5ade3741bcdc45ed5d1f44aa983a2b390129576ef6b0e0abd5ca9a5"
+    },
+    {
+      "name": "principle-explain-the-number",
+      "path": "skills/principle-explain-the-number",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-9ee6b77c237a",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "9ee6b77c237a40ac4152a2d60958b5cd32a22df4949f8b756ae1341e065b8090"
+    },
+    {
+      "name": "principle-fix-root-causes",
+      "path": "skills/principle-fix-root-causes",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-edef87da02a0",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "edef87da02a0f04df1c798c337d18395a58ebb8e06b7a5672f47e521cf5d1448"
+    },
+    {
+      "name": "principle-foundational-thinking",
+      "path": "skills/principle-foundational-thinking",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-27e7893ce6ac",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "27e7893ce6ace4a6c0d617c9208f1929b982950685f3039d867301bf1d23bc91"
+    },
+    {
+      "name": "principle-guard-the-context-window",
+      "path": "skills/principle-guard-the-context-window",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-82ab11d99b5e",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "82ab11d99b5e89f367ab01b7811b672f77797607e035a3a0570f6d68cb8b1509"
+    },
+    {
+      "name": "principle-laziness-protocol",
+      "path": "skills/principle-laziness-protocol",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-b436e5be1675",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "b436e5be1675805b4b9b75daacb5ebee3182e55fe0b0376c5b451d54ca7ef748"
+    },
+    {
+      "name": "principle-make-operations-idempotent",
+      "path": "skills/principle-make-operations-idempotent",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-42f5066619f1",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "42f5066619f1b27a8586371e159a481ed049456322d4f608ec2440fa78d9dac8"
+    },
+    {
+      "name": "principle-migrate-callers-then-delete-legacy-apis",
+      "path": "skills/principle-migrate-callers-then-delete-legacy-apis",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-ce86faf1afab",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "ce86faf1afabb3588635b0afd900cb07ca5365316d0a9690b8729c90ed3c2922"
+    },
+    {
+      "name": "principle-minimize-reader-load",
+      "path": "skills/principle-minimize-reader-load",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-3cb119566847",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "3cb119566847958ba63bde0281909e37defdefa1a44638aa08e602d5d6edd002"
+    },
+    {
+      "name": "principle-model-the-domain",
+      "path": "skills/principle-model-the-domain",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-904e322fb12d",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "904e322fb12d042030d6edee9bffc7c30f686572af7049d450db4ccf17f586fc"
+    },
+    {
+      "name": "principle-never-block-on-the-human",
+      "path": "skills/principle-never-block-on-the-human",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-ce27bf1fc070",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "ce27bf1fc0709c3e9fd9da7269b6300651415b19f0cb07c9f9322d1c9df849df"
+    },
+    {
+      "name": "principle-outcome-oriented-execution",
+      "path": "skills/principle-outcome-oriented-execution",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-cba3152ec4ab",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "cba3152ec4abea63f419765b0c7ea7c99fb1079fe3e1de373d1f83d6ba9f0b74"
+    },
+    {
+      "name": "principle-prove-it-works",
+      "path": "skills/principle-prove-it-works",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-420526bbbb8d",
+        "origin": "upstream"
+      },
+      "sha256": "b74a2ee3996a912da7f59021ffdabe0d0fa06f5d727f8a21e834b8aef513b262"
+    },
+    {
+      "name": "principle-redesign-from-first-principles",
+      "path": "skills/principle-redesign-from-first-principles",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-aca82d4793c7",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "aca82d4793c76fad59a8e15ca3c25128bfd382df1d3102f005207d81de40a647"
+    },
+    {
+      "name": "principle-separate-before-serializing-shared-state",
+      "path": "skills/principle-separate-before-serializing-shared-state",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-8cb9dcb61e6e",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "8cb9dcb61e6ea5cb25060f1b29d572b8108eaf0097e6e1178ccafbd4199424e5"
+    },
+    {
+      "name": "principle-sequence-verifiable-units",
+      "path": "skills/principle-sequence-verifiable-units",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-3cf5cf477d48",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "3cf5cf477d48ea527ffce868b7c00a6ad903cfa3c724c4afbf285bbd26658432"
+    },
+    {
+      "name": "principle-subtract-before-you-add",
+      "path": "skills/principle-subtract-before-you-add",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-8491b10b380c",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "8491b10b380c4f4b59cc3cc73a9bac315eb507735348a34f92ac39b0799f7083"
+    },
+    {
+      "name": "principle-test-behavior-not-implementation",
+      "path": "skills/principle-test-behavior-not-implementation",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-5cff7713a908",
+        "origin": "upstream"
+      },
+      "sha256": "7afb3277d64835e74585e5e1dddf916f99c878cad4a55ebc0a334a120f3c1593"
+    },
+    {
+      "name": "principle-type-system-discipline",
+      "path": "skills/principle-type-system-discipline",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-ac1f3131a635",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "ac1f3131a63567e424c8a4330bfdd96c0c8cd6c36d94b1c5d02f2424eeeb41fa"
+    },
+    {
+      "name": "reflect",
+      "path": "skills/reflect",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-aaff8f689b77",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "cbff7a7b2cc3d49b9f3605788d95b1a0f93b31ac504e14427ef8c89f8cf141a3"
+    },
+    {
+      "name": "setup-p3",
+      "path": "skills/setup-p3",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-b71aa725069d",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "059fb36d2007bde9d3f7774c8ed2befff07f2a9437c7ed4c61d504cde343e606"
+    },
+    {
+      "name": "show-me-your-work",
+      "path": "skills/show-me-your-work",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-10c0c44a5134",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "10c0c44a5134e91df2b530ac175befd79edc57d5c9682eefba9fe20daf564356"
+    },
+    {
+      "name": "sol-loop",
+      "path": "skills/sol-loop",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-3a491d43a6e8",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "280b86a62d2953bf0a7e1a9f3a47a471a7a411dd0a37c729565fa4613246d073"
+    },
+    {
+      "name": "swarm",
+      "path": "skills/swarm",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-1d0449465572",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "6297bc945c7266efec9a4046d6c1051e39a13d9dc950d441b4cacd2749a07276"
+    },
+    {
+      "name": "tdd",
+      "path": "skills/tdd",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-1a9bc927735b",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "1a9bc927735b5e9cda8712d2cfde35d5c95b895dfeca5e56b928f51e54b37edc"
+    },
+    {
+      "name": "technical-writing",
+      "path": "skills/technical-writing",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-9a1892320f72",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "9a1892320f72dd7d22e4bfafa3a0f96af513ef1a12a8624338eb7badf3616fe7"
+    },
+    {
+      "name": "typescript-best-practices",
+      "path": "skills/typescript-best-practices",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-790711c3a73b",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "790711c3a73bb33c2ecc6479d56fb7eae86d907c803650069e68e2b07e3b7c8c"
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "path": "skills/ui-ux-pro-max",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-0d07d71ac0b1",
+        "origin": "upstream"
+      },
+      "sha256": "0d07d71ac0b1bfcf6267688701210afd33564b74481e5afb793f87e78152275f"
+    },
+    {
+      "name": "unslop",
+      "path": "skills/unslop",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-d42a7e7eef67",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "d42a7e7eef67b272eee4a32064dea37860616ae4044cdb21b6c33066502ce3d9"
+    },
+    {
+      "name": "verify-loop",
+      "path": "skills/verify-loop",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-e47160665780",
+        "origin": "authored"
+      },
+      "sha256": "e47160665780dfcc2da8d5dd7d475482b51bafb8263c0934cfec39c08aa817d1"
+    },
+    {
+      "name": "why",
+      "path": "skills/why",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-608927e16d5d",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "07a0fb41786cc56dd161817094302c6cf7bb146f8f95ca1d1cdc248a019e4978"
+    }
+  ],
+  "rules": [
+    {
+      "name": "coldbox-verification",
+      "path": "rules/coldbox-verification.md",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-29c38cc21be5",
+        "origin": "authored"
+      },
+      "sha256": "29c38cc21be5f309650ad15f3d0a3a0a79787b0f42128fe20214077aa60e5d2c"
+    },
+    {
+      "name": "model-routing",
+      "path": "rules/model-routing.md",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-ce67b86d017d",
+        "origin": "authored"
+      },
+      "sha256": "ce67b86d017dd7ef96d890aca48983f578ab0c1627b00173d21f3e70610d629d"
+    },
+    {
+      "name": "shared-policy",
+      "path": "rules/shared-policy.md",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-668d16e87849",
+        "origin": "authored"
+      },
+      "sha256": "668d16e87849444c51c6a0407f40b8802ddea19769cfb9b07d6809b28b6f9d4c"
+    },
+    {
+      "name": "verify-before-merge",
+      "path": "rules/verify-before-merge.md",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-bfcd4243a28f",
+        "origin": "authored"
+      },
+      "sha256": "bfcd4243a28f9f8c4b3e0cc425dc3addba9b885cc8409fd7abb369750df0348c"
+    }
+  ],
+  "mcp_servers": [
+    {
+      "name": "example-server",
+      "path": "mcp/servers/example-server.json",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-7d7812452add",
+        "origin": "authored"
+      },
+      "sha256": "7d7812452addda207d3eac6f7de441972077e94f323d43d33c2ea39b1a694cbc"
+    }
+  ],
+  "routines": [
+    {
+      "id": "inventory-digest",
+      "path": "routines/inventory-digest/routine.json",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-ef5d563256ed",
+        "origin": "authored"
+      },
+      "sha256": "ef5d563256edb59073ba67986d90a5b538e26704dd481862b8388a06a9f5863a"
+    }
+  ],
+  "plugins": [],
+  "connections": []
+}

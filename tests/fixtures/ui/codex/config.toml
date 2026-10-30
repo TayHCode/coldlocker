@@ -1,0 +1,9 @@
+[mcp_servers.fixture-codex]
+command = "example"
+args = ["--read-only"]
+[mcp_servers.fixture-codex.env]
+API_TOKEN = "synthetic-codex-value"
+[mcp_servers.fixture-codex-http]
+url = "https://example.invalid/mcp"
+[mcp_servers.fixture-codex-http.http_headers]
+Authorization = "synthetic-codex-http-value"

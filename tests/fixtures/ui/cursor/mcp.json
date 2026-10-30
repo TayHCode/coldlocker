@@ -1,0 +1,1 @@
+{"mcpServers":{"fixture-cursor":{"type":"streamable-http","url":"https://example.invalid/mcp","headers":{"Authorization":"synthetic-cursor-value","X-Context":"synthetic-context-value"}}}}

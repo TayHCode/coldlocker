@@ -1,0 +1,4 @@
+id = "digest"
+name = "digest"
+prompt = "Summarize synthetic inventory."
+rrule = "FREQ=DAILY;BYHOUR=9;BYMINUTE=30"

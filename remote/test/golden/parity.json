@@ -1,0 +1,3234 @@
+{
+ "fixtures": [
+  {
+   "blobs": {
+    "00b0e37c96ed8fecd8f76c9ab37ca48058f0d8f1c546a406ce808bcf5df577dd": "Unicode ☃ text\n",
+    "089b58e353e009c38eb69e8d74a8bad4fa834026e68378dacbe904404c20c615": "file 23\n",
+    "0b7e1391e807365614c548fd10a4a543cf0654268529f3fe768ed7042624c006": "file 2\n",
+    "0dc499f654ef22a02669732fe392994e310c179bf45561c0081096886f0aa60a": "file 50\n",
+    "111320d3ddfc2d1493ca5f21b32c570d4da8505ab4865daac5cfb8505539a4a7": "file 33\n",
+    "1495341df103b4646853a06bc11b25b8b1439d2ea1a9bbd8d715cf7cef367353": "file 46\n",
+    "180fa4e69eabbd12afde1390092594798e083d97f779d089cd753363c6905cd0": "file 6\n",
+    "1c18ad98070cfbe9c316a8c195095675199b9612006d09695f343c52a9a9be79": "file 52\n",
+    "1d0ae5e29e381e72894924c10a00023f0d248afce54413030eec438cff987253": "file 45\n",
+    "1dcc6d81aee1b5404b226fef4128baaddcc85e11d133d2d07da8d80325fac590": "file 20\n",
+    "2268d99d3a0f71eaed46a3b3bd2cc6338ec529187a9b1c486389a7fe4de4cd66": "file 14\n",
+    "22e5a613ba0ab63f2a35659029e846abe8f09307cf76635ff7488f8c348865ba": "# Guide\r\nMore detail.\rEnd\n",
+    "24e274bd433cafe12b1649479db5a742f2805fb616d953dc83b528ab4d9af7ca": "file 12\n",
+    "261439a9268d4244e2ef3c73f18448da0b54733f304777a12f172aa7222aa513": "file 24\n",
+    "27c7d24edb77a005c6109792cc4efc120bc2388a5464d54745b99f006d241db9": "file 5\n",
+    "2b37d68a1483bb3eeb37be0185f8be36499abe12c45f5cab77b474c5b86655b0": "file 49\n",
+    "2d4b67d07f5e4744906350ab1cb00c3494993493b5f46f5525e6c2156ff24c1d": "file 17\n",
+    "2dc4a82b786aabeebebfb1bcf8a1beac3e80f4a4ae679b93488e59595c7d4c90": "file 48\n",
+    "320a977fa7c0e1bec9b667f1a3f823de8dbbda38238a7af0f0bbddb4e6da25e7": "file 34\n",
+    "341606b8587f7d2db4346c434daabe0335e98c53a0ff25e87629e03f3af2f694": "file 16\n",
+    "392ea683b9499b24feafc7c757890f15b341c9e714b83219494064162a3cf57b": "file 41\n",
+    "3e5df1b7644f3503bb3ed774d381e5d1031de6cf6731f59cb275b83d7e90ca02": "# Shared policy\nBe careful.\n",
+    "3e7e2b6c54af7ff67e199f44eb09494ab201c828ea140470d0327a9155beee78": "file 8\n",
+    "3ea81a90631ed12b32e600a4c5a837166755792eeb47204710a16c401196badb": "file 47\n",
+    "41b3fbbe4d8d6bbd44c4b610bb678c55dd53fdbe9a3ed257057ee1edf5136f5b": "file 0\n",
+    "43d4e495d1a4d5d83b9b9c00dcd4830124e9b5aa3cf90fb20b7ee830b8734287": "file 31\n",
+    "43ddc00b68011db10f935b43e2ec8ec790504e3aa3c1a30f9c993c4019786ed0": "file 22\n",
+    "49a44677956305ab5866009cf3613c9ac4213743629c3bfc3485a5389938bbfa": "file 32\n",
+    "4f28e94a66a39cc342133f4949ecf51d07a1666e7b9b93a0efba02f8b1a864b7": "file 27\n",
+    "4f8f77b0ea1b891ac5ff615b3aff7d84f52825a24813763ad8c65ab87ca85a9d": "file 30\n",
+    "5130967ce959207bdddbfd1b4dda985228d9c3a76cb16e6369b2666d16302c23": "file 51\n",
+    "578c05eae46cb1dfaf27d47f7a5ccb7876c2eb5aa6fa93671ea2724f00349f95": "no extension\n",
+    "5f5d584c5857d85af911ade1b2ae7cb593c17654282091f3ace31efd9e951360": "file 1\n",
+    "6767b224456213bce1271b2ab80ce439cd1a1f0cad956cced679131da320e7ad": "file 28\n",
+    "722a043bec8601a2ab38745adb5563ca8db525e9bd56d71717cbff37351c8ed7": "file 40\n",
+    "76f61e3503f81ffc8ccff1db16486d49a5f602267027e5ae85ae17d0c5e041b1": "file 4\n",
+    "77d86d8a6b114772988a9ca6e2cd2ff6432c37eb1410af8d7c71fa5ad6f6a990": "---\nname: many-files\ndescription: Has many supporting files\n---\n# Many\n",
+    "7d62b66820ba5cdb55857369befbccba334bc3a8ca41ec66e80afb89727f286a": "Run the weekly review.\n",
+    "7e929ce0b4344d6061ffac95189b9abeee4189e292cbd3ac42a1b0e5afefceb4": "file 15\n",
+    "8e6210b234cfd1c105ec3c2f1d5d3ad055f39e2ef21e1cbff1858a804e1b718b": "file 18\n",
+    "8f7e2ba9aa8bb0e3b00cb077fbf07e36c59ecb43953a3cfc081b72a86b274a37": "file 39\n",
+    "91600ead78460875bdd21e59f49b3262404346f2ab1ca535d2c3486ca48434e2": "---\nname: demo-skill\ndescription: Summarises release notes\n---\n# Demo skill\nBody text.\n",
+    "9305f40a678e3123be5b6fb8590c2192adff1bf732389cd63c8b8ba108102342": "{\"id\": \"demo-routine\", \"description\": \"Weekly review\", \"owner\": \"agentlocker\", \"runner\": \"t3-scheduler\", \"schedule\": {\"type\": \"interval\", \"every_seconds\": 3600}, \"timezone\": \"UTC\", \"prompt\": \"prompt.md\", \"overlap\": \"skip\", \"timeout_seconds\": 60, \"enabled\": false}",
+    "96faa18568f8de6d2be0927265d4f317324564b41ca02188ba5430234a87860d": "spaced\n",
+    "97e657de832e05c4919741d3a660c685268cd9bebf3b18812fe9de7fe5b8af21": "file 29\n",
+    "9ab1c487d62413afc31c76ab9865cb9d50585772654047fba84311614a423c95": "file 9\n",
+    "9f2d3105d5198a772957876b25a16adc1f9dc87b3aaa43f27891bdd33fe64c96": "file 35\n",
+    "ac31495c9d46e2e3a8f6798bbaf0b810906bb1f05496d2f27bf99ee35eef1c82": "file 42\n",
+    "b3850a429f49d5bddfb1dedd1ab6fe667faf3790247a6a3b2b86298947d65833": "file 26\n",
+    "b65a593d5747c47f0ac8f3e6aa4a24c9425f57a628afcc8f4e64376faf0e751c": "file 38\n",
+    "b90ae9387f8c3b679f6bbd62649e3b0649fd2f5ab82cc174af8977671367f761": "file 3\n",
+    "bc100569ce0f46b7956f8677794df3b7cd8a5b3b19a0ade20877cf5a83ff949a": "file 43\n",
+    "c23c64e866d511e420df8be80dfb96873b8fdd48c01358398d1d156723080ed0": "file 19\n",
+    "c2756086b5d70a1bcd6da71277f1238568b3c35aaacdf9e10e426d1876022e0d": "file 10\n",
+    "cdc4f52fe4cd55696b22732e3d35afd38e2905551ac4f7b4ceb44357740b62ea": "file 7\n",
+    "d71ce34c7d3a21bcc34ca421a1746d4edb5fb5c9ab350989dea7427f44f08be2": "file 11\n",
+    "d780ce84b54230a61c017e1db416a1de000a22af21c63088b941364353e4fe03": "file 36\n",
+    "daac96fe607d6c1e25b1963bb40aee990184ea338ba509778a61383d9d85cedc": "file 13\n",
+    "e09e2cbf01c458b4d9f3740c0cfd2864ff53a7224ab626a73464b0d0a225ee08": "# Second\nMore rules.\n",
+    "e6be5e995093917a541f1bd191af2e626c79261ea381f9a6d372f44ef7ba578c": "file 44\n",
+    "ed8f7d8cecd885a87c6863926af2f61e2ba33581fd623d5fed8ae0a3f17acafb": "plain notes\n",
+    "f52f4b2ac91aae4fcd1b64f49dc2227930b21a927157f854b1bbf8e45061916e": "file 25\n",
+    "f72306e5abea3faa8fc9cea7dd736d70b74c5cf53caa2206b5469e5670679095": "file 37\n",
+    "fed050590e00099bbb2205a4fd738ff2e640ac843393dbae6a9084e35b081255": "file 21\n"
+   },
+   "cases": [
+    {
+     "expected": {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "result": {
+       "capabilities": {
+        "prompts": {},
+        "resources": {},
+        "tools": {}
+       },
+       "protocolVersion": "2025-06-18",
+       "serverInfo": {
+        "name": "agentlocker",
+        "version": "1.0.0"
+       }
+      }
+     },
+     "name": "initialize latest",
+     "request": {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "method": "initialize",
+      "params": {
+       "protocolVersion": "2025-06-18"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "result": {
+       "capabilities": {
+        "prompts": {},
+        "resources": {},
+        "tools": {}
+       },
+       "protocolVersion": "2025-03-26",
+       "serverInfo": {
+        "name": "agentlocker",
+        "version": "1.0.0"
+       }
+      }
+     },
+     "name": "initialize middle",
+     "request": {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "method": "initialize",
+      "params": {
+       "protocolVersion": "2025-03-26"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "result": {
+       "capabilities": {
+        "prompts": {},
+        "resources": {},
+        "tools": {}
+       },
+       "protocolVersion": "2024-11-05",
+       "serverInfo": {
+        "name": "agentlocker",
+        "version": "1.0.0"
+       }
+      }
+     },
+     "name": "initialize oldest",
+     "request": {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "method": "initialize",
+      "params": {
+       "protocolVersion": "2024-11-05"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "result": {
+       "capabilities": {
+        "prompts": {},
+        "resources": {},
+        "tools": {}
+       },
+       "protocolVersion": "2025-06-18",
+       "serverInfo": {
+        "name": "agentlocker",
+        "version": "1.0.0"
+       }
+      }
+     },
+     "name": "initialize unknown",
+     "request": {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "method": "initialize",
+      "params": {
+       "protocolVersion": "1999-01-01"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": "a",
+      "jsonrpc": "2.0",
+      "result": {
+       "capabilities": {
+        "prompts": {},
+        "resources": {},
+        "tools": {}
+       },
+       "protocolVersion": "2025-06-18",
+       "serverInfo": {
+        "name": "agentlocker",
+        "version": "1.0.0"
+       }
+      }
+     },
+     "name": "initialize bare",
+     "request": {
+      "id": "a",
+      "jsonrpc": "2.0",
+      "method": "initialize"
+     }
+    },
+    {
+     "expected": {
+      "id": 2,
+      "jsonrpc": "2.0",
+      "result": {}
+     },
+     "name": "ping",
+     "request": {
+      "id": 2,
+      "jsonrpc": "2.0",
+      "method": "ping"
+     }
+    },
+    {
+     "expected": {
+      "id": 3,
+      "jsonrpc": "2.0",
+      "result": {
+       "tools": [
+        {
+         "annotations": {
+          "readOnlyHint": true
+         },
+         "description": "List every skill in the agentlocker hub with name, description, owner, provenance and content hash. Call this first to discover available skills, then load one with hub_get_item (kind 'skill') only when its description matches the task. An entry with an 'error' field could not be fully read.",
+         "inputSchema": {
+          "additionalProperties": false,
+          "properties": {},
+          "type": "object"
+         },
+         "name": "hub_list_skills"
+        },
+        {
+         "annotations": {
+          "readOnlyHint": true
+         },
+         "description": "List the hub's rule fragments (shared policy and project instructions) with name, owner, provenance and content hash. Read the applicable ones, including 'shared-policy', with hub_get_item (kind 'rule') before starting work.",
+         "inputSchema": {
+          "additionalProperties": false,
+          "properties": {},
+          "type": "object"
+         },
+         "name": "hub_list_rules"
+        },
+        {
+         "annotations": {
+          "readOnlyHint": true
+         },
+         "description": "List nonsecret MCP server definitions indexed in the hub: transport, command and args or URL, and env or header names with secret:// references. Secret values are never returned and listing never starts a server. Use it to see which upstream servers exist and which credentials they need.",
+         "inputSchema": {
+          "additionalProperties": false,
+          "properties": {},
+          "type": "object"
+         },
+         "name": "hub_list_mcp_servers"
+        },
+        {
+         "annotations": {
+          "readOnlyHint": true
+         },
+         "description": "List routine definitions (repeatable agent jobs) with id, description, owner and provenance. Routines are recorded definitions only: they are disabled and this endpoint never runs them. Read one with hub_get_item (kind 'routine').",
+         "inputSchema": {
+          "additionalProperties": false,
+          "properties": {},
+          "type": "object"
+         },
+         "name": "hub_list_routines"
+        },
+        {
+         "annotations": {
+          "readOnlyHint": true
+         },
+         "description": "List nonsecret plugin metadata records imported into the hub (an empty list when none were imported). Read-only: nothing is installed or executed.",
+         "inputSchema": {
+          "additionalProperties": false,
+          "properties": {},
+          "type": "object"
+         },
+         "name": "hub_list_plugins"
+        },
+        {
+         "annotations": {
+          "readOnlyHint": true
+         },
+         "description": "List nonsecret connection metadata records (provider and endpoint of a linked service) imported into the hub, with secret:// references only. Read-only: nothing is contacted.",
+         "inputSchema": {
+          "additionalProperties": false,
+          "properties": {},
+          "type": "object"
+         },
+         "name": "hub_list_connections"
+        },
+        {
+         "annotations": {
+          "readOnlyHint": true
+         },
+         "description": "Load one skill, rule or routine by name after finding it with the matching hub_list_* tool. For a skill, 'files' maps every relative path (SKILL.md plus references/, scripts/ and assets/) to its UTF-8 text. Files that are not text, symlinks and anything past the 1 MiB text cap are named in 'omitted' with their size and reason, and 'truncated' is true when the cap cut content. Fetch individual ordinary files within 1 MiB with resources/read. A rule is one file; a routine is its routine.json plus its prompt file. The indexed sha256 is verified before anything is returned.",
+         "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+           "kind": {
+            "description": "What to load: 'skill', 'rule' or 'routine'.",
+            "enum": [
+             "skill",
+             "rule",
+             "routine"
+            ],
+            "type": "string"
+           },
+           "name": {
+            "description": "Entry name exactly as returned by the matching hub_list_* tool (a routine's id).",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,62}$",
+            "type": "string"
+           }
+          },
+          "required": [
+           "kind",
+           "name"
+          ],
+          "type": "object"
+         },
+         "name": "hub_get_item"
+        }
+       ]
+      }
+     },
+     "name": "tools list",
+     "request": {
+      "id": 3,
+      "jsonrpc": "2.0",
+      "method": "tools/list"
+     }
+    },
+    {
+     "expected": {
+      "id": 4,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": [
+          {
+           "description": "Summarises release notes",
+           "name": "demo-skill",
+           "owner": "agentlocker",
+           "path": "skills/demo-skill",
+           "provenance": {
+            "origin": "authored",
+            "source_id": "src-d2c431a99777"
+           },
+           "sha256": "d2c431a99777c4c98d14963c41c1118f552f0ca299a6f37350be0edd6e6ea054"
+          },
+          {
+           "description": "Has many supporting files",
+           "name": "many-files",
+           "owner": "agentlocker",
+           "path": "skills/many-files",
+           "provenance": {
+            "origin": "authored",
+            "source_id": "src-4b8a77522cd5"
+           },
+           "sha256": "4b8a77522cd51cc2a3a560e344d42653f404ee07e624f3a1b950e7269ad25ff9"
+          }
+         ],
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "list skills",
+     "request": {
+      "id": 4,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {},
+       "name": "hub_list_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 4,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": [
+          {
+           "description": "Summarises release notes",
+           "name": "demo-skill",
+           "owner": "agentlocker",
+           "path": "skills/demo-skill",
+           "provenance": {
+            "origin": "authored",
+            "source_id": "src-d2c431a99777"
+           },
+           "sha256": "d2c431a99777c4c98d14963c41c1118f552f0ca299a6f37350be0edd6e6ea054"
+          },
+          {
+           "description": "Has many supporting files",
+           "name": "many-files",
+           "owner": "agentlocker",
+           "path": "skills/many-files",
+           "provenance": {
+            "origin": "authored",
+            "source_id": "src-4b8a77522cd5"
+           },
+           "sha256": "4b8a77522cd51cc2a3a560e344d42653f404ee07e624f3a1b950e7269ad25ff9"
+          }
+         ],
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "list skills without arguments",
+     "request": {
+      "id": 4,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "name": "hub_list_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 5,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": [
+          {
+           "name": "second-rule",
+           "owner": "agentlocker",
+           "path": "rules/second-rule.md",
+           "provenance": {
+            "origin": "authored",
+            "source_id": "src-e09e2cbf01c4"
+           },
+           "sha256": "e09e2cbf01c458b4d9f3740c0cfd2864ff53a7224ab626a73464b0d0a225ee08"
+          },
+          {
+           "name": "shared-policy",
+           "owner": "agentlocker",
+           "path": "rules/shared-policy.md",
+           "provenance": {
+            "origin": "authored",
+            "source_id": "src-3e5df1b7644f"
+           },
+           "sha256": "3e5df1b7644f3503bb3ed774d381e5d1031de6cf6731f59cb275b83d7e90ca02"
+          }
+         ],
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "list rules",
+     "request": {
+      "id": 5,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {},
+       "name": "hub_list_rules"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 6,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": [
+          {
+           "description": "Demo upstream",
+           "name": "demo-server",
+           "owner": "agentlocker",
+           "path": "mcp/servers/demo-server.json",
+           "provenance": {
+            "origin": "authored",
+            "source_id": "src-b8bfae1e7d7e"
+           },
+           "server": {
+            "headers": {
+             "Authorization": "secret://demo-token"
+            },
+            "transport": "http",
+            "url": "https://mcp.example.com/mcp"
+           },
+           "sha256": "b8bfae1e7d7e77f371392ac9ee2ca2129cad7bbdb2fc12acff95d33f046d6035"
+          }
+         ],
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "list mcp servers",
+     "request": {
+      "id": 6,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {},
+       "name": "hub_list_mcp_servers"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 7,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": [
+          {
+           "description": "Weekly review",
+           "id": "demo-routine",
+           "owner": "agentlocker",
+           "path": "routines/demo-routine/routine.json",
+           "provenance": {
+            "origin": "authored",
+            "source_id": "src-9305f40a678e"
+           },
+           "sha256": "9305f40a678e3123be5b6fb8590c2192adff1bf732389cd63c8b8ba108102342"
+          }
+         ],
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "list routines",
+     "request": {
+      "id": 7,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {},
+       "name": "hub_list_routines"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 8,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": [],
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "list plugins",
+     "request": {
+      "id": 8,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {},
+       "name": "hub_list_plugins"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 9,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": [],
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "list connections",
+     "request": {
+      "id": 9,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {},
+       "name": "hub_list_connections"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 10,
+      "jsonrpc": "2.0"
+     },
+     "name": "list with arguments",
+     "request": {
+      "id": 10,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "x": 1
+       },
+       "name": "hub_list_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 11,
+      "jsonrpc": "2.0"
+     },
+     "name": "unknown tool",
+     "request": {
+      "id": 11,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {},
+       "name": "hub_nope"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 11,
+      "jsonrpc": "2.0"
+     },
+     "name": "tool name not a string",
+     "request": {
+      "id": 11,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {},
+       "name": [
+        "hub_list_skills"
+       ]
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 11,
+      "jsonrpc": "2.0"
+     },
+     "name": "tool without name",
+     "request": {
+      "id": 11,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {}
+     }
+    },
+    {
+     "expected": {
+      "id": 12,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": {
+          "files": {
+           "skills/demo-skill/SKILL.md": "---\nname: demo-skill\ndescription: Summarises release notes\n---\n# Demo skill\nBody text.\n",
+           "skills/demo-skill/assets/NOTICE": "no extension\n",
+           "skills/demo-skill/references/guide.md": "# Guide\nMore detail.\nEnd\n",
+           "skills/demo-skill/references/référence-naïve.md": "Unicode ☃ text\n",
+           "skills/demo-skill/references/with space.md": "spaced\n",
+           "skills/demo-skill/scripts/notes.txt": "plain notes\n"
+          },
+          "kind": "skill",
+          "max_bytes": 1048576,
+          "name": "demo-skill",
+          "omitted": [],
+          "truncated": false
+         },
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "get skill",
+     "request": {
+      "id": 12,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "kind": "skill",
+        "name": "demo-skill"
+       },
+       "name": "hub_get_item"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 12,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": {
+          "files": {
+           "skills/many-files/SKILL.md": "---\nname: many-files\ndescription: Has many supporting files\n---\n# Many\n",
+           "skills/many-files/references/file-00.md": "file 0\n",
+           "skills/many-files/references/file-01.md": "file 1\n",
+           "skills/many-files/references/file-02.md": "file 2\n",
+           "skills/many-files/references/file-03.md": "file 3\n",
+           "skills/many-files/references/file-04.md": "file 4\n",
+           "skills/many-files/references/file-05.md": "file 5\n",
+           "skills/many-files/references/file-06.md": "file 6\n",
+           "skills/many-files/references/file-07.md": "file 7\n",
+           "skills/many-files/references/file-08.md": "file 8\n",
+           "skills/many-files/references/file-09.md": "file 9\n",
+           "skills/many-files/references/file-10.md": "file 10\n",
+           "skills/many-files/references/file-11.md": "file 11\n",
+           "skills/many-files/references/file-12.md": "file 12\n",
+           "skills/many-files/references/file-13.md": "file 13\n",
+           "skills/many-files/references/file-14.md": "file 14\n",
+           "skills/many-files/references/file-15.md": "file 15\n",
+           "skills/many-files/references/file-16.md": "file 16\n",
+           "skills/many-files/references/file-17.md": "file 17\n",
+           "skills/many-files/references/file-18.md": "file 18\n",
+           "skills/many-files/references/file-19.md": "file 19\n",
+           "skills/many-files/references/file-20.md": "file 20\n",
+           "skills/many-files/references/file-21.md": "file 21\n",
+           "skills/many-files/references/file-22.md": "file 22\n",
+           "skills/many-files/references/file-23.md": "file 23\n",
+           "skills/many-files/references/file-24.md": "file 24\n",
+           "skills/many-files/references/file-25.md": "file 25\n",
+           "skills/many-files/references/file-26.md": "file 26\n",
+           "skills/many-files/references/file-27.md": "file 27\n",
+           "skills/many-files/references/file-28.md": "file 28\n",
+           "skills/many-files/references/file-29.md": "file 29\n",
+           "skills/many-files/references/file-30.md": "file 30\n",
+           "skills/many-files/references/file-31.md": "file 31\n",
+           "skills/many-files/references/file-32.md": "file 32\n",
+           "skills/many-files/references/file-33.md": "file 33\n",
+           "skills/many-files/references/file-34.md": "file 34\n",
+           "skills/many-files/references/file-35.md": "file 35\n",
+           "skills/many-files/references/file-36.md": "file 36\n",
+           "skills/many-files/references/file-37.md": "file 37\n",
+           "skills/many-files/references/file-38.md": "file 38\n",
+           "skills/many-files/references/file-39.md": "file 39\n",
+           "skills/many-files/references/file-40.md": "file 40\n",
+           "skills/many-files/references/file-41.md": "file 41\n",
+           "skills/many-files/references/file-42.md": "file 42\n",
+           "skills/many-files/references/file-43.md": "file 43\n",
+           "skills/many-files/references/file-44.md": "file 44\n",
+           "skills/many-files/references/file-45.md": "file 45\n",
+           "skills/many-files/references/file-46.md": "file 46\n",
+           "skills/many-files/references/file-47.md": "file 47\n",
+           "skills/many-files/references/file-48.md": "file 48\n",
+           "skills/many-files/references/file-49.md": "file 49\n",
+           "skills/many-files/references/file-50.md": "file 50\n",
+           "skills/many-files/references/file-51.md": "file 51\n",
+           "skills/many-files/references/file-52.md": "file 52\n"
+          },
+          "kind": "skill",
+          "max_bytes": 1048576,
+          "name": "many-files",
+          "omitted": [],
+          "truncated": false
+         },
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "get many-files skill",
+     "request": {
+      "id": 12,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "kind": "skill",
+        "name": "many-files"
+       },
+       "name": "hub_get_item"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 13,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": {
+          "files": {
+           "rules/shared-policy.md": "# Shared policy\nBe careful.\n"
+          },
+          "kind": "rule",
+          "max_bytes": 1048576,
+          "name": "shared-policy",
+          "omitted": [],
+          "truncated": false
+         },
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "get rule",
+     "request": {
+      "id": 13,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "kind": "rule",
+        "name": "shared-policy"
+       },
+       "name": "hub_get_item"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 14,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": {
+          "files": {
+           "routines/demo-routine/prompt.md": "Run the weekly review.\n",
+           "routines/demo-routine/routine.json": "{\"id\": \"demo-routine\", \"description\": \"Weekly review\", \"owner\": \"agentlocker\", \"runner\": \"t3-scheduler\", \"schedule\": {\"type\": \"interval\", \"every_seconds\": 3600}, \"timezone\": \"UTC\", \"prompt\": \"prompt.md\", \"overlap\": \"skip\", \"timeout_seconds\": 60, \"enabled\": false}"
+          },
+          "kind": "routine",
+          "max_bytes": 1048576,
+          "name": "demo-routine",
+          "omitted": [],
+          "truncated": false
+         },
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "get routine",
+     "request": {
+      "id": 14,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "kind": "routine",
+        "name": "demo-routine"
+       },
+       "name": "hub_get_item"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Unknown skill: nothing-here"
+      },
+      "id": 15,
+      "jsonrpc": "2.0"
+     },
+     "name": "get unknown skill",
+     "request": {
+      "id": 15,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "kind": "skill",
+        "name": "nothing-here"
+       },
+       "name": "hub_get_item"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Unknown rule: nothing-here"
+      },
+      "id": 15,
+      "jsonrpc": "2.0"
+     },
+     "name": "get unknown rule",
+     "request": {
+      "id": 15,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "kind": "rule",
+        "name": "nothing-here"
+       },
+       "name": "hub_get_item"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 16,
+      "jsonrpc": "2.0"
+     },
+     "name": "get with extra key",
+     "request": {
+      "id": 16,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "kind": "skill",
+        "name": "demo-skill",
+        "x": 1
+       },
+       "name": "hub_get_item"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 16,
+      "jsonrpc": "2.0"
+     },
+     "name": "get with missing name",
+     "request": {
+      "id": 16,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "kind": "skill"
+       },
+       "name": "hub_get_item"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 17,
+      "jsonrpc": "2.0"
+     },
+     "name": "get with bad name",
+     "request": {
+      "id": 17,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "kind": "skill",
+        "name": "../etc"
+       },
+       "name": "hub_get_item"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 17,
+      "jsonrpc": "2.0"
+     },
+     "name": "get with uppercase name",
+     "request": {
+      "id": 17,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "kind": "skill",
+        "name": "Demo-Skill"
+       },
+       "name": "hub_get_item"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 17,
+      "jsonrpc": "2.0"
+     },
+     "name": "get with non-string name",
+     "request": {
+      "id": 17,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "kind": "skill",
+        "name": 5
+       },
+       "name": "hub_get_item"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 18,
+      "jsonrpc": "2.0"
+     },
+     "name": "get with bad kind",
+     "request": {
+      "id": 18,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "kind": "plugin",
+        "name": "demo-skill"
+       },
+       "name": "hub_get_item"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 18,
+      "jsonrpc": "2.0"
+     },
+     "name": "get with plural kind",
+     "request": {
+      "id": 18,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "kind": "skills",
+        "name": "demo-skill"
+       },
+       "name": "hub_get_item"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32603,
+       "message": "Hub catalog unavailable"
+      },
+      "id": 19,
+      "jsonrpc": "2.0"
+     },
+     "name": "get with object kind",
+     "request": {
+      "id": 19,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "kind": {
+         "a": 1
+        },
+        "name": "demo-skill"
+       },
+       "name": "hub_get_item"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32603,
+       "message": "Hub catalog unavailable"
+      },
+      "id": 19,
+      "jsonrpc": "2.0"
+     },
+     "name": "get with list kind",
+     "request": {
+      "id": 19,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "kind": [
+         "skill"
+        ],
+        "name": "demo-skill"
+       },
+       "name": "hub_get_item"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 20,
+      "jsonrpc": "2.0"
+     },
+     "name": "get with list arguments",
+     "request": {
+      "id": 20,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": [
+        "skill",
+        "demo-skill"
+       ],
+       "name": "hub_get_item"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 20,
+      "jsonrpc": "2.0"
+     },
+     "name": "get without arguments",
+     "request": {
+      "id": 20,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "name": "hub_get_item"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 21,
+      "jsonrpc": "2.0",
+      "result": {
+       "prompts": [
+        {
+         "arguments": [],
+         "description": "Summarises release notes",
+         "name": "demo-skill"
+        },
+        {
+         "arguments": [],
+         "description": "Has many supporting files",
+         "name": "many-files"
+        }
+       ]
+      }
+     },
+     "name": "prompts list",
+     "request": {
+      "id": 21,
+      "jsonrpc": "2.0",
+      "method": "prompts/list"
+     }
+    },
+    {
+     "expected": {
+      "id": 22,
+      "jsonrpc": "2.0",
+      "result": {
+       "description": "Summarises release notes",
+       "messages": [
+        {
+         "content": {
+          "text": "---\nname: demo-skill\ndescription: Summarises release notes\n---\n# Demo skill\nBody text.\n\n\n---\nSupporting files for this skill are available as MCP resources (resources/read):\n- agentlocker://skills/demo-skill/assets/NOTICE\n- agentlocker://skills/demo-skill/references/guide.md\n- agentlocker://skills/demo-skill/references/r%C3%A9f%C3%A9rence-na%C3%AFve.md\n- agentlocker://skills/demo-skill/references/with%20space.md\n- agentlocker://skills/demo-skill/scripts/notes.txt\n",
+          "type": "text"
+         },
+         "role": "user"
+        }
+       ]
+      }
+     },
+     "name": "prompt with supporting files",
+     "request": {
+      "id": 22,
+      "jsonrpc": "2.0",
+      "method": "prompts/get",
+      "params": {
+       "name": "demo-skill"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 22,
+      "jsonrpc": "2.0",
+      "result": {
+       "description": "Summarises release notes",
+       "messages": [
+        {
+         "content": {
+          "text": "---\nname: demo-skill\ndescription: Summarises release notes\n---\n# Demo skill\nBody text.\n\n\n---\nSupporting files for this skill are available as MCP resources (resources/read):\n- agentlocker://skills/demo-skill/assets/NOTICE\n- agentlocker://skills/demo-skill/references/guide.md\n- agentlocker://skills/demo-skill/references/r%C3%A9f%C3%A9rence-na%C3%AFve.md\n- agentlocker://skills/demo-skill/references/with%20space.md\n- agentlocker://skills/demo-skill/scripts/notes.txt\n",
+          "type": "text"
+         },
+         "role": "user"
+        }
+       ]
+      }
+     },
+     "name": "prompt with empty arguments",
+     "request": {
+      "id": 22,
+      "jsonrpc": "2.0",
+      "method": "prompts/get",
+      "params": {
+       "arguments": {},
+       "name": "demo-skill"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 23,
+      "jsonrpc": "2.0",
+      "result": {
+       "description": "Has many supporting files",
+       "messages": [
+        {
+         "content": {
+          "text": "---\nname: many-files\ndescription: Has many supporting files\n---\n# Many\n\n\n---\nSupporting files for this skill are available as MCP resources (resources/read):\n- agentlocker://skills/many-files/references/file-00.md\n- agentlocker://skills/many-files/references/file-01.md\n- agentlocker://skills/many-files/references/file-02.md\n- agentlocker://skills/many-files/references/file-03.md\n- agentlocker://skills/many-files/references/file-04.md\n- agentlocker://skills/many-files/references/file-05.md\n- agentlocker://skills/many-files/references/file-06.md\n- agentlocker://skills/many-files/references/file-07.md\n- agentlocker://skills/many-files/references/file-08.md\n- agentlocker://skills/many-files/references/file-09.md\n- agentlocker://skills/many-files/references/file-10.md\n- agentlocker://skills/many-files/references/file-11.md\n- agentlocker://skills/many-files/references/file-12.md\n- agentlocker://skills/many-files/references/file-13.md\n- agentlocker://skills/many-files/references/file-14.md\n- agentlocker://skills/many-files/references/file-15.md\n- agentlocker://skills/many-files/references/file-16.md\n- agentlocker://skills/many-files/references/file-17.md\n- agentlocker://skills/many-files/references/file-18.md\n- agentlocker://skills/many-files/references/file-19.md\n- agentlocker://skills/many-files/references/file-20.md\n- agentlocker://skills/many-files/references/file-21.md\n- agentlocker://skills/many-files/references/file-22.md\n- agentlocker://skills/many-files/references/file-23.md\n- agentlocker://skills/many-files/references/file-24.md\n- agentlocker://skills/many-files/references/file-25.md\n- agentlocker://skills/many-files/references/file-26.md\n- agentlocker://skills/many-files/references/file-27.md\n- agentlocker://skills/many-files/references/file-28.md\n- agentlocker://skills/many-files/references/file-29.md\n- agentlocker://skills/many-files/references/file-30.md\n- agentlocker://skills/many-files/references/file-31.md\n- agentlocker://skills/many-files/references/file-32.md\n- agentlocker://skills/many-files/references/file-33.md\n- agentlocker://skills/many-files/references/file-34.md\n- agentlocker://skills/many-files/references/file-35.md\n- agentlocker://skills/many-files/references/file-36.md\n- agentlocker://skills/many-files/references/file-37.md\n- agentlocker://skills/many-files/references/file-38.md\n- agentlocker://skills/many-files/references/file-39.md\n- agentlocker://skills/many-files/references/file-40.md\n- agentlocker://skills/many-files/references/file-41.md\n- agentlocker://skills/many-files/references/file-42.md\n- agentlocker://skills/many-files/references/file-43.md\n- agentlocker://skills/many-files/references/file-44.md\n- agentlocker://skills/many-files/references/file-45.md\n- agentlocker://skills/many-files/references/file-46.md\n- agentlocker://skills/many-files/references/file-47.md\n- agentlocker://skills/many-files/references/file-48.md\n- agentlocker://skills/many-files/references/file-49.md\n- and 3 more (see resources/list)\n",
+          "type": "text"
+         },
+         "role": "user"
+        }
+       ]
+      }
+     },
+     "name": "prompt over the hint limit",
+     "request": {
+      "id": 23,
+      "jsonrpc": "2.0",
+      "method": "prompts/get",
+      "params": {
+       "name": "many-files"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Unknown prompt: nothing-here"
+      },
+      "id": 24,
+      "jsonrpc": "2.0"
+     },
+     "name": "prompt unknown",
+     "request": {
+      "id": 24,
+      "jsonrpc": "2.0",
+      "method": "prompts/get",
+      "params": {
+       "name": "nothing-here"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid prompt name or arguments"
+      },
+      "id": 24,
+      "jsonrpc": "2.0"
+     },
+     "name": "prompt with arguments",
+     "request": {
+      "id": 24,
+      "jsonrpc": "2.0",
+      "method": "prompts/get",
+      "params": {
+       "arguments": {
+        "a": 1
+       },
+       "name": "demo-skill"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid prompt name or arguments"
+      },
+      "id": 24,
+      "jsonrpc": "2.0"
+     },
+     "name": "prompt with extra key",
+     "request": {
+      "id": 24,
+      "jsonrpc": "2.0",
+      "method": "prompts/get",
+      "params": {
+       "name": "demo-skill",
+       "x": 1
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid prompt name or arguments"
+      },
+      "id": 24,
+      "jsonrpc": "2.0"
+     },
+     "name": "prompt with bad name",
+     "request": {
+      "id": 24,
+      "jsonrpc": "2.0",
+      "method": "prompts/get",
+      "params": {
+       "name": "Bad Name"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid prompt name or arguments"
+      },
+      "id": 24,
+      "jsonrpc": "2.0"
+     },
+     "name": "prompt without name",
+     "request": {
+      "id": 24,
+      "jsonrpc": "2.0",
+      "method": "prompts/get",
+      "params": {}
+     }
+    },
+    {
+     "expected": {
+      "id": 25,
+      "jsonrpc": "2.0",
+      "result": {
+       "resources": [
+        {
+         "mimeType": "text/markdown",
+         "name": "demo-skill/SKILL.md",
+         "size": 87,
+         "uri": "agentlocker://skills/demo-skill/SKILL.md"
+        },
+        {
+         "name": "demo-skill/assets/NOTICE",
+         "size": 13,
+         "uri": "agentlocker://skills/demo-skill/assets/NOTICE"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "demo-skill/references/guide.md",
+         "size": 26,
+         "uri": "agentlocker://skills/demo-skill/references/guide.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "demo-skill/references/référence-naïve.md",
+         "size": 17,
+         "uri": "agentlocker://skills/demo-skill/references/r%C3%A9f%C3%A9rence-na%C3%AFve.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "demo-skill/references/with space.md",
+         "size": 7,
+         "uri": "agentlocker://skills/demo-skill/references/with%20space.md"
+        },
+        {
+         "mimeType": "text/plain",
+         "name": "demo-skill/scripts/notes.txt",
+         "size": 12,
+         "uri": "agentlocker://skills/demo-skill/scripts/notes.txt"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/SKILL.md",
+         "size": 71,
+         "uri": "agentlocker://skills/many-files/SKILL.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-00.md",
+         "size": 7,
+         "uri": "agentlocker://skills/many-files/references/file-00.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-01.md",
+         "size": 7,
+         "uri": "agentlocker://skills/many-files/references/file-01.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-02.md",
+         "size": 7,
+         "uri": "agentlocker://skills/many-files/references/file-02.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-03.md",
+         "size": 7,
+         "uri": "agentlocker://skills/many-files/references/file-03.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-04.md",
+         "size": 7,
+         "uri": "agentlocker://skills/many-files/references/file-04.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-05.md",
+         "size": 7,
+         "uri": "agentlocker://skills/many-files/references/file-05.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-06.md",
+         "size": 7,
+         "uri": "agentlocker://skills/many-files/references/file-06.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-07.md",
+         "size": 7,
+         "uri": "agentlocker://skills/many-files/references/file-07.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-08.md",
+         "size": 7,
+         "uri": "agentlocker://skills/many-files/references/file-08.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-09.md",
+         "size": 7,
+         "uri": "agentlocker://skills/many-files/references/file-09.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-10.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-10.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-11.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-11.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-12.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-12.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-13.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-13.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-14.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-14.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-15.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-15.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-16.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-16.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-17.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-17.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-18.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-18.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-19.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-19.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-20.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-20.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-21.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-21.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-22.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-22.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-23.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-23.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-24.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-24.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-25.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-25.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-26.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-26.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-27.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-27.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-28.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-28.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-29.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-29.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-30.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-30.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-31.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-31.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-32.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-32.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-33.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-33.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-34.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-34.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-35.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-35.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-36.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-36.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-37.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-37.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-38.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-38.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-39.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-39.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-40.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-40.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-41.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-41.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-42.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-42.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-43.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-43.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-44.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-44.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-45.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-45.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-46.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-46.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-47.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-47.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-48.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-48.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-49.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-49.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-50.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-50.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-51.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-51.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "many-files/references/file-52.md",
+         "size": 8,
+         "uri": "agentlocker://skills/many-files/references/file-52.md"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "second-rule",
+         "size": 21,
+         "uri": "agentlocker://rules/second-rule"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "shared-policy",
+         "size": 28,
+         "uri": "agentlocker://rules/shared-policy"
+        },
+        {
+         "mimeType": "application/json",
+         "name": "demo-routine/routine.json",
+         "size": 263,
+         "uri": "agentlocker://routines/demo-routine/routine.json"
+        },
+        {
+         "mimeType": "text/markdown",
+         "name": "demo-routine/prompt.md",
+         "size": 23,
+         "uri": "agentlocker://routines/demo-routine/prompt.md"
+        }
+       ]
+      }
+     },
+     "name": "resources list",
+     "request": {
+      "id": 25,
+      "jsonrpc": "2.0",
+      "method": "resources/list"
+     }
+    },
+    {
+     "expected": {
+      "id": 26,
+      "jsonrpc": "2.0",
+      "result": {
+       "resourceTemplates": [
+        {
+         "description": "A file inside a hub skill, such as SKILL.md or references/<file>.",
+         "name": "skill-file",
+         "uriTemplate": "agentlocker://skills/{name}/{+path}"
+        },
+        {
+         "description": "A hub rule fragment.",
+         "name": "rule",
+         "uriTemplate": "agentlocker://rules/{name}"
+        },
+        {
+         "description": "A routine's routine.json or its prompt file.",
+         "name": "routine-file",
+         "uriTemplate": "agentlocker://routines/{id}/{file}"
+        }
+       ]
+      }
+     },
+     "name": "resource templates",
+     "request": {
+      "id": 26,
+      "jsonrpc": "2.0",
+      "method": "resources/templates/list"
+     }
+    },
+    {
+     "expected": {
+      "id": 27,
+      "jsonrpc": "2.0",
+      "result": {
+       "contents": [
+        {
+         "mimeType": "text/markdown",
+         "text": "---\nname: demo-skill\ndescription: Summarises release notes\n---\n# Demo skill\nBody text.\n",
+         "uri": "agentlocker://skills/demo-skill/SKILL.md"
+        }
+       ]
+      }
+     },
+     "name": "read skill main",
+     "request": {
+      "id": 27,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "agentlocker://skills/demo-skill/SKILL.md"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 27,
+      "jsonrpc": "2.0",
+      "result": {
+       "contents": [
+        {
+         "mimeType": "text/markdown",
+         "text": "# Guide\nMore detail.\nEnd\n",
+         "uri": "agentlocker://skills/demo-skill/references/guide.md"
+        }
+       ]
+      }
+     },
+     "name": "read skill reference with CRLF",
+     "request": {
+      "id": 27,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "agentlocker://skills/demo-skill/references/guide.md"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 27,
+      "jsonrpc": "2.0",
+      "result": {
+       "contents": [
+        {
+         "mimeType": "text/markdown",
+         "text": "spaced\n",
+         "uri": "agentlocker://skills/demo-skill/references/with%20space.md"
+        }
+       ]
+      }
+     },
+     "name": "read skill file with space",
+     "request": {
+      "id": 27,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "agentlocker://skills/demo-skill/references/with%20space.md"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 27,
+      "jsonrpc": "2.0",
+      "result": {
+       "contents": [
+        {
+         "mimeType": "text/markdown",
+         "text": "Unicode ☃ text\n",
+         "uri": "agentlocker://skills/demo-skill/references/r%C3%A9f%C3%A9rence-na%C3%AFve.md"
+        }
+       ]
+      }
+     },
+     "name": "read skill file with unicode",
+     "request": {
+      "id": 27,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "agentlocker://skills/demo-skill/references/r%C3%A9f%C3%A9rence-na%C3%AFve.md"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 27,
+      "jsonrpc": "2.0",
+      "result": {
+       "contents": [
+        {
+         "mimeType": "text/plain",
+         "text": "plain notes\n",
+         "uri": "agentlocker://skills/demo-skill/scripts/notes.txt"
+        }
+       ]
+      }
+     },
+     "name": "read skill text file",
+     "request": {
+      "id": 27,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "agentlocker://skills/demo-skill/scripts/notes.txt"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 27,
+      "jsonrpc": "2.0",
+      "result": {
+       "contents": [
+        {
+         "mimeType": "text/plain",
+         "text": "no extension\n",
+         "uri": "agentlocker://skills/demo-skill/assets/NOTICE"
+        }
+       ]
+      }
+     },
+     "name": "read skill file without extension",
+     "request": {
+      "id": 27,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "agentlocker://skills/demo-skill/assets/NOTICE"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 28,
+      "jsonrpc": "2.0",
+      "result": {
+       "contents": [
+        {
+         "mimeType": "text/markdown",
+         "text": "# Shared policy\nBe careful.\n",
+         "uri": "agentlocker://rules/shared-policy"
+        }
+       ]
+      }
+     },
+     "name": "read rule",
+     "request": {
+      "id": 28,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "agentlocker://rules/shared-policy"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 29,
+      "jsonrpc": "2.0",
+      "result": {
+       "contents": [
+        {
+         "mimeType": "application/json",
+         "text": "{\"id\": \"demo-routine\", \"description\": \"Weekly review\", \"owner\": \"agentlocker\", \"runner\": \"t3-scheduler\", \"schedule\": {\"type\": \"interval\", \"every_seconds\": 3600}, \"timezone\": \"UTC\", \"prompt\": \"prompt.md\", \"overlap\": \"skip\", \"timeout_seconds\": 60, \"enabled\": false}",
+         "uri": "agentlocker://routines/demo-routine/routine.json"
+        }
+       ]
+      }
+     },
+     "name": "read routine definition",
+     "request": {
+      "id": 29,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "agentlocker://routines/demo-routine/routine.json"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 29,
+      "jsonrpc": "2.0",
+      "result": {
+       "contents": [
+        {
+         "mimeType": "text/markdown",
+         "text": "Run the weekly review.\n",
+         "uri": "agentlocker://routines/demo-routine/prompt.md"
+        }
+       ]
+      }
+     },
+     "name": "read routine prompt",
+     "request": {
+      "id": 29,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "agentlocker://routines/demo-routine/prompt.md"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Unknown resource"
+      },
+      "id": 30,
+      "jsonrpc": "2.0"
+     },
+     "name": "read unknown file",
+     "request": {
+      "id": 30,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "agentlocker://skills/demo-skill/missing.md"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Unknown skill: nothing-here"
+      },
+      "id": 30,
+      "jsonrpc": "2.0"
+     },
+     "name": "read unknown item",
+     "request": {
+      "id": 30,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "agentlocker://skills/nothing-here/SKILL.md"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid resource URI"
+      },
+      "id": 31,
+      "jsonrpc": "2.0"
+     },
+     "name": "read rule with path",
+     "request": {
+      "id": 31,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "agentlocker://rules/shared-policy/extra"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid resource URI"
+      },
+      "id": 31,
+      "jsonrpc": "2.0"
+     },
+     "name": "read skill without path",
+     "request": {
+      "id": 31,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "agentlocker://skills/demo-skill"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid resource URI"
+      },
+      "id": 31,
+      "jsonrpc": "2.0"
+     },
+     "name": "read routine without file",
+     "request": {
+      "id": 31,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "agentlocker://routines/demo-routine"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid resource URI"
+      },
+      "id": 31,
+      "jsonrpc": "2.0"
+     },
+     "name": "read encoded slash",
+     "request": {
+      "id": 31,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "agentlocker://skills/demo-skill/references%2Fguide.md"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid resource URI"
+      },
+      "id": 31,
+      "jsonrpc": "2.0"
+     },
+     "name": "read other scheme",
+     "request": {
+      "id": 31,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "file:///etc/passwd"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid resource URI"
+      },
+      "id": 31,
+      "jsonrpc": "2.0"
+     },
+     "name": "read unknown collection",
+     "request": {
+      "id": 31,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "agentlocker://plugins/x/y"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid resource URI"
+      },
+      "id": 31,
+      "jsonrpc": "2.0"
+     },
+     "name": "read non-string uri",
+     "request": {
+      "id": 31,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": 5
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid params"
+      },
+      "id": 32,
+      "jsonrpc": "2.0"
+     },
+     "name": "read with extra key",
+     "request": {
+      "id": 32,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "agentlocker://rules/shared-policy",
+       "x": 1
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid params"
+      },
+      "id": 32,
+      "jsonrpc": "2.0"
+     },
+     "name": "read without uri",
+     "request": {
+      "id": 32,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {}
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32601,
+       "message": "Method not found"
+      },
+      "id": 33,
+      "jsonrpc": "2.0"
+     },
+     "name": "unknown method",
+     "request": {
+      "id": 33,
+      "jsonrpc": "2.0",
+      "method": "nope/nothing"
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid params"
+      },
+      "id": 34,
+      "jsonrpc": "2.0"
+     },
+     "name": "params not an object",
+     "request": {
+      "id": 34,
+      "jsonrpc": "2.0",
+      "method": "ping",
+      "params": [
+       1
+      ]
+     }
+    },
+    {
+     "expected": {
+      "id": null,
+      "jsonrpc": "2.0",
+      "result": {}
+     },
+     "name": "null id",
+     "request": {
+      "id": null,
+      "jsonrpc": "2.0",
+      "method": "ping"
+     }
+    },
+    {
+     "expected": {
+      "id": "abc",
+      "jsonrpc": "2.0",
+      "result": {}
+     },
+     "name": "string id",
+     "request": {
+      "id": "abc",
+      "jsonrpc": "2.0",
+      "method": "ping"
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32600,
+       "message": "Invalid Request"
+      },
+      "id": null,
+      "jsonrpc": "2.0"
+     },
+     "name": "boolean id",
+     "request": {
+      "id": true,
+      "jsonrpc": "2.0",
+      "method": "ping"
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32600,
+       "message": "Invalid Request"
+      },
+      "id": null,
+      "jsonrpc": "2.0"
+     },
+     "name": "object id",
+     "request": {
+      "id": {
+       "a": 1
+      },
+      "jsonrpc": "2.0",
+      "method": "ping"
+     }
+    },
+    {
+     "expected": null,
+     "name": "notification",
+     "request": {
+      "jsonrpc": "2.0",
+      "method": "notifications/initialized"
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32600,
+       "message": "Invalid Request"
+      },
+      "id": null,
+      "jsonrpc": "2.0"
+     },
+     "name": "wrong version",
+     "request": {
+      "id": 1,
+      "jsonrpc": "1.0",
+      "method": "ping"
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32600,
+       "message": "Invalid Request"
+      },
+      "id": null,
+      "jsonrpc": "2.0"
+     },
+     "name": "method not a string",
+     "request": {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "method": 5
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32600,
+       "message": "Invalid Request"
+      },
+      "id": null,
+      "jsonrpc": "2.0"
+     },
+     "name": "not an object",
+     "request": [
+      1,
+      2
+     ]
+    }
+   ],
+   "index": {
+    "kinds": {
+     "connections": [],
+     "mcp_servers": [
+      {
+       "description": "Demo upstream",
+       "name": "demo-server",
+       "owner": "agentlocker",
+       "path": "mcp/servers/demo-server.json",
+       "provenance": {
+        "origin": "authored",
+        "source_id": "src-b8bfae1e7d7e"
+       },
+       "server": {
+        "headers": {
+         "Authorization": "secret://demo-token"
+        },
+        "transport": "http",
+        "url": "https://mcp.example.com/mcp"
+       },
+       "sha256": "b8bfae1e7d7e77f371392ac9ee2ca2129cad7bbdb2fc12acff95d33f046d6035"
+      }
+     ],
+     "plugins": [],
+     "routines": [
+      {
+       "description": "Weekly review",
+       "files": [
+        {
+         "path": "routines/demo-routine/routine.json",
+         "sha256": "9305f40a678e3123be5b6fb8590c2192adff1bf732389cd63c8b8ba108102342",
+         "size": 263,
+         "sub": "routine.json"
+        },
+        {
+         "path": "routines/demo-routine/prompt.md",
+         "sha256": "7d62b66820ba5cdb55857369befbccba334bc3a8ca41ec66e80afb89727f286a",
+         "size": 23,
+         "sub": "prompt.md"
+        }
+       ],
+       "id": "demo-routine",
+       "omitted": [],
+       "owner": "agentlocker",
+       "path": "routines/demo-routine/routine.json",
+       "provenance": {
+        "origin": "authored",
+        "source_id": "src-9305f40a678e"
+       },
+       "sha256": "9305f40a678e3123be5b6fb8590c2192adff1bf732389cd63c8b8ba108102342"
+      }
+     ],
+     "rules": [
+      {
+       "files": [
+        {
+         "path": "rules/second-rule.md",
+         "sha256": "e09e2cbf01c458b4d9f3740c0cfd2864ff53a7224ab626a73464b0d0a225ee08",
+         "size": 21,
+         "sub": null
+        }
+       ],
+       "name": "second-rule",
+       "omitted": [],
+       "owner": "agentlocker",
+       "path": "rules/second-rule.md",
+       "provenance": {
+        "origin": "authored",
+        "source_id": "src-e09e2cbf01c4"
+       },
+       "sha256": "e09e2cbf01c458b4d9f3740c0cfd2864ff53a7224ab626a73464b0d0a225ee08"
+      },
+      {
+       "files": [
+        {
+         "path": "rules/shared-policy.md",
+         "sha256": "3e5df1b7644f3503bb3ed774d381e5d1031de6cf6731f59cb275b83d7e90ca02",
+         "size": 28,
+         "sub": null
+        }
+       ],
+       "name": "shared-policy",
+       "omitted": [],
+       "owner": "agentlocker",
+       "path": "rules/shared-policy.md",
+       "provenance": {
+        "origin": "authored",
+        "source_id": "src-3e5df1b7644f"
+       },
+       "sha256": "3e5df1b7644f3503bb3ed774d381e5d1031de6cf6731f59cb275b83d7e90ca02"
+      }
+     ],
+     "skills": [
+      {
+       "description": "Summarises release notes",
+       "files": [
+        {
+         "path": "skills/demo-skill/SKILL.md",
+         "sha256": "91600ead78460875bdd21e59f49b3262404346f2ab1ca535d2c3486ca48434e2",
+         "size": 87,
+         "sub": "SKILL.md"
+        },
+        {
+         "path": "skills/demo-skill/assets/NOTICE",
+         "sha256": "578c05eae46cb1dfaf27d47f7a5ccb7876c2eb5aa6fa93671ea2724f00349f95",
+         "size": 13,
+         "sub": "assets/NOTICE"
+        },
+        {
+         "path": "skills/demo-skill/references/guide.md",
+         "sha256": "22e5a613ba0ab63f2a35659029e846abe8f09307cf76635ff7488f8c348865ba",
+         "size": 26,
+         "sub": "references/guide.md"
+        },
+        {
+         "path": "skills/demo-skill/references/référence-naïve.md",
+         "sha256": "00b0e37c96ed8fecd8f76c9ab37ca48058f0d8f1c546a406ce808bcf5df577dd",
+         "size": 17,
+         "sub": "references/référence-naïve.md"
+        },
+        {
+         "path": "skills/demo-skill/references/with space.md",
+         "sha256": "96faa18568f8de6d2be0927265d4f317324564b41ca02188ba5430234a87860d",
+         "size": 7,
+         "sub": "references/with space.md"
+        },
+        {
+         "path": "skills/demo-skill/scripts/notes.txt",
+         "sha256": "ed8f7d8cecd885a87c6863926af2f61e2ba33581fd623d5fed8ae0a3f17acafb",
+         "size": 12,
+         "sub": "scripts/notes.txt"
+        }
+       ],
+       "name": "demo-skill",
+       "omitted": [],
+       "owner": "agentlocker",
+       "path": "skills/demo-skill",
+       "provenance": {
+        "origin": "authored",
+        "source_id": "src-d2c431a99777"
+       },
+       "sha256": "d2c431a99777c4c98d14963c41c1118f552f0ca299a6f37350be0edd6e6ea054"
+      },
+      {
+       "description": "Has many supporting files",
+       "files": [
+        {
+         "path": "skills/many-files/SKILL.md",
+         "sha256": "77d86d8a6b114772988a9ca6e2cd2ff6432c37eb1410af8d7c71fa5ad6f6a990",
+         "size": 71,
+         "sub": "SKILL.md"
+        },
+        {
+         "path": "skills/many-files/references/file-00.md",
+         "sha256": "41b3fbbe4d8d6bbd44c4b610bb678c55dd53fdbe9a3ed257057ee1edf5136f5b",
+         "size": 7,
+         "sub": "references/file-00.md"
+        },
+        {
+         "path": "skills/many-files/references/file-01.md",
+         "sha256": "5f5d584c5857d85af911ade1b2ae7cb593c17654282091f3ace31efd9e951360",
+         "size": 7,
+         "sub": "references/file-01.md"
+        },
+        {
+         "path": "skills/many-files/references/file-02.md",
+         "sha256": "0b7e1391e807365614c548fd10a4a543cf0654268529f3fe768ed7042624c006",
+         "size": 7,
+         "sub": "references/file-02.md"
+        },
+        {
+         "path": "skills/many-files/references/file-03.md",
+         "sha256": "b90ae9387f8c3b679f6bbd62649e3b0649fd2f5ab82cc174af8977671367f761",
+         "size": 7,
+         "sub": "references/file-03.md"
+        },
+        {
+         "path": "skills/many-files/references/file-04.md",
+         "sha256": "76f61e3503f81ffc8ccff1db16486d49a5f602267027e5ae85ae17d0c5e041b1",
+         "size": 7,
+         "sub": "references/file-04.md"
+        },
+        {
+         "path": "skills/many-files/references/file-05.md",
+         "sha256": "27c7d24edb77a005c6109792cc4efc120bc2388a5464d54745b99f006d241db9",
+         "size": 7,
+         "sub": "references/file-05.md"
+        },
+        {
+         "path": "skills/many-files/references/file-06.md",
+         "sha256": "180fa4e69eabbd12afde1390092594798e083d97f779d089cd753363c6905cd0",
+         "size": 7,
+         "sub": "references/file-06.md"
+        },
+        {
+         "path": "skills/many-files/references/file-07.md",
+         "sha256": "cdc4f52fe4cd55696b22732e3d35afd38e2905551ac4f7b4ceb44357740b62ea",
+         "size": 7,
+         "sub": "references/file-07.md"
+        },
+        {
+         "path": "skills/many-files/references/file-08.md",
+         "sha256": "3e7e2b6c54af7ff67e199f44eb09494ab201c828ea140470d0327a9155beee78",
+         "size": 7,
+         "sub": "references/file-08.md"
+        },
+        {
+         "path": "skills/many-files/references/file-09.md",
+         "sha256": "9ab1c487d62413afc31c76ab9865cb9d50585772654047fba84311614a423c95",
+         "size": 7,
+         "sub": "references/file-09.md"
+        },
+        {
+         "path": "skills/many-files/references/file-10.md",
+         "sha256": "c2756086b5d70a1bcd6da71277f1238568b3c35aaacdf9e10e426d1876022e0d",
+         "size": 8,
+         "sub": "references/file-10.md"
+        },
+        {
+         "path": "skills/many-files/references/file-11.md",
+         "sha256": "d71ce34c7d3a21bcc34ca421a1746d4edb5fb5c9ab350989dea7427f44f08be2",
+         "size": 8,
+         "sub": "references/file-11.md"
+        },
+        {
+         "path": "skills/many-files/references/file-12.md",
+         "sha256": "24e274bd433cafe12b1649479db5a742f2805fb616d953dc83b528ab4d9af7ca",
+         "size": 8,
+         "sub": "references/file-12.md"
+        },
+        {
+         "path": "skills/many-files/references/file-13.md",
+         "sha256": "daac96fe607d6c1e25b1963bb40aee990184ea338ba509778a61383d9d85cedc",
+         "size": 8,
+         "sub": "references/file-13.md"
+        },
+        {
+         "path": "skills/many-files/references/file-14.md",
+         "sha256": "2268d99d3a0f71eaed46a3b3bd2cc6338ec529187a9b1c486389a7fe4de4cd66",
+         "size": 8,
+         "sub": "references/file-14.md"
+        },
+        {
+         "path": "skills/many-files/references/file-15.md",
+         "sha256": "7e929ce0b4344d6061ffac95189b9abeee4189e292cbd3ac42a1b0e5afefceb4",
+         "size": 8,
+         "sub": "references/file-15.md"
+        },
+        {
+         "path": "skills/many-files/references/file-16.md",
+         "sha256": "341606b8587f7d2db4346c434daabe0335e98c53a0ff25e87629e03f3af2f694",
+         "size": 8,
+         "sub": "references/file-16.md"
+        },
+        {
+         "path": "skills/many-files/references/file-17.md",
+         "sha256": "2d4b67d07f5e4744906350ab1cb00c3494993493b5f46f5525e6c2156ff24c1d",
+         "size": 8,
+         "sub": "references/file-17.md"
+        },
+        {
+         "path": "skills/many-files/references/file-18.md",
+         "sha256": "8e6210b234cfd1c105ec3c2f1d5d3ad055f39e2ef21e1cbff1858a804e1b718b",
+         "size": 8,
+         "sub": "references/file-18.md"
+        },
+        {
+         "path": "skills/many-files/references/file-19.md",
+         "sha256": "c23c64e866d511e420df8be80dfb96873b8fdd48c01358398d1d156723080ed0",
+         "size": 8,
+         "sub": "references/file-19.md"
+        },
+        {
+         "path": "skills/many-files/references/file-20.md",
+         "sha256": "1dcc6d81aee1b5404b226fef4128baaddcc85e11d133d2d07da8d80325fac590",
+         "size": 8,
+         "sub": "references/file-20.md"
+        },
+        {
+         "path": "skills/many-files/references/file-21.md",
+         "sha256": "fed050590e00099bbb2205a4fd738ff2e640ac843393dbae6a9084e35b081255",
+         "size": 8,
+         "sub": "references/file-21.md"
+        },
+        {
+         "path": "skills/many-files/references/file-22.md",
+         "sha256": "43ddc00b68011db10f935b43e2ec8ec790504e3aa3c1a30f9c993c4019786ed0",
+         "size": 8,
+         "sub": "references/file-22.md"
+        },
+        {
+         "path": "skills/many-files/references/file-23.md",
+         "sha256": "089b58e353e009c38eb69e8d74a8bad4fa834026e68378dacbe904404c20c615",
+         "size": 8,
+         "sub": "references/file-23.md"
+        },
+        {
+         "path": "skills/many-files/references/file-24.md",
+         "sha256": "261439a9268d4244e2ef3c73f18448da0b54733f304777a12f172aa7222aa513",
+         "size": 8,
+         "sub": "references/file-24.md"
+        },
+        {
+         "path": "skills/many-files/references/file-25.md",
+         "sha256": "f52f4b2ac91aae4fcd1b64f49dc2227930b21a927157f854b1bbf8e45061916e",
+         "size": 8,
+         "sub": "references/file-25.md"
+        },
+        {
+         "path": "skills/many-files/references/file-26.md",
+         "sha256": "b3850a429f49d5bddfb1dedd1ab6fe667faf3790247a6a3b2b86298947d65833",
+         "size": 8,
+         "sub": "references/file-26.md"
+        },
+        {
+         "path": "skills/many-files/references/file-27.md",
+         "sha256": "4f28e94a66a39cc342133f4949ecf51d07a1666e7b9b93a0efba02f8b1a864b7",
+         "size": 8,
+         "sub": "references/file-27.md"
+        },
+        {
+         "path": "skills/many-files/references/file-28.md",
+         "sha256": "6767b224456213bce1271b2ab80ce439cd1a1f0cad956cced679131da320e7ad",
+         "size": 8,
+         "sub": "references/file-28.md"
+        },
+        {
+         "path": "skills/many-files/references/file-29.md",
+         "sha256": "97e657de832e05c4919741d3a660c685268cd9bebf3b18812fe9de7fe5b8af21",
+         "size": 8,
+         "sub": "references/file-29.md"
+        },
+        {
+         "path": "skills/many-files/references/file-30.md",
+         "sha256": "4f8f77b0ea1b891ac5ff615b3aff7d84f52825a24813763ad8c65ab87ca85a9d",
+         "size": 8,
+         "sub": "references/file-30.md"
+        },
+        {
+         "path": "skills/many-files/references/file-31.md",
+         "sha256": "43d4e495d1a4d5d83b9b9c00dcd4830124e9b5aa3cf90fb20b7ee830b8734287",
+         "size": 8,
+         "sub": "references/file-31.md"
+        },
+        {
+         "path": "skills/many-files/references/file-32.md",
+         "sha256": "49a44677956305ab5866009cf3613c9ac4213743629c3bfc3485a5389938bbfa",
+         "size": 8,
+         "sub": "references/file-32.md"
+        },
+        {
+         "path": "skills/many-files/references/file-33.md",
+         "sha256": "111320d3ddfc2d1493ca5f21b32c570d4da8505ab4865daac5cfb8505539a4a7",
+         "size": 8,
+         "sub": "references/file-33.md"
+        },
+        {
+         "path": "skills/many-files/references/file-34.md",
+         "sha256": "320a977fa7c0e1bec9b667f1a3f823de8dbbda38238a7af0f0bbddb4e6da25e7",
+         "size": 8,
+         "sub": "references/file-34.md"
+        },
+        {
+         "path": "skills/many-files/references/file-35.md",
+         "sha256": "9f2d3105d5198a772957876b25a16adc1f9dc87b3aaa43f27891bdd33fe64c96",
+         "size": 8,
+         "sub": "references/file-35.md"
+        },
+        {
+         "path": "skills/many-files/references/file-36.md",
+         "sha256": "d780ce84b54230a61c017e1db416a1de000a22af21c63088b941364353e4fe03",
+         "size": 8,
+         "sub": "references/file-36.md"
+        },
+        {
+         "path": "skills/many-files/references/file-37.md",
+         "sha256": "f72306e5abea3faa8fc9cea7dd736d70b74c5cf53caa2206b5469e5670679095",
+         "size": 8,
+         "sub": "references/file-37.md"
+        },
+        {
+         "path": "skills/many-files/references/file-38.md",
+         "sha256": "b65a593d5747c47f0ac8f3e6aa4a24c9425f57a628afcc8f4e64376faf0e751c",
+         "size": 8,
+         "sub": "references/file-38.md"
+        },
+        {
+         "path": "skills/many-files/references/file-39.md",
+         "sha256": "8f7e2ba9aa8bb0e3b00cb077fbf07e36c59ecb43953a3cfc081b72a86b274a37",
+         "size": 8,
+         "sub": "references/file-39.md"
+        },
+        {
+         "path": "skills/many-files/references/file-40.md",
+         "sha256": "722a043bec8601a2ab38745adb5563ca8db525e9bd56d71717cbff37351c8ed7",
+         "size": 8,
+         "sub": "references/file-40.md"
+        },
+        {
+         "path": "skills/many-files/references/file-41.md",
+         "sha256": "392ea683b9499b24feafc7c757890f15b341c9e714b83219494064162a3cf57b",
+         "size": 8,
+         "sub": "references/file-41.md"
+        },
+        {
+         "path": "skills/many-files/references/file-42.md",
+         "sha256": "ac31495c9d46e2e3a8f6798bbaf0b810906bb1f05496d2f27bf99ee35eef1c82",
+         "size": 8,
+         "sub": "references/file-42.md"
+        },
+        {
+         "path": "skills/many-files/references/file-43.md",
+         "sha256": "bc100569ce0f46b7956f8677794df3b7cd8a5b3b19a0ade20877cf5a83ff949a",
+         "size": 8,
+         "sub": "references/file-43.md"
+        },
+        {
+         "path": "skills/many-files/references/file-44.md",
+         "sha256": "e6be5e995093917a541f1bd191af2e626c79261ea381f9a6d372f44ef7ba578c",
+         "size": 8,
+         "sub": "references/file-44.md"
+        },
+        {
+         "path": "skills/many-files/references/file-45.md",
+         "sha256": "1d0ae5e29e381e72894924c10a00023f0d248afce54413030eec438cff987253",
+         "size": 8,
+         "sub": "references/file-45.md"
+        },
+        {
+         "path": "skills/many-files/references/file-46.md",
+         "sha256": "1495341df103b4646853a06bc11b25b8b1439d2ea1a9bbd8d715cf7cef367353",
+         "size": 8,
+         "sub": "references/file-46.md"
+        },
+        {
+         "path": "skills/many-files/references/file-47.md",
+         "sha256": "3ea81a90631ed12b32e600a4c5a837166755792eeb47204710a16c401196badb",
+         "size": 8,
+         "sub": "references/file-47.md"
+        },
+        {
+         "path": "skills/many-files/references/file-48.md",
+         "sha256": "2dc4a82b786aabeebebfb1bcf8a1beac3e80f4a4ae679b93488e59595c7d4c90",
+         "size": 8,
+         "sub": "references/file-48.md"
+        },
+        {
+         "path": "skills/many-files/references/file-49.md",
+         "sha256": "2b37d68a1483bb3eeb37be0185f8be36499abe12c45f5cab77b474c5b86655b0",
+         "size": 8,
+         "sub": "references/file-49.md"
+        },
+        {
+         "path": "skills/many-files/references/file-50.md",
+         "sha256": "0dc499f654ef22a02669732fe392994e310c179bf45561c0081096886f0aa60a",
+         "size": 8,
+         "sub": "references/file-50.md"
+        },
+        {
+         "path": "skills/many-files/references/file-51.md",
+         "sha256": "5130967ce959207bdddbfd1b4dda985228d9c3a76cb16e6369b2666d16302c23",
+         "size": 8,
+         "sub": "references/file-51.md"
+        },
+        {
+         "path": "skills/many-files/references/file-52.md",
+         "sha256": "1c18ad98070cfbe9c316a8c195095675199b9612006d09695f343c52a9a9be79",
+         "size": 8,
+         "sub": "references/file-52.md"
+        }
+       ],
+       "name": "many-files",
+       "omitted": [],
+       "owner": "agentlocker",
+       "path": "skills/many-files",
+       "provenance": {
+        "origin": "authored",
+        "source_id": "src-4b8a77522cd5"
+       },
+       "sha256": "4b8a77522cd51cc2a3a560e344d42653f404ee07e624f3a1b950e7269ad25ff9"
+      }
+     ]
+    },
+    "revision": "2932f3c3a3be38b8917d",
+    "schema": 1
+   },
+   "name": "main",
+   "revision": "2932f3c3a3be38b8917d"
+  },
+  {
+   "blobs": {
+    "3e5df1b7644f3503bb3ed774d381e5d1031de6cf6731f59cb275b83d7e90ca02": "# Shared policy\nBe careful.\n",
+    "6201024bb4c25ee33b86d6302366704837d30448bbc5728e970b628430c8b582": {
+     "$repeat": "c-line of padding text\n",
+     "count": 19600
+    },
+    "7d62b66820ba5cdb55857369befbccba334bc3a8ca41ec66e80afb89727f286a": "Run the weekly review.\n",
+    "7f1d9a16e570789af5c8d89b462f4ed82d6cda458ae63c6c7038d8523e6741df": {
+     "$repeat": "b-line of padding text\n",
+     "count": 19600
+    },
+    "86029af45bb2876b236b382aa1190e587650bbc99ffc9c234a62ad20544b5088": "# Guide\nMore detail.\n",
+    "91600ead78460875bdd21e59f49b3262404346f2ab1ca535d2c3486ca48434e2": "---\nname: demo-skill\ndescription: Summarises release notes\n---\n# Demo skill\nBody text.\n",
+    "9305f40a678e3123be5b6fb8590c2192adff1bf732389cd63c8b8ba108102342": "{\"id\": \"demo-routine\", \"description\": \"Weekly review\", \"owner\": \"agentlocker\", \"runner\": \"t3-scheduler\", \"schedule\": {\"type\": \"interval\", \"every_seconds\": 3600}, \"timezone\": \"UTC\", \"prompt\": \"prompt.md\", \"overlap\": \"skip\", \"timeout_seconds\": 60, \"enabled\": false}",
+    "c3d0d1f0f731dc5f5d2f96ef745bd4d669b97a60c94b02d0130e21ff09464863": "---\nname: edge-skill\ndescription: Binary and oversized content\n---\n# Edge\n",
+    "ffe5fc64434e3e04e0946660ebb70fcd4a7f780fd4f75a028f0019973e3a6c31": {
+     "$repeat": "a-line of padding text\n",
+     "count": 19600
+    }
+   },
+   "cases": [
+    {
+     "expected": {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": [
+          {
+           "description": "Summarises release notes",
+           "name": "demo-skill",
+           "owner": "agentlocker",
+           "path": "skills/demo-skill",
+           "provenance": {
+            "origin": "authored",
+            "source_id": "src-b35f13779c56"
+           },
+           "sha256": "b35f13779c56992d47bba2bfc745f462c23efd1e5be4a147e09fca55f55f7b8d"
+          },
+          {
+           "description": "Binary and oversized content",
+           "name": "edge-skill",
+           "owner": "agentlocker",
+           "path": "skills/edge-skill",
+           "provenance": {
+            "origin": "authored",
+            "source_id": "src-173b489e1c71"
+           },
+           "sha256": "173b489e1c71e5c16721ab1b56702f71f6bf7ac1f9587c45d0a4472d67fee0e2"
+          }
+         ],
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "list skills",
+     "request": {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {},
+       "name": "hub_list_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 2,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": {
+          "files": {
+           "skills/edge-skill/SKILL.md": "---\nname: edge-skill\ndescription: Binary and oversized content\n---\n# Edge\n",
+           "skills/edge-skill/big/a.txt": {
+            "$repeat": "a-line of padding text\n",
+            "count": 19600
+           },
+           "skills/edge-skill/big/b.txt": {
+            "$repeat": "b-line of padding text\n",
+            "count": 19600
+           }
+          },
+          "kind": "skill",
+          "max_bytes": 1048576,
+          "name": "edge-skill",
+          "omitted": [
+           {
+            "path": "skills/edge-skill/assets/blob.bin",
+            "reason": "non-text",
+            "size": 12
+           },
+           {
+            "path": "skills/edge-skill/big/c.txt",
+            "reason": "size-cap",
+            "size": 450800
+           },
+           {
+            "path": "skills/edge-skill/huge.txt",
+            "reason": "size-cap",
+            "size": 1610000
+           }
+          ],
+          "truncated": true
+         },
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "get skill with omitted and capped files",
+     "request": {
+      "id": 2,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "kind": "skill",
+        "name": "edge-skill"
+       },
+       "name": "hub_get_item"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 3,
+      "jsonrpc": "2.0",
+      "result": {
+       "contents": [
+        {
+         "mimeType": "text/plain",
+         "text": {
+          "$repeat": "a-line of padding text\n",
+          "count": 19600
+         },
+         "uri": "agentlocker://skills/edge-skill/big/a.txt"
+        }
+       ]
+      }
+     },
+     "name": "read within the cap",
+     "request": {
+      "id": 3,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "agentlocker://skills/edge-skill/big/a.txt"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 4,
+      "jsonrpc": "2.0",
+      "result": {
+       "contents": [
+        {
+         "mimeType": "text/markdown",
+         "text": "---\nname: edge-skill\ndescription: Binary and oversized content\n---\n# Edge\n",
+         "uri": "agentlocker://skills/edge-skill/SKILL.md"
+        }
+       ]
+      }
+     },
+     "name": "read skill main",
+     "request": {
+      "id": 4,
+      "jsonrpc": "2.0",
+      "method": "resources/read",
+      "params": {
+       "uri": "agentlocker://skills/edge-skill/SKILL.md"
+      }
+     }
+    }
+   ],
+   "index": {
+    "kinds": {
+     "connections": [],
+     "mcp_servers": [
+      {
+       "description": "Demo upstream",
+       "name": "demo-server",
+       "owner": "agentlocker",
+       "path": "mcp/servers/demo-server.json",
+       "provenance": {
+        "origin": "authored",
+        "source_id": "src-b8bfae1e7d7e"
+       },
+       "server": {
+        "headers": {
+         "Authorization": "secret://demo-token"
+        },
+        "transport": "http",
+        "url": "https://mcp.example.com/mcp"
+       },
+       "sha256": "b8bfae1e7d7e77f371392ac9ee2ca2129cad7bbdb2fc12acff95d33f046d6035"
+      }
+     ],
+     "plugins": [],
+     "routines": [
+      {
+       "description": "Weekly review",
+       "files": [
+        {
+         "path": "routines/demo-routine/routine.json",
+         "sha256": "9305f40a678e3123be5b6fb8590c2192adff1bf732389cd63c8b8ba108102342",
+         "size": 263,
+         "sub": "routine.json"
+        },
+        {
+         "path": "routines/demo-routine/prompt.md",
+         "sha256": "7d62b66820ba5cdb55857369befbccba334bc3a8ca41ec66e80afb89727f286a",
+         "size": 23,
+         "sub": "prompt.md"
+        }
+       ],
+       "id": "demo-routine",
+       "omitted": [],
+       "owner": "agentlocker",
+       "path": "routines/demo-routine/routine.json",
+       "provenance": {
+        "origin": "authored",
+        "source_id": "src-9305f40a678e"
+       },
+       "sha256": "9305f40a678e3123be5b6fb8590c2192adff1bf732389cd63c8b8ba108102342"
+      }
+     ],
+     "rules": [
+      {
+       "files": [
+        {
+         "path": "rules/shared-policy.md",
+         "sha256": "3e5df1b7644f3503bb3ed774d381e5d1031de6cf6731f59cb275b83d7e90ca02",
+         "size": 28,
+         "sub": null
+        }
+       ],
+       "name": "shared-policy",
+       "omitted": [],
+       "owner": "agentlocker",
+       "path": "rules/shared-policy.md",
+       "provenance": {
+        "origin": "authored",
+        "source_id": "src-3e5df1b7644f"
+       },
+       "sha256": "3e5df1b7644f3503bb3ed774d381e5d1031de6cf6731f59cb275b83d7e90ca02"
+      }
+     ],
+     "skills": [
+      {
+       "description": "Summarises release notes",
+       "files": [
+        {
+         "path": "skills/demo-skill/SKILL.md",
+         "sha256": "91600ead78460875bdd21e59f49b3262404346f2ab1ca535d2c3486ca48434e2",
+         "size": 87,
+         "sub": "SKILL.md"
+        },
+        {
+         "path": "skills/demo-skill/references/guide.md",
+         "sha256": "86029af45bb2876b236b382aa1190e587650bbc99ffc9c234a62ad20544b5088",
+         "size": 21,
+         "sub": "references/guide.md"
+        }
+       ],
+       "name": "demo-skill",
+       "omitted": [],
+       "owner": "agentlocker",
+       "path": "skills/demo-skill",
+       "provenance": {
+        "origin": "authored",
+        "source_id": "src-b35f13779c56"
+       },
+       "sha256": "b35f13779c56992d47bba2bfc745f462c23efd1e5be4a147e09fca55f55f7b8d"
+      },
+      {
+       "description": "Binary and oversized content",
+       "files": [
+        {
+         "path": "skills/edge-skill/SKILL.md",
+         "sha256": "c3d0d1f0f731dc5f5d2f96ef745bd4d669b97a60c94b02d0130e21ff09464863",
+         "size": 74,
+         "sub": "SKILL.md"
+        },
+        {
+         "path": "skills/edge-skill/big/a.txt",
+         "sha256": "ffe5fc64434e3e04e0946660ebb70fcd4a7f780fd4f75a028f0019973e3a6c31",
+         "size": 450800,
+         "sub": "big/a.txt"
+        },
+        {
+         "path": "skills/edge-skill/big/b.txt",
+         "sha256": "7f1d9a16e570789af5c8d89b462f4ed82d6cda458ae63c6c7038d8523e6741df",
+         "size": 450800,
+         "sub": "big/b.txt"
+        },
+        {
+         "path": "skills/edge-skill/big/c.txt",
+         "sha256": "6201024bb4c25ee33b86d6302366704837d30448bbc5728e970b628430c8b582",
+         "size": 450800,
+         "sub": "big/c.txt"
+        }
+       ],
+       "name": "edge-skill",
+       "omitted": [
+        {
+         "path": "skills/edge-skill/assets/blob.bin",
+         "reason": "non-text",
+         "size": 12
+        },
+        {
+         "path": "skills/edge-skill/huge.txt",
+         "reason": "size-cap",
+         "size": 1610000
+        }
+       ],
+       "owner": "agentlocker",
+       "path": "skills/edge-skill",
+       "provenance": {
+        "origin": "authored",
+        "source_id": "src-173b489e1c71"
+       },
+       "sha256": "173b489e1c71e5c16721ab1b56702f71f6bf7ac1f9587c45d0a4472d67fee0e2"
+      }
+     ]
+    },
+    "revision": "3b2c344d7269270611cc",
+    "schema": 1
+   },
+   "name": "edge",
+   "revision": "3b2c344d7269270611cc"
+  }
+ ]
+}

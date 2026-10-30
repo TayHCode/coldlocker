@@ -1,0 +1,11 @@
+{
+    "unrelated": {
+        "theme": "fixture"
+    },
+    "mcpServers": {
+        "other": {
+            "command": "fixture-tool",
+            "args": []
+        }
+    }
+}

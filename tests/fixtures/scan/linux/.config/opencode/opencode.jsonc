@@ -1,0 +1,4 @@
+{ // synthetic configuration
+ "mcp": {"open-local": {"type":"local","command":["example","local"],"environment":{"TOKEN":"canary-secret-value-0001"}},"open-remote":{"type":"remote","url":"https://example.invalid/mcp","headers":{"Authorization":"canary-secret-value-0001"}}},
+ "plugin":["fixture-plugin@1"],
+}

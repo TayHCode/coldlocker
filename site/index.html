@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="One library for your AI skills and routines. Import once, connect your agents, and use the same instructions everywhere.">
+  <title>agentlocker — one library for your agents</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/site.css">
+  <script src="/site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#"><img src="/favicon.svg" width="20" height="20" alt="">agentlocker</a>
+      <nav aria-label="Main"><a href="#main">Overview</a><a href="#setup">The setup</a><a href="#download">Self-host</a><a href="#connect">Connect an agent</a><a href="#hosting">Managed hosting</a></nav>
+      <div class="side-bottom"><button id="theme" class="quiet" aria-label="Switch color theme">Theme: system</button><p>Your library.<br>Your choice of agent.</p></div>
+    </aside>
+    <main id="main">
+      <header class="topline"><span>SKILLS / ROUTINES / AGENTS</span><a href="#download">Self-hosted preview <span aria-hidden="true">↓</span></a></header>
+      <section class="hero" aria-labelledby="title">
+        <p class="eyebrow">STOP COPYING THE SAME INSTRUCTIONS.</p>
+        <h1 id="title">One locker.<br>All your agents.</h1>
+        <p class="lede">Keep skills, plugins, MCP server details, connectors, routines, and the rest of your agent library in one place. Agents that can connect to MCP can read the same library, with setup suited to each client.</p>
+        <div class="actions"><a class="button" href="#download">Get agentlocker <span aria-hidden="true">↓</span></a><a class="text-link" href="#setup">See how it works <span aria-hidden="true">↗</span></a></div>
+        <p class="fine">Self-hosted today. Reach it on your devices: locally on the computer running agentlocker, or over the internet from your own hosted endpoint. Each agent keeps its own sign-in.</p>
+      </section>
+      <section class="journey" aria-label="How it works"><article><span class="number">01</span><h2>Import once</h2><p>Scan your computer, review what was found, and copy selected library items into your locker.</p></article><article><span class="number">02</span><h2>Connect your agents</h2><p>Use the local catalog on its computer, or publish to your own hosted endpoint for agents on other devices.</p></article><article><span class="number">03</span><h2>Use the same library</h2><p>Ask an agent to fetch an item and follow its instructions. Publish updates for your hosted readers.</p></article></section>
+      <section id="setup" class="section" aria-labelledby="setup-title">
+        <div class="section-head"><div><p class="eyebrow">THE V4 SETUP WIZARD</p><h2 id="setup-title">A guided setup. Not another config project.</h2></div><span class="tag">Example screens</span></div>
+        <p class="intro">The downloadable app includes this interface. Run it on your computer to scan your own files, review imports, and connect your agents.</p>
+        <div class="preview-tabs" role="tablist" aria-label="Setup preview"><button role="tab" aria-selected="true" aria-controls="preview-panel" id="tab-welcome" data-screen="welcome">Welcome</button><button role="tab" aria-selected="false" aria-controls="preview-panel" id="tab-scan" data-screen="scan" tabindex="-1">Scan & import</button><button role="tab" aria-selected="false" aria-controls="preview-panel" id="tab-signin" data-screen="signin" tabindex="-1">Sign in</button><button role="tab" aria-selected="false" aria-controls="preview-panel" id="tab-connect" data-screen="connect" tabindex="-1">Connect</button></div>
+        <figure id="preview-panel" role="tabpanel" aria-labelledby="tab-welcome"><picture><source id="preview-dark" media="(prefers-color-scheme: dark)" srcset="/screens/welcome-dark.png"><img id="preview-image" src="/screens/welcome-light.png" alt="Example welcome screen showing the locker inventory and setup navigation" width="1280" height="800" loading="lazy"></picture><figcaption id="preview-caption">Welcome — see what is in your locker and what needs attention. These are design examples, not your private library.</figcaption></figure>
+      </section>
+      <section id="download" class="section" aria-labelledby="download-title">
+        <p class="eyebrow">GET STARTED</p><h2 id="download-title">Your computer. Your library.</h2><p class="intro">Give this prompt to your coding agent (Claude Code, Codex, Cursor, or any agent that can run terminal commands). It clones agentlocker, checks the install, and walks you through the setup. No app subscription is required.</p>
+        <div class="install-label"><span>Prompt for your agent</span><button class="text-link" data-copy="agent-prompt">Copy prompt</button></div>
+        <pre id="agent-prompt"><code>Set up agentlocker on this computer.
+1. Run: git clone https://github.com/TayHCode/agentlocker ~/agentlocker
+2. From that folder run: python3 hub.py doctor (use py -3 on Windows; Python 3.11+ (Windows: 3.12.4+) and Git are required). Stop and tell me if it fails.
+3. Read AGENTS.md and docs/IMPORT-PROMPT.md, then follow them to scan my existing skills, rules and MCP servers. Show me what you found and wait for my approval before importing anything.
+4. Never print or ask me to paste secret values.</code></pre>
+        <div class="install-label"><span>Or run the commands yourself</span><button class="text-link" data-copy="install-commands">Copy commands</button></div>
+        <pre id="install-commands"><code>git clone https://github.com/TayHCode/agentlocker
+cd agentlocker
+python3 hub.py doctor
+python3 hub.py serve</code></pre>
+        <p class="fine">Open the local address printed in your terminal. On Windows, use <code>py -3</code> instead of <code>python3</code> (Python 3.12.4+). The wizard scans locally; this website cannot read your files.</p>
+        <details><summary>Want hosted bots to use your library too?</summary><p>Deploy the included catalog Worker on your Cloudflare account, publish your selected library, then connect the bot to your endpoint. Each deployment serves one owner's library. Your Cloudflare usage and domain are your responsibility.</p><p>The package includes the full guide at <code>docs/self-host.md</code> and deployment instructions at <code>docs/remote.md</code>.</p></details>
+        <p class="fine" id="source-repository"><a href="https://github.com/TayHCode/agentlocker">Source repository on GitHub</a> · Source, self-hosting and contributions.</p>
+        <details><summary>No Git? Download a package and verify it</summary><p><span id="release-detail">Source package with the setup wizard, CLI, and optional hosted catalog.</span><br>Download: <a href="/downloads/agentlocker.zip" download>ZIP</a> or <a href="/downloads/agentlocker.tar.gz" download>tar.gz</a>. <a href="/downloads/SHA256SUMS.txt">Download checksums</a> · <a href="/downloads/release.json">Source manifest</a>. The source package contains no Git history, credentials, or imported library. Review imported instructions before running them.</p></details>
+      </section>
+      <section id="connect" class="section" aria-labelledby="connect-title">
+        <p class="eyebrow">BRING YOUR AGENT</p><h2 id="connect-title">One address for your hosted readers.</h2><p class="intro">After deploying your own catalog, add its MCP address in your bot. Complete that client's private sign-in. Claude Code and Codex can also read the local catalog without hosting it.</p>
+        <form id="connection-form"><label for="catalog-url">Your catalog's MCP URL</label><div class="input-row"><input id="catalog-url" type="url" placeholder="https://your-locker.example/mcp" required autocomplete="url"><button class="button" type="submit">Get instructions</button></div><p id="connection-error" class="error" role="alert"></p></form>
+        <div id="connection-result" hidden><div class="install-label"><span>Paste into the bot you want to connect</span><button class="text-link" data-copy="connection-prompt">Copy</button></div><pre id="connection-prompt"></pre><p class="fine">This generates instructions in your browser. It does not connect an account or send your address anywhere.</p></div>
+        <p class="fine">Claude Code and Codex CLI have recorded local catalog tests; Grok Bot use is user-reported. Gemini, Muse, Duet, OpenAI Dots, and other MCP clients are possible connection targets where their current product supports the needed MCP connection, but agentlocker has not verified their library use. Existing Composio connections can stay in Composio.</p>
+      </section>
+      <section id="hosting" class="section hosting" aria-labelledby="hosting-title"><div><p class="eyebrow">PREFER SOMEONE ELSE TO RUN IT?</p><h2 id="hosting-title">Managed hosting is next.</h2><p>Self-hosting is available now. A managed plan would handle your hosted endpoint and updates for a subscription, with a private library for each customer.</p><p class="fine">Managed accounts and checkout are not available yet. This site does not collect payments or give visitors access to someone else's catalog.</p></div><div class="hosting-note"><span class="tag">Planned paid option</span><p>Same skills.<br>Less setup.</p></div></section>
+      <section class="section faq" aria-labelledby="faq-title"><h2 id="faq-title">A few useful details.</h2><details><summary>Which agents can connect?</summary><p>Claude, Codex, Gemini, Grok Bot, Muse, Duet, OpenAI Dots, and more may connect where the specific app or service supports an MCP client connection. Setup and authentication vary by product. Current primary docs describe MCP options for <a href="https://code.claude.com/docs/en/mcp">Claude Code</a>, <a href="https://developers.openai.com/codex/mcp">Codex</a>, <a href="https://ai.google.dev/gemini-api/docs/function-calling">Gemini API</a>, <a href="https://docs.x.ai/grok/connectors">Grok</a>, and <a href="https://dev.meta.ai/docs/muse-code/extending">Muse Code</a>. Product docs do not establish agentlocker compatibility; see the evidence above.</p></details><details><summary>What can a connected agent read or run?</summary><p>The catalog is read-only: it lists skills, rules, routines, MCP server details, plugins, and connections, and returns library files on request. Plugin and connection entries are descriptions; adding them to the library does not install a plugin, sign in to a provider, or start an upstream service. To call tools from your own MCP servers, configure and run the local gateway on the computer that can reach them.</p></details><details><summary>Can I use the library on another device?</summary><p>Yes, if that device can reach your endpoint. The local catalog is on the computer running agentlocker. For a hosted agent or another device, deploy and publish your own remote catalog; it requires internet access and the client’s own sign-in or authorization. A hosted endpoint serves the library you publish there.</p></details><details><summary>What is a routine?</summary><p>A reusable set of instructions. Ask an agent to fetch and follow one when you need it. Automatic scheduling is optional and belongs to the runner you choose.</p></details><details><summary>Do edits appear everywhere automatically?</summary><p>Re-import a changed source to update your local library. Publish the updated library for hosted clients. Ask each reader to fetch the latest version.</p></details><details><summary>Does this replace my agent or my MCP provider?</summary><p>No. Your agents still do the work and keep their existing logins. agentlocker shares the skills and routine instructions they use.</p></details></section>
+      <footer><a class="brand" href="#">agentlocker</a><span>Keep the library. Choose the agent.</span><a href="/fonts/LICENSES.md">Font licenses</a><a href="/security.html">Security</a></footer>
+      <p id="copy-status" class="sr-only" role="status" aria-live="polite"></p>
+    </main>
+  </div>
+</body>
+</html>

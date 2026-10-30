@@ -1,0 +1,9 @@
+{
+  "name": "example-server",
+  "description": "Offline addition tool shipped with the locker; no credentials required.",
+  "transport": "stdio",
+  "command": "python3",
+  "args": [
+    "${AGENTLOCKER_ROOT}/examples/example-server.py"
+  ]
+}
