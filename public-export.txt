@@ -686,3 +686,7 @@ ui/welcome.css
 ui/welcome.js
 ui_auth.py
 verify.py
+AGENTS.md
+CLAUDE.md
+docs/model-routing-evidence-2026-10-31.md
+tests/test_model_policy.py
