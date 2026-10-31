@@ -44,5 +44,3 @@ def search_skills(catalog, query):
     scored.sort(key=lambda row: (-row[0], row[1]["name"]))
     return {"results": [entry for _, entry in scored[:SEARCH_LIMIT]], "searched": len(catalog),
             "remaining": max(0, len(scored) - SEARCH_LIMIT)}
-
-
