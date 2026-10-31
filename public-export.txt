@@ -72,6 +72,7 @@ docs/scan.md
 docs/self-host.md
 docs/ui.md
 docs/upgrade.md
+docs/verification/e2e-dogfood.md
 docs/verify-loop.md
 examples/example-server.py
 examples/mcp-server.example.json
@@ -558,6 +559,7 @@ tests/fixtures/ui/cursor/mcp.json
 tests/fixtures/ui/routines/prompt.md
 tests/fixtures/ui/routines/routine.json
 tests/fixtures/ui/skills/sample-skill/SKILL.md
+tests/fixtures/verify-loop/fake_gh.py
 tests/modes.py
 tests/remote_parity.py
 tests/safety_fixtures.py
@@ -578,6 +580,7 @@ tests/test_content.py
 tests/test_docs_auth.py
 tests/test_doctor.py
 tests/test_drift_check.py
+tests/test_e2e_dogfood.py
 tests/test_encoding.py
 tests/test_endpoint.py
 tests/test_example_server.py
