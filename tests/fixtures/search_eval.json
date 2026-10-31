@@ -1,0 +1,374 @@
+{
+ "dev": {
+  "source": "Eve analysis, coldstack PR 57 (head 0ab092e), catalog_probe.py CASES",
+  "cases": [
+   {
+    "query": "benchmark measurement repeatability",
+    "expected_any": [
+     "benchmark-checklist"
+    ],
+    "kind": "present"
+   },
+   {
+    "query": "monitor pull request CI",
+    "expected_any": [
+     "babysit-pr"
+    ],
+    "kind": "present"
+   },
+   {
+    "query": "regression test failing",
+    "expected_any": [
+     "tdd"
+    ],
+    "kind": "present"
+   },
+   {
+    "query": "verify evidence before done",
+    "expected_any": [
+     "evidence-before-done"
+    ],
+    "kind": "present"
+   },
+   {
+    "query": "generate project verification skill",
+    "expected_any": [
+     "create-verification-skill"
+    ],
+    "kind": "present"
+   },
+   {
+    "query": "refactor smallest change",
+    "expected_any": [
+     "principle-laziness-protocol"
+    ],
+    "kind": "present"
+   },
+   {
+    "query": "stop saying finished until you actually tried it",
+    "expected_any": [
+     "principle-prove-it-works"
+    ],
+    "kind": "present"
+   },
+   {
+    "query": "make the robot remember its mistakes",
+    "expected_any": [
+     "principle-encode-lessons-in-structure"
+    ],
+    "kind": "present"
+   },
+   {
+    "query": "zznonexistentcapabilityzz",
+    "expected_any": [],
+    "kind": "absent"
+   }
+  ]
+ },
+ "history": {
+  "source": "Taylor-typed messages from the private vault conversation notes, authorship verified by vault fingerprint; seeded shuffle seed 20261031 over 1092 messages; labeled by hand from skill names and descriptions only, before any search was run or tuned; single rater",
+  "frozen": "2026-10-31",
+  "private_file_sha256": "3bf1375d5efe88a05f616e1f36d55166520639b501936c86206afec6f101b179",
+  "fingerprint": "sha256 of the message with whitespace collapsed to single spaces and trimmed",
+  "excerpts": "Public excerpts exist only for six hand-checked generic messages; every other case is fingerprint and expected set only.",
+  "cases": [
+   {
+    "id": "h00",
+    "kind": "present",
+    "expected_any": [
+     "why"
+    ],
+    "fingerprint": "4693ed68773d79543d8dc05dae912cfee56def6c992cbb7c0ccdac5eb4d084b3"
+   },
+   {
+    "id": "h01",
+    "kind": "present",
+    "expected_any": [
+     "why"
+    ],
+    "fingerprint": "7fc6586ea54d1e4b92b20a5e69b65bdc39803c3760bae2935c983cb7f40f9145"
+   },
+   {
+    "id": "h02",
+    "kind": "present",
+    "expected_any": [
+     "how"
+    ],
+    "fingerprint": "d1a1c5137c3999b7aa533637e24fccdee3e4853a4eaa4e6e6e7bdcbb73bc2147"
+   },
+   {
+    "id": "h03",
+    "kind": "present",
+    "expected_any": [
+     "why"
+    ],
+    "fingerprint": "721f89919f0fe8f4bf2cc267364281d22529724bad6d60cbc0fd13ed832c87a4"
+   },
+   {
+    "id": "h04",
+    "kind": "present",
+    "expected_any": [
+     "benchmark-checklist"
+    ],
+    "fingerprint": "f7e2f77120c053383fec3378d64a697a5d38c519e9dd191108ddabdf71147e91"
+   },
+   {
+    "id": "h05",
+    "kind": "present",
+    "expected_any": [
+     "why",
+     "principle-fix-root-causes"
+    ],
+    "fingerprint": "2d4da92be697bc31114e339c01088c68a891ee03a2a9eba8a2b85aa4a1be07e8",
+    "excerpt": "great. why do the agents keep getting cancelled?"
+   },
+   {
+    "id": "h06",
+    "kind": "present",
+    "expected_any": [
+     "technical-writing"
+    ],
+    "fingerprint": "4a5ec1e9bd6ec524c8afc4e4d32fa8753ffd44dccd4bc81068823210c3461677"
+   },
+   {
+    "id": "h07",
+    "kind": "present",
+    "expected_any": [
+     "how"
+    ],
+    "fingerprint": "63496e6d89a96b676a435fd1be2e8d4a1ffb34a8e6ae0ba979a80c03e5a73276"
+   },
+   {
+    "id": "h08",
+    "kind": "present",
+    "expected_any": [
+     "why"
+    ],
+    "fingerprint": "d7c09bee26e4013cf950623ca2b06a9d9cccf736ccc99ad827c822e66a5621f9",
+    "excerpt": "Why are we doing a 30 minute cap again? This takes so long"
+   },
+   {
+    "id": "h09",
+    "kind": "present",
+    "expected_any": [
+     "benchmark-checklist"
+    ],
+    "fingerprint": "6e8c0d4bae3eaa7e440c8af9b2ecce96a17c0e3686effb89b6add6eb328c5fb5"
+   },
+   {
+    "id": "h10",
+    "kind": "present",
+    "expected_any": [
+     "minimal-diff-review",
+     "interrogate"
+    ],
+    "fingerprint": "bc4708f7725daba9599a7702452ad6a94265fb2a3c9cc38b47b8c3de501b03f5"
+   },
+   {
+    "id": "h11",
+    "kind": "present",
+    "expected_any": [
+     "benchmark-checklist"
+    ],
+    "fingerprint": "4a155dc818d8f38a0d5329cb664096b9d47fac5e15eee14fecf20fe94874bee5"
+   },
+   {
+    "id": "h12",
+    "kind": "present",
+    "expected_any": [
+     "verify-loop",
+     "evidence-before-done",
+     "create-verification-skill"
+    ],
+    "fingerprint": "f855afe62cfd86b43015951bbb5880be94d574b9338d4dc897b14eb2e44d7f2b"
+   },
+   {
+    "id": "h13",
+    "kind": "present",
+    "expected_any": [
+     "principle-prove-it-works",
+     "evidence-before-done",
+     "benchmark-checklist"
+    ],
+    "fingerprint": "e22ea2d4ca5a82dd073b7f764ac04786422d51679983390eb3b1877b9825b1c4"
+   },
+   {
+    "id": "h14",
+    "kind": "present",
+    "expected_any": [
+     "benchmark-checklist"
+    ],
+    "fingerprint": "34a0beb10d8622366aa2ba3ad66350658726532f02844e8947b5b3bab94d3f9f"
+   },
+   {
+    "id": "h15",
+    "kind": "present",
+    "expected_any": [
+     "interrogate",
+     "minimal-diff-review"
+    ],
+    "fingerprint": "a8938f6f10aff36507f0c9df6a6ba70e28d96df7811b0024aef2dd90bb00aaea",
+    "excerpt": "it doesn't have to be a full adversarial review - did it do what your plan said it should do, if it did great move on to stage 2 then stage 3."
+   },
+   {
+    "id": "h16",
+    "kind": "present",
+    "expected_any": [
+     "why"
+    ],
+    "fingerprint": "ecfd4dd8bdea8b89c817503e59bf31849f2b4fbca7748d5b5040794e90950892"
+   },
+   {
+    "id": "h17",
+    "kind": "present",
+    "expected_any": [
+     "principle-encode-lessons-in-structure",
+     "reflect"
+    ],
+    "fingerprint": "a23078030e7e34c43a61000d7b0527ccc77630786517cfc90a81f3d25e4f0dbf"
+   },
+   {
+    "id": "h18",
+    "kind": "present",
+    "expected_any": [
+     "principle-laziness-protocol",
+     "principle-subtract-before-you-add"
+    ],
+    "fingerprint": "0785d050b3079701ce253bd687a6557d64a7d1164204cdad11d56137543fcc95"
+   },
+   {
+    "id": "h19",
+    "kind": "present",
+    "expected_any": [
+     "why"
+    ],
+    "fingerprint": "3d5f7344aea6b572b1b2956825043b039302d0c27236d285d4d79d0d2c8dd4dc"
+   },
+   {
+    "id": "h20",
+    "kind": "present",
+    "expected_any": [
+     "technical-writing"
+    ],
+    "fingerprint": "68edaa6820f69097c47db311c9c3741796bd55b235a513e12b5eefab3b7a3594"
+   },
+   {
+    "id": "h21",
+    "kind": "present",
+    "expected_any": [
+     "principle-encode-lessons-in-structure",
+     "reflect"
+    ],
+    "fingerprint": "c49a7afba1d5941e36809d5659fea7b46a37beecac1db926b68f7a9fd7aac2a2"
+   },
+   {
+    "id": "h22",
+    "kind": "present",
+    "expected_any": [
+     "technical-writing"
+    ],
+    "fingerprint": "b5997b8e3d6aa6628cb2a3b7214030d6954c770f435ff8eeefe6cfb1a00f5453",
+    "excerpt": "no not yet, but write up a doc i can save that details what we are planning."
+   },
+   {
+    "id": "h23",
+    "kind": "present",
+    "expected_any": [
+     "unslop",
+     "technical-writing"
+    ],
+    "fingerprint": "e5c2b62ef666b0fcec5bbd89c41aa4b41ee333e0f6e41e7cd0d1ed000c293a94",
+    "excerpt": "It has to read better and give more context. It has to tell a story. Intro, problem, solution, conflict, resolution. Follow the same rules the other writers do in the obsidian vault."
+   },
+   {
+    "id": "h24",
+    "kind": "present",
+    "expected_any": [
+     "why"
+    ],
+    "fingerprint": "9840868384556954a261b72ef222c9f8fc642e26f173792234c690a805ec8663"
+   },
+   {
+    "id": "h25",
+    "kind": "present",
+    "expected_any": [
+     "principle-explain-the-number"
+    ],
+    "fingerprint": "4671359fd40aa047e032d16b4b42142871c5b526fa7e004e2448f4d7385abdec"
+   },
+   {
+    "id": "h26",
+    "kind": "absent",
+    "expected_any": [],
+    "fingerprint": "7818a67428d4a4a9855e41c76a7eb941b0006642fb4757fcb06d2cc156715f9d"
+   },
+   {
+    "id": "h27",
+    "kind": "absent",
+    "expected_any": [],
+    "fingerprint": "c540cb2a59a3cf7a179fd18ba20361c0ab4cdd55cc7c349e5fee307d1d0f2352"
+   },
+   {
+    "id": "h28",
+    "kind": "absent",
+    "expected_any": [],
+    "fingerprint": "f5ea4b06f05356cb7125a87cb6735f8011897417d9129aeaaa261ad979f7a141"
+   },
+   {
+    "id": "h29",
+    "kind": "absent",
+    "expected_any": [],
+    "fingerprint": "671fad8a904ac0821c29749b700206db0f4ceba44901f33085e2d78650e0b4b8"
+   },
+   {
+    "id": "h30",
+    "kind": "absent",
+    "expected_any": [],
+    "fingerprint": "d9685e684c9008a13a28f0c3b4c14ac7abd18c8542d0af0ad7e5253b76435491"
+   },
+   {
+    "id": "h31",
+    "kind": "absent",
+    "expected_any": [],
+    "fingerprint": "d1da23f258423a2c1882fb8d3c9a468d75fe8d5bf40fae81292af0064e501d0c"
+   },
+   {
+    "id": "h32",
+    "kind": "absent",
+    "expected_any": [],
+    "fingerprint": "7ef06a5074a3682f9114b61ac18a0c04db6326c58cd4f7dffa06d4952577449d",
+    "excerpt": "what's the link to the dashboard"
+   },
+   {
+    "id": "h33",
+    "kind": "absent",
+    "expected_any": [],
+    "fingerprint": "6ec4093f28296c59bb839cd5de9851b5255aede8b442d1cc6697f554b5c99fa8"
+   },
+   {
+    "id": "h34",
+    "kind": "absent",
+    "expected_any": [],
+    "fingerprint": "30181dc446a0f84e20d6d431de4fd430d3594b7f5726bbcac1f526b7a7de4623"
+   },
+   {
+    "id": "h35",
+    "kind": "absent",
+    "expected_any": [],
+    "fingerprint": "fcb19566aea467daf30e94796274c8ddb4b4e944b15c3987b4ebb03b52566b1f"
+   },
+   {
+    "id": "h36",
+    "kind": "absent",
+    "expected_any": [],
+    "fingerprint": "602c09f8ce0aa41716ff982a73d764cd222eeea0211a38f47914ff128b304e8f"
+   },
+   {
+    "id": "h37",
+    "kind": "absent",
+    "expected_any": [],
+    "fingerprint": "4d117d9dfa44e6d266663dcf6a5007de2428659f66d955e42b6baa0b1297baae"
+   }
+  ]
+ }
+}

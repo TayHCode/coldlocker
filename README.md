@@ -205,6 +205,8 @@ python3 -B -m unittest discover -s tests -p test_endpoint.py -v
 
 These checks do not approve publication or replace dependency-license review.
 
+See the [Eve search experiment](docs/catalog-search.md) for measured retrieval limits and local runtime proofs. Search-first discovery was not adopted.
+
 ## Reference
 
 The catalog includes the official [frontend-design](skills/frontend-design/SKILL.md)
