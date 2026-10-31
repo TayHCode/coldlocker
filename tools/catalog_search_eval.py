@@ -121,6 +121,7 @@ def main():
     reports = [run(ROOT, count, args.history_private) for _ in range(REPEATS)]
     assert all(report == reports[0] for report in reports), "search results changed between repeats"
     output = {"tokenizer": tokenizer_info, "repeats": REPEATS,
+              "oracle_policy": "Fall back on present misses and all absent cases, including empty results, to confirm absence with the full list.",
               "repeat_note": "identical deterministic repeats measure stability, not independent samples",
               "catalog_sha256": hashlib.sha256(call(ROOT, "hub_list_skills", {}).encode()).hexdigest(),
               "fixture_sha256": hashlib.sha256(FIXTURE.read_bytes()).hexdigest(),

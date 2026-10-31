@@ -1,864 +1,865 @@
 {
-  "catalog_sha256": "e659bab060fad141c7ba4e9749e79e60e71d1fd93fae1660a894f1e9e5b29bbb",
-  "catalog_skills": 58,
-  "dev": {
-    "candidate": {
-      "absent": 1,
-      "correct_empty": 1,
-      "empty_miss": 0,
-      "false_positive": 0,
-      "package_loads_verified": 8,
-      "package_tokens": 22708,
-      "present": 8,
-      "silent_miss": 0,
-      "strict_hit": 8,
-      "tokens": {
-        "list_only": 75285,
-        "search_fallback_on_empty": 11152,
-        "search_oracle_fallback": 11152
-      },
-      "tokens_with_one_expected_package": {
-        "list_only": 97993,
-        "search_fallback_on_empty": 33860,
-        "search_oracle_fallback": 33860
-      },
-      "trace": [
-        {
-          "cached_tokens": null,
-          "case_id": "d0",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 9,
-          "response_tokens": 167
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "d1",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 9,
-          "response_tokens": 408
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "d2",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 9,
-          "response_tokens": 460
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "d3",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 9,
-          "response_tokens": 434
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "d4",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 9,
-          "response_tokens": 343
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "d5",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 9,
-          "response_tokens": 161
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "d6",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 13,
-          "response_tokens": 393
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "d7",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 11,
-          "response_tokens": 316
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "d8",
-          "fallback_on_empty": true,
-          "model_output_tokens": null,
-          "query_tokens": 11,
-          "response_tokens": 16
-        }
-      ]
+ "catalog_sha256": "e659bab060fad141c7ba4e9749e79e60e71d1fd93fae1660a894f1e9e5b29bbb",
+ "catalog_skills": 58,
+ "dev": {
+  "candidate": {
+   "absent": 1,
+   "correct_empty": 1,
+   "empty_miss": 0,
+   "false_positive": 0,
+   "package_loads_verified": 8,
+   "package_tokens": 22708,
+   "present": 8,
+   "silent_miss": 0,
+   "strict_hit": 8,
+   "tokens": {
+    "list_only": 75285,
+    "search_fallback_on_empty": 11152,
+    "search_oracle_fallback": 11152
+   },
+   "tokens_with_one_expected_package": {
+    "list_only": 97993,
+    "search_fallback_on_empty": 33860,
+    "search_oracle_fallback": 33860
+   },
+   "trace": [
+    {
+     "cached_tokens": null,
+     "case_id": "d0",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 9,
+     "response_tokens": 167
     },
-    "cases": 9,
-    "prototype": {
-      "absent": 1,
-      "correct_empty": 1,
-      "empty_miss": 0,
-      "false_positive": 0,
-      "package_loads_verified": 8,
-      "package_tokens": 22708,
-      "present": 8,
-      "silent_miss": 1,
-      "strict_hit": 7,
-      "tokens": {
-        "list_only": 75285,
-        "search_fallback_on_empty": 11819,
-        "search_oracle_fallback": 20184
-      },
-      "tokens_with_one_expected_package": {
-        "list_only": 97993,
-        "search_fallback_on_empty": 34527,
-        "search_oracle_fallback": 42892
-      },
-      "trace": [
-        {
-          "cached_tokens": null,
-          "case_id": "d0",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 9,
-          "response_tokens": 167
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "d1",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 9,
-          "response_tokens": 408
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "d2",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 9,
-          "response_tokens": 470
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "d3",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 9,
-          "response_tokens": 434
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "d4",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 9,
-          "response_tokens": 464
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "d5",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 9,
-          "response_tokens": 482
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "d6",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 13,
-          "response_tokens": 453
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "d7",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 11,
-          "response_tokens": 471
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "d8",
-          "fallback_on_empty": true,
-          "model_output_tokens": null,
-          "query_tokens": 11,
-          "response_tokens": 16
-        }
-      ]
+    {
+     "cached_tokens": null,
+     "case_id": "d1",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 9,
+     "response_tokens": 408
     },
-    "source": "public"
+    {
+     "cached_tokens": null,
+     "case_id": "d2",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 9,
+     "response_tokens": 460
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "d3",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 9,
+     "response_tokens": 434
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "d4",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 9,
+     "response_tokens": 343
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "d5",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 9,
+     "response_tokens": 161
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "d6",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 13,
+     "response_tokens": 393
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "d7",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 11,
+     "response_tokens": 316
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "d8",
+     "fallback_on_empty": true,
+     "model_output_tokens": null,
+     "query_tokens": 11,
+     "response_tokens": 16
+    }
+   ]
   },
-  "fixture_sha256": "12fcd44f20e41ed4b0e1cadf908a252d4ece70e73f11e13865dbd540f00dbd81",
-  "history": {
-    "candidate": {
-      "absent": 12,
-      "correct_empty": 3,
-      "empty_miss": 0,
-      "false_positive": 9,
-      "package_loads_verified": 26,
-      "package_tokens": 180630,
-      "present": 26,
-      "silent_miss": 10,
-      "strict_hit": 16,
-      "tokens": {
-        "list_only": 317870,
-        "search_fallback_on_empty": 41234,
-        "search_oracle_fallback": 200169
-      },
-      "tokens_with_one_expected_package": {
-        "list_only": 498500,
-        "search_fallback_on_empty": 221864,
-        "search_oracle_fallback": 380799
-      },
-      "trace": [
-        {
-          "cached_tokens": null,
-          "case_id": "h00",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 35,
-          "response_tokens": 468
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h01",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 48,
-          "response_tokens": 460
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h02",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 32,
-          "response_tokens": 170
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h03",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 38,
-          "response_tokens": 543
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h04",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 31,
-          "response_tokens": 314
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h05",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 15,
-          "response_tokens": 371
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h06",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 58,
-          "response_tokens": 415
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h07",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 44,
-          "response_tokens": 188
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h08",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 20,
-          "response_tokens": 371
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h09",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 56,
-          "response_tokens": 459
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h10",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 36,
-          "response_tokens": 415
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h11",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 38,
-          "response_tokens": 439
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h12",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 24,
-          "response_tokens": 496
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h13",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 17,
-          "response_tokens": 286
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h14",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 65,
-          "response_tokens": 478
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h15",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 42,
-          "response_tokens": 350
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h16",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 72,
-          "response_tokens": 485
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h17",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 66,
-          "response_tokens": 438
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h18",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 55,
-          "response_tokens": 467
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h19",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 70,
-          "response_tokens": 559
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h20",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 32,
-          "response_tokens": 463
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h21",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 36,
-          "response_tokens": 479
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h22",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 24,
-          "response_tokens": 439
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h23",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 46,
-          "response_tokens": 448
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h24",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 26,
-          "response_tokens": 443
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h25",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 59,
-          "response_tokens": 474
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h26",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 66,
-          "response_tokens": 459
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h27",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 37,
-          "response_tokens": 422
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h28",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 58,
-          "response_tokens": 381
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h29",
-          "fallback_on_empty": true,
-          "model_output_tokens": null,
-          "query_tokens": 16,
-          "response_tokens": 16
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h30",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 86,
-          "response_tokens": 420
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h31",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 17,
-          "response_tokens": 343
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h32",
-          "fallback_on_empty": true,
-          "model_output_tokens": null,
-          "query_tokens": 12,
-          "response_tokens": 16
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h33",
-          "fallback_on_empty": true,
-          "model_output_tokens": null,
-          "query_tokens": 18,
-          "response_tokens": 16
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h34",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 46,
-          "response_tokens": 465
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h35",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 35,
-          "response_tokens": 346
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h36",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 45,
-          "response_tokens": 405
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h37",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 36,
-          "response_tokens": 375
-        }
-      ]
+  "cases": 9,
+  "prototype": {
+   "absent": 1,
+   "correct_empty": 1,
+   "empty_miss": 0,
+   "false_positive": 0,
+   "package_loads_verified": 8,
+   "package_tokens": 22708,
+   "present": 8,
+   "silent_miss": 1,
+   "strict_hit": 7,
+   "tokens": {
+    "list_only": 75285,
+    "search_fallback_on_empty": 11819,
+    "search_oracle_fallback": 20184
+   },
+   "tokens_with_one_expected_package": {
+    "list_only": 97993,
+    "search_fallback_on_empty": 34527,
+    "search_oracle_fallback": 42892
+   },
+   "trace": [
+    {
+     "cached_tokens": null,
+     "case_id": "d0",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 9,
+     "response_tokens": 167
     },
-    "cases": 38,
-    "prototype": {
-      "absent": 12,
-      "correct_empty": 0,
-      "empty_miss": 0,
-      "false_positive": 12,
-      "package_loads_verified": 26,
-      "package_tokens": 180630,
-      "present": 26,
-      "silent_miss": 18,
-      "strict_hit": 8,
-      "tokens": {
-        "list_only": 317870,
-        "search_fallback_on_empty": 20127,
-        "search_oracle_fallback": 271077
-      },
-      "tokens_with_one_expected_package": {
-        "list_only": 498500,
-        "search_fallback_on_empty": 200757,
-        "search_oracle_fallback": 451707
-      },
-      "trace": [
-        {
-          "cached_tokens": null,
-          "case_id": "h00",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 35,
-          "response_tokens": 500
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h01",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 48,
-          "response_tokens": 538
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h02",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 32,
-          "response_tokens": 470
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h03",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 38,
-          "response_tokens": 488
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h04",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 31,
-          "response_tokens": 492
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h05",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 15,
-          "response_tokens": 480
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h06",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 58,
-          "response_tokens": 455
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h07",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 44,
-          "response_tokens": 495
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h08",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 20,
-          "response_tokens": 525
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h09",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 56,
-          "response_tokens": 510
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h10",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 36,
-          "response_tokens": 495
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h11",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 38,
-          "response_tokens": 440
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h12",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 24,
-          "response_tokens": 451
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h13",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 17,
-          "response_tokens": 492
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h14",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 65,
-          "response_tokens": 487
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h15",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 42,
-          "response_tokens": 496
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h16",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 72,
-          "response_tokens": 530
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h17",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 66,
-          "response_tokens": 499
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h18",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 55,
-          "response_tokens": 480
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h19",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 70,
-          "response_tokens": 559
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h20",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 32,
-          "response_tokens": 489
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h21",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 36,
-          "response_tokens": 492
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h22",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 24,
-          "response_tokens": 498
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h23",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 46,
-          "response_tokens": 488
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h24",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 26,
-          "response_tokens": 443
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h25",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 59,
-          "response_tokens": 504
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h26",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 66,
-          "response_tokens": 506
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h27",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 37,
-          "response_tokens": 462
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h28",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 58,
-          "response_tokens": 447
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h29",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 16,
-          "response_tokens": 468
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h30",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 86,
-          "response_tokens": 486
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h31",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 17,
-          "response_tokens": 472
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h32",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 12,
-          "response_tokens": 501
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h33",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 18,
-          "response_tokens": 480
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h34",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 46,
-          "response_tokens": 480
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h35",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 35,
-          "response_tokens": 510
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h36",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 45,
-          "response_tokens": 485
-        },
-        {
-          "cached_tokens": null,
-          "case_id": "h37",
-          "fallback_on_empty": false,
-          "model_output_tokens": null,
-          "query_tokens": 36,
-          "response_tokens": 477
-        }
-      ]
+    {
+     "cached_tokens": null,
+     "case_id": "d1",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 9,
+     "response_tokens": 408
     },
-    "source": "private-full"
+    {
+     "cached_tokens": null,
+     "case_id": "d2",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 9,
+     "response_tokens": 470
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "d3",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 9,
+     "response_tokens": 434
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "d4",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 9,
+     "response_tokens": 464
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "d5",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 9,
+     "response_tokens": 482
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "d6",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 13,
+     "response_tokens": 453
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "d7",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 11,
+     "response_tokens": 471
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "d8",
+     "fallback_on_empty": true,
+     "model_output_tokens": null,
+     "query_tokens": 11,
+     "response_tokens": 16
+    }
+   ]
   },
-  "repeat_note": "identical deterministic repeats measure stability, not independent samples",
-  "repeats": 5,
-  "tokenizer": {
-    "name": "tiktoken o200k_base",
-    "note": "OpenAI encoding used as a proxy, not Claude's tokenizer",
-    "version": "0.14.0"
-  }
+  "source": "public"
+ },
+ "fixture_sha256": "12fcd44f20e41ed4b0e1cadf908a252d4ece70e73f11e13865dbd540f00dbd81",
+ "history": {
+  "candidate": {
+   "absent": 12,
+   "correct_empty": 3,
+   "empty_miss": 0,
+   "false_positive": 9,
+   "package_loads_verified": 26,
+   "package_tokens": 180630,
+   "present": 26,
+   "silent_miss": 10,
+   "strict_hit": 16,
+   "tokens": {
+    "list_only": 317870,
+    "search_fallback_on_empty": 41234,
+    "search_oracle_fallback": 200169
+   },
+   "tokens_with_one_expected_package": {
+    "list_only": 498500,
+    "search_fallback_on_empty": 221864,
+    "search_oracle_fallback": 380799
+   },
+   "trace": [
+    {
+     "cached_tokens": null,
+     "case_id": "h00",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 35,
+     "response_tokens": 468
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h01",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 48,
+     "response_tokens": 460
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h02",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 32,
+     "response_tokens": 170
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h03",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 38,
+     "response_tokens": 543
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h04",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 31,
+     "response_tokens": 314
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h05",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 15,
+     "response_tokens": 371
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h06",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 58,
+     "response_tokens": 415
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h07",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 44,
+     "response_tokens": 188
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h08",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 20,
+     "response_tokens": 371
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h09",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 56,
+     "response_tokens": 459
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h10",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 36,
+     "response_tokens": 415
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h11",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 38,
+     "response_tokens": 439
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h12",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 24,
+     "response_tokens": 496
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h13",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 17,
+     "response_tokens": 286
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h14",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 65,
+     "response_tokens": 478
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h15",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 42,
+     "response_tokens": 350
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h16",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 72,
+     "response_tokens": 485
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h17",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 66,
+     "response_tokens": 438
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h18",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 55,
+     "response_tokens": 467
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h19",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 70,
+     "response_tokens": 559
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h20",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 32,
+     "response_tokens": 463
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h21",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 36,
+     "response_tokens": 479
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h22",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 24,
+     "response_tokens": 439
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h23",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 46,
+     "response_tokens": 448
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h24",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 26,
+     "response_tokens": 443
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h25",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 59,
+     "response_tokens": 474
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h26",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 66,
+     "response_tokens": 459
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h27",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 37,
+     "response_tokens": 422
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h28",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 58,
+     "response_tokens": 381
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h29",
+     "fallback_on_empty": true,
+     "model_output_tokens": null,
+     "query_tokens": 16,
+     "response_tokens": 16
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h30",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 86,
+     "response_tokens": 420
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h31",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 17,
+     "response_tokens": 343
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h32",
+     "fallback_on_empty": true,
+     "model_output_tokens": null,
+     "query_tokens": 12,
+     "response_tokens": 16
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h33",
+     "fallback_on_empty": true,
+     "model_output_tokens": null,
+     "query_tokens": 18,
+     "response_tokens": 16
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h34",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 46,
+     "response_tokens": 465
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h35",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 35,
+     "response_tokens": 346
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h36",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 45,
+     "response_tokens": 405
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h37",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 36,
+     "response_tokens": 375
+    }
+   ]
+  },
+  "cases": 38,
+  "prototype": {
+   "absent": 12,
+   "correct_empty": 0,
+   "empty_miss": 0,
+   "false_positive": 12,
+   "package_loads_verified": 26,
+   "package_tokens": 180630,
+   "present": 26,
+   "silent_miss": 18,
+   "strict_hit": 8,
+   "tokens": {
+    "list_only": 317870,
+    "search_fallback_on_empty": 20127,
+    "search_oracle_fallback": 271077
+   },
+   "tokens_with_one_expected_package": {
+    "list_only": 498500,
+    "search_fallback_on_empty": 200757,
+    "search_oracle_fallback": 451707
+   },
+   "trace": [
+    {
+     "cached_tokens": null,
+     "case_id": "h00",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 35,
+     "response_tokens": 500
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h01",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 48,
+     "response_tokens": 538
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h02",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 32,
+     "response_tokens": 470
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h03",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 38,
+     "response_tokens": 488
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h04",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 31,
+     "response_tokens": 492
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h05",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 15,
+     "response_tokens": 480
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h06",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 58,
+     "response_tokens": 455
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h07",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 44,
+     "response_tokens": 495
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h08",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 20,
+     "response_tokens": 525
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h09",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 56,
+     "response_tokens": 510
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h10",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 36,
+     "response_tokens": 495
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h11",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 38,
+     "response_tokens": 440
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h12",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 24,
+     "response_tokens": 451
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h13",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 17,
+     "response_tokens": 492
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h14",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 65,
+     "response_tokens": 487
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h15",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 42,
+     "response_tokens": 496
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h16",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 72,
+     "response_tokens": 530
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h17",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 66,
+     "response_tokens": 499
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h18",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 55,
+     "response_tokens": 480
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h19",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 70,
+     "response_tokens": 559
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h20",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 32,
+     "response_tokens": 489
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h21",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 36,
+     "response_tokens": 492
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h22",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 24,
+     "response_tokens": 498
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h23",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 46,
+     "response_tokens": 488
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h24",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 26,
+     "response_tokens": 443
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h25",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 59,
+     "response_tokens": 504
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h26",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 66,
+     "response_tokens": 506
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h27",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 37,
+     "response_tokens": 462
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h28",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 58,
+     "response_tokens": 447
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h29",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 16,
+     "response_tokens": 468
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h30",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 86,
+     "response_tokens": 486
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h31",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 17,
+     "response_tokens": 472
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h32",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 12,
+     "response_tokens": 501
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h33",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 18,
+     "response_tokens": 480
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h34",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 46,
+     "response_tokens": 480
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h35",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 35,
+     "response_tokens": 510
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h36",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 45,
+     "response_tokens": 485
+    },
+    {
+     "cached_tokens": null,
+     "case_id": "h37",
+     "fallback_on_empty": false,
+     "model_output_tokens": null,
+     "query_tokens": 36,
+     "response_tokens": 477
+    }
+   ]
+  },
+  "source": "private-full"
+ },
+ "oracle_policy": "Fall back on present misses and all absent cases, including empty results, to confirm absence with the full list.",
+ "repeat_note": "identical deterministic repeats measure stability, not independent samples",
+ "repeats": 5,
+ "tokenizer": {
+  "name": "tiktoken o200k_base",
+  "note": "OpenAI encoding used as a proxy, not Claude's tokenizer",
+  "version": "0.14.0"
+ }
 }

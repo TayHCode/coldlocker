@@ -76,6 +76,16 @@ class ShippedCatalogTests(unittest.TestCase):
             catalog = [{"name": "done-evidence-performance", "description": "evidence"}]
             self.assertEqual(search_skills(catalog, query)["results"], catalog)
 
+    def test_oracle_confirms_absence_with_full_list_even_when_search_is_empty(self):
+        from tools.catalog_search_eval import measure
+        case = {"kind": "absent", "expected_any": []}
+        result = measure(ROOT, [("absent", "zznonexistentcapabilityzz", case)], len, "candidate")
+        self.assertEqual(result["correct_empty"], 1)
+        trace = result["trace"][0]
+        expected = trace["query_tokens"] + trace["response_tokens"] + result["tokens"]["list_only"]
+        self.assertEqual(result["tokens"]["search_oracle_fallback"], expected)
+        self.assertEqual(result["tokens"]["search_fallback_on_empty"], expected)
+
     def test_fixture_is_split_and_fingerprinted(self):
         history = FIXTURE["history"]["cases"]
         self.assertGreaterEqual(len(history), 30)
