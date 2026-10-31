@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 import mcp_endpoint
+from tools import catalog_search
 
 FIXTURE = ROOT / "tests/fixtures/search_eval.json"
 REPEATS = 5
@@ -18,6 +19,7 @@ def call(root, name, arguments):
     response = mcp_endpoint.dispatch({"jsonrpc": "2.0", "id": 1, "method": "tools/call",
                                       "params": {"name": name, "arguments": arguments}}, root)
     assert "error" not in response, response
+    assert response["result"]["isError"] is False, response
     return response["result"]["content"][0]["text"]
 
 
@@ -54,7 +56,7 @@ def history_queries(cases, private):
     for case in cases:
         text = fingerprints[case["fingerprint"]]
         assert hashlib.sha256(re.sub(r"\s+", " ", text).strip().encode()).hexdigest() == case["fingerprint"]
-        queries.append((case["id"], text[: mcp_endpoint.SEARCH_QUERY_MAX], case))
+        queries.append((case["id"], text[: catalog_search.SEARCH_QUERY_MAX], case))
     return queries, "private-full"
 
 
@@ -64,12 +66,17 @@ def measure(root, queries, count, ranker):
     names = {entry["name"] for entry in catalog}
     totals = {"list_only": 0, "search_fallback_on_empty": 0, "search_oracle_fallback": 0}
     stats = {"present": 0, "strict_hit": 0, "silent_miss": 0, "empty_miss": 0, "absent": 0, "correct_empty": 0,
-             "false_positive": 0, "package_loads_verified": 0}
-    for _, query, case in queries:
-        text = call(root, "hub_search_skills", {"query": query}) if ranker == "current" else json.dumps(prototype(catalog, query))
+             "false_positive": 0, "package_loads_verified": 0, "package_tokens": 0}
+    trace = []
+    for case_id, query, case in queries:
+        text = json.dumps(catalog_search.search_skills(catalog, query) if ranker == "candidate" else prototype(catalog, query))
         result = json.loads(text)
         found = [entry["name"] for entry in result["results"]]
-        cost = count(json.dumps({"query": query})) + count(text)
+        query_tokens = count(json.dumps({"query": query}))
+        response_tokens = count(text)
+        cost = query_tokens + response_tokens
+        trace.append({"case_id": case_id, "query_tokens": query_tokens, "response_tokens": response_tokens,
+                      "fallback_on_empty": not found, "cached_tokens": None, "model_output_tokens": None})
         totals["list_only"] += list_tokens
         totals["search_fallback_on_empty"] += cost + (list_tokens if not found else 0)
         if case["kind"] == "present":
@@ -79,17 +86,18 @@ def measure(root, queries, count, ranker):
             stats["silent_miss"] += bool(found) and not hit
             stats["empty_miss"] += not found
             totals["search_oracle_fallback"] += cost + (0 if hit else list_tokens)
-            for name in case["expected_any"]:
+            for name in sorted(set(case["expected_any"]) & names)[:1]:
                 if name in names:
                     package = json.loads(call(root, "hub_get_item", {"kind": "skill", "name": name}))
                     assert package["files"] and not package["truncated"] and not package["omitted"]
                     stats["package_loads_verified"] += 1
+                    stats["package_tokens"] += count(json.dumps(package))
         else:
             stats["absent"] += 1
             stats["correct_empty"] += not found
             stats["false_positive"] += bool(found)
             totals["search_oracle_fallback"] += cost + list_tokens
-    return {**stats, "tokens": totals}
+    return {**stats, "trace": trace, "tokens": totals, "tokens_with_one_expected_package": {key: value + stats["package_tokens"] for key, value in totals.items()}}
 
 
 def run(root, count, private):
@@ -99,13 +107,13 @@ def run(root, count, private):
     report = {}
     for name, (queries, source) in sets.items():
         report[name] = {"source": source, "cases": len(queries)}
-        for ranker in ("prototype", "current"):
+        for ranker in ("prototype", "candidate"):
             report[name][ranker] = measure(root, queries, count, ranker)
     return report
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Compare list-only, prototype and shipped catalog search on frozen cases.")
+    parser = argparse.ArgumentParser(description="Compare list-only, prototype and experimental catalog search on frozen cases.")
     parser.add_argument("--history-private", help="private frozen history file; omit to use the public excerpts only")
     parser.add_argument("--out", help="write the JSON report here")
     args = parser.parse_args()
@@ -114,6 +122,8 @@ def main():
     assert all(report == reports[0] for report in reports), "search results changed between repeats"
     output = {"tokenizer": tokenizer_info, "repeats": REPEATS,
               "repeat_note": "identical deterministic repeats measure stability, not independent samples",
+              "catalog_sha256": hashlib.sha256(call(ROOT, "hub_list_skills", {}).encode()).hexdigest(),
+              "fixture_sha256": hashlib.sha256(FIXTURE.read_bytes()).hexdigest(),
               "catalog_skills": len(json.loads(call(ROOT, "hub_list_skills", {}))), **reports[0]}
     text = json.dumps(output, indent=1, sort_keys=True) + "\n"
     if args.out:

@@ -19,22 +19,6 @@ SENSITIVE = re.compile(r"token|secret|key|password|authorization|credential", re
 LOCAL = ".hub-store/catalog"
 KINDS = {"skills": "skills", "rules": "rules", "mcp_servers": "mcp/servers", "routines": "routines", "plugins": "plugins", "connections": "connections"}
 TOOLS = {"hub_list_" + kind: kind for kind in KINDS}
-SEARCH_TOOL = "hub_search_skills"
-SEARCH_QUERY_MAX = 500
-SEARCH_LIMIT = 3
-SEARCH_MIN_SCORE = 2
-STOPWORDS = frozenset(
-    "a an and are as at be been but by can could did do does for from get got had has have i if in into is it its me my "
-    "of on or our please so than that the their then there these they this those to up us was we were what when where "
-    "which who will with would you your".split())
-CONCEPTS = {
-    "robot": ("agent",), "bot": ("agent",), "ai": ("agent",), "assistant": ("agent",), "model": ("agent",),
-    "remember": ("lesson", "encod"), "forget": ("lesson", "encod"), "mistak": ("lesson", "correction"),
-    "error": ("failure",), "bug": ("failure",), "broken": ("failure",), "fail": ("failure",),
-    "slow": ("performance",), "fast": ("performance",), "speed": ("performance",),
-    "test": ("verif",), "check": ("verif",), "prove": ("verif", "evidence"), "proof": ("verif", "evidence"),
-    "finish": ("done",), "complete": ("done",), "tri": ("prove", "verif"),
-}
 ITEM_KINDS = {"skill": "skills", "rule": "rules", "routine": "routines"}
 MAX_ITEM_BYTES = 1024 * 1024
 SNIFF_BYTES = 8192
@@ -44,8 +28,8 @@ PROMPT_HINT_LIMIT = 50
 MIME_TYPES = {".md": "text/markdown", ".json": "application/json"}
 TOOL_DESCRIPTIONS = {
     "skills": "List every skill in the agentlocker hub with name, description, owner, provenance and content hash. "
-              "Use hub_search_skills first for a short list; call this to see every skill, then load one with hub_get_item "
-              "(kind 'skill') only when its description matches the task. An entry with an 'error' field could not be fully read.",
+              "Call this first to discover available skills, then load one with hub_get_item (kind 'skill') only when its "
+              "description matches the task. An entry with an 'error' field could not be fully read.",
     "rules": "List the hub's rule fragments (shared policy and project instructions) with name, owner, provenance and "
              "content hash. Read the applicable ones, including 'shared-policy', with hub_get_item (kind 'rule') before "
              "starting work.",
@@ -67,13 +51,8 @@ RESOURCE_TEMPLATES = [
     {"uriTemplate": URI_SCHEME + "routines/{id}/{file}", "name": "routine-file",
      "description": "A routine's routine.json or its prompt file."},
 ]
-SEARCH_DESCRIPTION = (
-    "Find skills by describing the task in a few words. Returns the best three matches (same fields as hub_list_skills), "
-    "'searched' (skills considered) and 'remaining' (further matches not shown). An empty 'results' list means no skill "
-    "matched well enough, not that the catalog is unavailable: fall back to hub_list_skills. Load a match with "
-    "hub_get_item (kind 'skill') only when its description fits the task.")
 GET_ITEM_DESCRIPTION = (
-    "Load one skill, rule or routine by name after finding it with hub_search_skills or the matching hub_list_* tool. For a skill, 'files' maps "
+    "Load one skill, rule or routine by name after finding it with the matching hub_list_* tool. For a skill, 'files' maps "
     "every relative path (SKILL.md plus references/, scripts/ and assets/) to its UTF-8 text. Files that are not text, "
     "symlinks and anything past the 1 MiB text cap are named in 'omitted' with their size and reason, and 'truncated' is "
     "true when the cap cut content. Fetch individual ordinary files within 1 MiB with resources/read. A rule is one file; a routine is its "
@@ -269,34 +248,6 @@ def inventory(root, kind):
         except OSError:
             entry["error"] = "unreadable file"
     return result
-
-
-def stem(word):
-    for suffix in ("ing", "ly", "ed", "es", "s"):
-        if len(word) > len(suffix) + 2 and word.endswith(suffix):
-            word = word[:-len(suffix)]
-            break
-    return word[:-1] if len(word) > 3 and word.endswith("e") else word
-
-
-def terms(text):
-    return {stem(word) for word in re.findall(r"[a-z0-9]+", text.lower()) if word not in STOPWORDS}
-
-
-def search_skills(root, query):
-    wanted = terms(query)
-    for word in list(wanted):
-        wanted.update(stem(related) for related in CONCEPTS.get(word, ()))
-    catalog = inventory(root, "skills")
-    scored = []
-    for entry in catalog:
-        score = (3 * len(wanted & terms(entry["name"].replace("-", " ")))
-                 + len(wanted & terms(entry.get("description", ""))))
-        if score >= SEARCH_MIN_SCORE:
-            scored.append((score, entry))
-    scored.sort(key=lambda row: (-row[0], row[1]["name"]))
-    return {"results": [entry for _, entry in scored[:SEARCH_LIMIT]], "searched": len(catalog),
-            "remaining": max(0, len(scored) - SEARCH_LIMIT)}
 
 
 def locate(root, relative):
@@ -540,12 +491,6 @@ def tool_definitions():
     schema = {"type": "object", "properties": {}, "additionalProperties": False}
     tools = [{"name": name, "description": TOOL_DESCRIPTIONS[kind], "inputSchema": schema,
               "annotations": {"readOnlyHint": True}} for name, kind in TOOLS.items()]
-    tools.append({"name": SEARCH_TOOL, "description": SEARCH_DESCRIPTION, "inputSchema": {
-        "type": "object", "properties": {
-            "query": {"type": "string", "minLength": 1, "maxLength": SEARCH_QUERY_MAX,
-                      "description": "The task in a few plain words, such as 'monitor pull request CI'."}},
-        "required": ["query"], "additionalProperties": False},
-        "annotations": {"readOnlyHint": True}})
     tools.append({"name": "hub_get_item", "description": GET_ITEM_DESCRIPTION, "inputSchema": {
         "type": "object", "properties": {
             "kind": {"type": "string", "enum": list(ITEM_KINDS),
@@ -590,9 +535,6 @@ def dispatch(request, root=ROOT):
                 valid = (isinstance(arguments, dict) and set(arguments) == {"kind", "name"}
                          and arguments["kind"] in ITEM_KINDS and isinstance(arguments["name"], str)
                          and NAME.fullmatch(arguments["name"]))
-            elif name == SEARCH_TOOL:
-                valid = (isinstance(arguments, dict) and set(arguments) == {"query"}
-                         and isinstance(arguments["query"], str) and 0 < len(arguments["query"]) <= SEARCH_QUERY_MAX)
             else:
                 valid = isinstance(name, str) and name in TOOLS and arguments == {}
             if not valid:
@@ -600,8 +542,6 @@ def dispatch(request, root=ROOT):
             else:
                 if name == "hub_get_item":
                     values = item_contents(root, arguments["kind"], arguments["name"])
-                elif name == SEARCH_TOOL:
-                    values = search_skills(root, arguments["query"])
                 else:
                     values = inventory(root, TOOLS[name])
                 response["result"] = {"content": [{"type": "text", "text": json.dumps(values)}], "isError": False}

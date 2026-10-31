@@ -2,8 +2,6 @@
 
 ## Unreleased
 
-- Add optional `hub_search_skills`, a local lexical top-three skill search that keeps `hub_list_skills` as the fallback, with a frozen evaluation, runtime proofs and a Worker mirror. See `docs/catalog-search.md`.
-
 - Add `--stat` to the export diff command for per-path added and removed line counts.
 
 - Add `--show PATH` to the export diff command to show published versus checkout content.

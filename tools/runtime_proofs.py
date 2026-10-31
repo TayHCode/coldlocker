@@ -1,4 +1,6 @@
+"""Single-process local proofs, not a durable production executor or Eve runtime."""
 import json
+import os
 from pathlib import Path
 
 
@@ -16,7 +18,9 @@ def run_steps(steps, state_file, interrupt_after=None, ledger=None):
         if interrupt_after == (name, "before-receipt"):
             raise Interrupted(name)
         done[name] = result
-        state_file.write_text(json.dumps(done), encoding="utf-8")
+        temporary = state_file.with_suffix(".pending")
+        temporary.write_text(json.dumps(done), encoding="utf-8")
+        os.replace(temporary, state_file)
         if interrupt_after == (name, "after-receipt"):
             raise Interrupted(name)
     return done
@@ -43,7 +47,10 @@ def total(trace):
 
 
 def record_turn(trace, input_tokens, cached_tokens, output_tokens):
-    assert cached_tokens <= input_tokens
+    if any(type(value) is not int or value < 0 for value in (input_tokens, cached_tokens, output_tokens)):
+        raise ValueError("token counts must be nonnegative integers")
+    if cached_tokens > input_tokens:
+        raise ValueError("cached tokens cannot exceed input tokens")
     trace.append({"turn": len(trace) + 1, "input": input_tokens, "cached": cached_tokens, "output": output_tokens})
 
 
@@ -61,5 +68,9 @@ EVAL_CASES = [([3, 1, 2], 2), ([4, 1, 3, 2], 2.5), ([7], 7)]
 
 
 def run_eval(function):
-    failures = [(values, expected, function(values)) for values, expected in EVAL_CASES if function(values) != expected]
+    failures = []
+    for values, expected in EVAL_CASES:
+        actual = function(values)
+        if actual != expected:
+            failures.append((values, expected, actual))
     return {"passed": len(EVAL_CASES) - len(failures), "total": len(EVAL_CASES), "failures": failures}

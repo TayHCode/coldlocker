@@ -81,8 +81,7 @@ not a guarantee.
 
 `python3 mcp_endpoint.py` speaks MCP over stdio. Tools: `hub_list_skills`,
 `hub_list_rules`, `hub_list_mcp_servers`, `hub_list_routines`, `hub_list_plugins`,
-`hub_list_connections`, `hub_search_skills` (top three skills for a plain-language
-request, see [catalog search](catalog-search.md)) and `hub_get_item`, which returns a skill with all its
+`hub_list_connections` and `hub_get_item`, which returns a skill with all its
 supporting files. Skills are also MCP prompts, and files are `agentlocker://`
 resources. Listing never executes an upstream server or reads secret values.
 

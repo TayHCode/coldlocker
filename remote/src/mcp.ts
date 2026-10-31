@@ -21,41 +21,12 @@ import type { Env } from "./env";
 export const PROTOCOL_VERSIONS = ["2025-06-18", "2025-03-26", "2024-11-05"] as const;
 
 const TOOLS: Record<string, Kind> = Object.fromEntries(KINDS.map((kind) => [`hub_list_${kind}`, kind]));
-const SEARCH_TOOL = "hub_search_skills";
-const SEARCH_QUERY_MAX = 500;
-const SEARCH_LIMIT = 3;
-const SEARCH_MIN_SCORE = 2;
-const STOPWORDS = new Set(["a", "an", "and", "are", "as", "at", "be", "been", "but", "by", "can", "could", "did", "do", "does", "for", "from", "get", "got", "had", "has", "have", "i", "if", "in", "into", "is", "it", "its", "me", "my", "of", "on", "or", "our", "please", "so", "than", "that", "the", "their", "then", "there", "these", "they", "this", "those", "to", "up", "us", "was", "we", "were", "what", "when", "where", "which", "who", "will", "with", "would", "you", "your"]);
-const CONCEPTS: Record<string, string[]> = {
-  "robot": ["agent"],
-  "bot": ["agent"],
-  "ai": ["agent"],
-  "assistant": ["agent"],
-  "model": ["agent"],
-  "remember": ["lesson", "encod"],
-  "forget": ["lesson", "encod"],
-  "mistak": ["lesson", "correction"],
-  "error": ["failure"],
-  "bug": ["failure"],
-  "broken": ["failure"],
-  "fail": ["failure"],
-  "slow": ["performance"],
-  "fast": ["performance"],
-  "speed": ["performance"],
-  "test": ["verif"],
-  "check": ["verif"],
-  "prove": ["verif", "evidence"],
-  "proof": ["verif", "evidence"],
-  "finish": ["done"],
-  "complete": ["done"],
-  "tri": ["prove", "verif"]
-};
 
 const TOOL_DESCRIPTIONS: Record<Kind, string> = {
   skills:
     "List every skill in the agentlocker hub with name, description, owner, provenance and content hash. " +
-    "Use hub_search_skills first for a short list; call this to see every skill, then load one with hub_get_item " +
-    "(kind 'skill') only when its description matches the task. An entry with an 'error' field could not be fully read.",
+    "Call this first to discover available skills, then load one with hub_get_item (kind 'skill') only when its " +
+    "description matches the task. An entry with an 'error' field could not be fully read.",
   rules:
     "List the hub's rule fragments (shared policy and project instructions) with name, owner, provenance and " +
     "content hash. Read the applicable ones, including 'shared-policy', with hub_get_item (kind 'rule') before " +
@@ -76,14 +47,8 @@ const TOOL_DESCRIPTIONS: Record<Kind, string> = {
     "the hub, with secret:// references only. Read-only: nothing is contacted."
 };
 
-const SEARCH_DESCRIPTION =
-  "Find skills by describing the task in a few words. Returns the best three matches (same fields as hub_list_skills), " +
-  "'searched' (skills considered) and 'remaining' (further matches not shown). An empty 'results' list means no skill " +
-  "matched well enough, not that the catalog is unavailable: fall back to hub_list_skills. Load a match with " +
-  "hub_get_item (kind 'skill') only when its description fits the task.";
-
 const GET_ITEM_DESCRIPTION =
-  "Load one skill, rule or routine by name after finding it with hub_search_skills or the matching hub_list_* tool. For a skill, 'files' maps " +
+  "Load one skill, rule or routine by name after finding it with the matching hub_list_* tool. For a skill, 'files' maps " +
   "every relative path (SKILL.md plus references/, scripts/ and assets/) to its UTF-8 text. Files that are not text, " +
   "symlinks and anything past the 1 MiB text cap are named in 'omitted' with their size and reason, and 'truncated' is " +
   "true when the cap cut content. Fetch individual ordinary files within 1 MiB with resources/read. A rule is one file; a routine is its " +
@@ -123,24 +88,6 @@ function toolDefinitions(): Json[] {
     annotations: { readOnlyHint: true }
   }));
   tools.push({
-    name: SEARCH_TOOL,
-    description: SEARCH_DESCRIPTION,
-    inputSchema: {
-      type: "object",
-      properties: {
-        query: {
-          type: "string",
-          minLength: 1,
-          maxLength: SEARCH_QUERY_MAX,
-          description: "The task in a few plain words, such as 'monitor pull request CI'."
-        }
-      },
-      required: ["query"],
-      additionalProperties: false
-    },
-    annotations: { readOnlyHint: true }
-  });
-  tools.push({
     name: "hub_get_item",
     description: GET_ITEM_DESCRIPTION,
     inputSchema: {
@@ -173,51 +120,12 @@ function validToolCall(name: unknown, args: unknown): boolean {
     if (typeof args.kind === "object" && args.kind !== null) throw new TypeError("unhashable kind");
     return isItemKind(args.kind) && typeof args.name === "string" && NAME_PATTERN.test(args.name);
   }
-  if (name === SEARCH_TOOL) {
-    return isObject(args) && sameKeys(args, ["query"]) && typeof args.query === "string" && [...args.query].length > 0 && [...args.query].length <= SEARCH_QUERY_MAX;
-  }
   return typeof name === "string" && Object.hasOwn(TOOLS, name) && isEmptyObject(args);
-}
-
-function stem(word: string): string {
-  let stemmed = word;
-  for (const suffix of ["ing", "ly", "ed", "es", "s"]) {
-    if (stemmed.length > suffix.length + 2 && stemmed.endsWith(suffix)) {
-      stemmed = stemmed.slice(0, -suffix.length);
-      break;
-    }
-  }
-  return stemmed.length > 3 && stemmed.endsWith("e") ? stemmed.slice(0, -1) : stemmed;
-}
-
-function terms(text: string): Set<string> {
-  const words = text.toLowerCase().match(/[a-z0-9]+/g) ?? [];
-  return new Set(words.filter((word) => !STOPWORDS.has(word)).map(stem));
-}
-
-function searchSkills(catalog: Json[], query: string): Json {
-  const wanted = terms(query);
-  for (const word of [...wanted]) {
-    for (const related of Object.hasOwn(CONCEPTS, word) ? CONCEPTS[word] : []) wanted.add(stem(related));
-  }
-  const overlap = (found: Set<string>): number => [...found].filter((word) => wanted.has(word)).length;
-  const scored: { score: number; entry: Json }[] = [];
-  for (const entry of catalog) {
-    const score = 3 * overlap(terms(String(entry.name).replaceAll("-", " "))) + overlap(terms(String(entry.description ?? "")));
-    if (score >= SEARCH_MIN_SCORE) scored.push({ score, entry });
-  }
-  scored.sort((a, b) => b.score - a.score || (a.entry.name as string < (b.entry.name as string) ? -1 : 1));
-  return {
-    results: scored.slice(0, SEARCH_LIMIT).map((row) => row.entry),
-    searched: catalog.length,
-    remaining: Math.max(0, scored.length - SEARCH_LIMIT)
-  };
 }
 
 async function callTool(env: Env, index: () => Promise<Index>, name: string, args: Json): Promise<unknown> {
   const loaded = await index();
   if (name === "hub_get_item") return itemContents(env, loaded, args.kind as ItemKind, args.name as string);
-  if (name === SEARCH_TOOL) return searchSkills(loaded.kinds.skills.map(summarize) as Json[], args.query as string);
   return loaded.kinds[TOOLS[name]].map(summarize);
 }
 

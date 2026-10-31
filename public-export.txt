@@ -692,3 +692,6 @@ ui/welcome.css
 ui/welcome.js
 ui_auth.py
 verify.py
+tools/catalog_search.py
+tools/verify_export.py
+docs/evidence/eve-catalog-eval.json

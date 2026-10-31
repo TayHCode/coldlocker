@@ -4,7 +4,8 @@ import shutil
 import tempfile
 import unittest
 
-from mcp_endpoint import SEARCH_TOOL, dispatch, search_skills, terms
+from mcp_endpoint import dispatch, inventory
+from tools.catalog_search import search_skills, terms
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE = json.loads((ROOT / "tests/fixtures/search_eval.json").read_text(encoding="utf-8"))
@@ -16,8 +17,7 @@ def call(root, name, arguments):
 
 
 def search(root, query):
-    response = call(root, SEARCH_TOOL, {"query": query})
-    return json.loads(response["result"]["content"][0]["text"])
+    return search_skills(inventory(root, "skills"), query)
 
 
 class RankerTests(unittest.TestCase):
@@ -42,13 +42,7 @@ class RankerTests(unittest.TestCase):
 
 
 def search_skills_over(catalog, query):
-    import mcp_endpoint
-    original = mcp_endpoint.inventory
-    mcp_endpoint.inventory = lambda root, kind: catalog
-    try:
-        return search_skills(None, query)
-    finally:
-        mcp_endpoint.inventory = original
+    return search_skills(catalog, query)
 
 
 class ShippedCatalogTests(unittest.TestCase):
@@ -73,10 +67,14 @@ class ShippedCatalogTests(unittest.TestCase):
         listed = json.loads(call(ROOT, "hub_list_skills", {})["result"]["content"][0]["text"])
         self.assertGreater(len(listed), 3)
 
-    def test_bad_arguments_are_rejected(self):
-        for arguments in ({}, {"query": ""}, {"query": 1}, {"query": "x" * 501}, {"query": "a", "x": 1}, ["a"]):
-            response = call(ROOT, SEARCH_TOOL, arguments)
-            self.assertEqual(response["error"]["code"], -32602, arguments)
+    def test_search_not_exposed_in_production(self):
+        response = dispatch({"jsonrpc": "2.0", "id": 1, "method": "tools/list"}, ROOT)
+        self.assertNotIn("hub_search_skills", [tool["name"] for tool in response["result"]["tools"]])
+
+    def test_concept_keys_use_same_normalization_as_query(self):
+        for query in ("complete", "prove", "speed"):
+            catalog = [{"name": "done-evidence-performance", "description": "evidence"}]
+            self.assertEqual(search_skills(catalog, query)["results"], catalog)
 
     def test_fixture_is_split_and_fingerprinted(self):
         history = FIXTURE["history"]["cases"]

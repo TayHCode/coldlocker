@@ -69,10 +69,7 @@ Shipped entries are indexed in [manifest.json](manifest.json). The always-verify
 `maintain-verification-skill`, and `principle-test-behavior-not-implementation`
 alongside `evidence-before-done`. Each imported pstack skill includes its MIT
 license and provenance; creation includes the feature-map examples. Fetch a
-package with `hub_get_item` using `kind: "skill"` and its name. To avoid reading
-the whole list first, call `hub_search_skills` with a plain-language request; if
-it returns nothing useful, call `hub_list_skills`. See
-[catalog search](docs/catalog-search.md).
+package with `hub_get_item` using `kind: "skill"` and its name.
 
 In the manual client examples, `<HUB_DIR>` is your permanent installation directory.
 
@@ -207,6 +204,8 @@ python3 -B -m unittest discover -s tests -p test_endpoint.py -v
 ```
 
 These checks do not approve publication or replace dependency-license review.
+
+See the [Eve search experiment](docs/catalog-search.md) for measured retrieval limits and local runtime proofs. Search-first discovery was not adopted.
 
 ## Reference
 

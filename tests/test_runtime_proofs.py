@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 import sys
+import subprocess
 import tempfile
 import unittest
 
@@ -79,8 +80,33 @@ class TokenTraceTests(unittest.TestCase):
             self.assertTrue(all(isinstance(value, int) for value in turn.values()))
 
     def test_cached_cannot_exceed_input(self):
-        with self.assertRaises(AssertionError):
+        with self.assertRaises(ValueError):
             proofs.record_turn([], 10, 11, 1)
+
+
+
+class ProcessRestartTests(Workspace):
+    def test_fresh_process_resumes_without_repeating_effect(self):
+        script = """
+import sys
+from pathlib import Path
+from tools.runtime_proofs import run_steps, keyed_effect, Interrupted
+root = Path(sys.argv[1])
+steps = [(name, lambda _, name=name: keyed_effect(name, root / 'ledger.jsonl', name)) for name in ('fetch', 'write')]
+try:
+    run_steps(steps, root / 'state.json', interrupt_after=('fetch', sys.argv[2]) if len(sys.argv) > 2 else None)
+except Interrupted:
+    sys.exit(9)
+"""
+        for boundary in ('before-receipt', 'after-receipt'):
+            root = self.dir / boundary
+            root.mkdir()
+            interrupted = subprocess.run([sys.executable, '-c', script, str(root), boundary], cwd=ROOT)
+            self.assertEqual(interrupted.returncode, 9)
+            subprocess.run([sys.executable, '-c', script, str(root)], cwd=ROOT, check=True)
+            records = [json.loads(line) for line in (root / 'ledger.jsonl').read_text().splitlines()]
+            self.assertEqual([record['key'] for record in records], ['fetch', 'write'])
+            self.assertEqual(set(json.loads((root / 'state.json').read_text())), {'fetch', 'write'})
 
 
 if __name__ == "__main__":
