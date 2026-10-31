@@ -7,6 +7,31 @@ from test_local_catalog_proof import proof
 
 
 class DogfoodTests(unittest.TestCase):
+    def test_missing_routine_prompt_is_rejected_without_catalog_changes(self):
+        with proof.Fixture() as fixture:
+            fixture.cli('import-skill', fixture.skill)
+            catalog = fixture.root / '.hub-store/catalog'
+            before = {p.relative_to(catalog): p.read_bytes()
+                      for p in catalog.rglob('*') if p.is_file()}
+            prompt = fixture.routine.parent / 'prompt.md'
+            original = prompt.read_bytes()
+            prompt.unlink()
+            result = fixture.cli('import-routine', fixture.routine, expected=1)
+            self.assertIn('prompt must be an ordinary file', result.stderr)
+            self.assertEqual(before, {p.relative_to(catalog): p.read_bytes()
+                                      for p in catalog.rglob('*') if p.is_file()})
+            self.assertFalse((fixture.root / '.hub-store/history').exists())
+            prompt.write_bytes(original)
+            fixture.cli('import-routine', fixture.routine)
+            responses = fixture.rpc([
+                fixture.initialize(), {'method': 'notifications/initialized'},
+                {'id': 2, 'method': 'tools/call', 'params': {
+                    'name': 'hub_get_item', 'arguments': {
+                        'kind': 'routine', 'name': 'catalog-sample-routine'}}}])
+            item = responses[1]
+            self.assertFalse(item['isError'])
+            self.assertIn(original.decode(), json.loads(item['content'][0]['text'])['files'].values())
+
     def test_import_connect_fetch_update_remove(self):
         with proof.Fixture() as fixture:
             result = fixture.prove()
