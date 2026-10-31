@@ -35,6 +35,8 @@ Package counts add the first alphabetically sorted acceptable skill per present 
 
 ## Reproduce locally
 
+Install Python 3.11+ and Git on PATH. Tests create temporary Git repositories even when the source archive has no `.git` directory. Symlink creation must be permitted; on Windows use Developer Mode or an account with symbolic-link privilege. The verification command checks these prerequisites before running tests.
+
 ```sh
 python3 -m venv .scratch/venv
 .scratch/venv/bin/python -m pip install tiktoken==0.14.0
