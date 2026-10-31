@@ -142,13 +142,6 @@ python3 hub.py routine enable ID --runner RUNNER --remote
 - `agents-import`, `agents-export`, `agents-sync` delegate to amtiYo/agents ([agents-sync.md](agents-sync.md)).
 - `import-executor` makes an optional nonsecret copy from a live Executor ([executor-connector.md](executor-connector.md)).
 
-## Generate a CI review copy
-
-`python3 ci_template.py REPO` prints a review-only `cold/verify` workflow.
-`--output FILE` saves a new review file outside `.github/workflows`.
-`--dry-run` lists recipe availability without execution. See
-[the CI template guide](ci-template.md) for usage and trust limits.
-
 ## Check the hub
 
 For an installed catalog, use `python3 hub.py doctor`. It checks schema, MIT
@@ -158,8 +151,18 @@ does not enforce maintainer commit identities or scan unrelated source and
 dependency files. It does not establish hosted connectivity or routine execution.
 In a Git installation it still refuses tracked or unignored private state.
 
-Maintainers and contributors must run the stricter source checks below;
-`doctor` does not replace them or weaken CI's identity policy.
+Source-export contributors run the supported verification recipe:
+
+```sh
+python3 -B tools/verify_export.py
+```
+
+It requires Git and symlink permission. See [Contributing](../CONTRIBUTING.md)
+for scope and platform prerequisites.
+
+The private maintainer checkout runs the stricter checks below. They require
+omitted `config/` policy and fixtures and are not supported in this source export.
+`doctor` does not replace them or weaken the maintainer identity policy.
 
 ```sh
 python3 hub.py check

@@ -86,3 +86,17 @@ changed file against `origin/main`, reports inherited findings separately, and
 requires zero new findings before the source PR push. Private reports and raw
 logs stay outside the public source. No finding values or secrets are included
 here. The PR records the exact tested head and final gate outcome.
+
+## Held-item follow-up
+
+The held-polish follow-up corrects the source-export contributor instructions in
+README, CONTRIBUTING, install and CLI documentation. They now use
+`python3 -B tools/verify_export.py` and explicitly scope full discovery and
+`hub.py check` to the private maintainer checkout. The CLI guide no longer
+advertises the absent `ci_template.py` or links to its absent guide.
+No private policy is restored and no failing maintainer check is weakened.
+
+Deferred items remain private maintainer-suite support, central Linux routing,
+and fresh hosted or native-client acceptance. Those require private inputs,
+out-of-repository changes or authorized live sessions. Source PR delivery is permitted. Deployments, packages, releases and new
+repositories remain outside this follow-up.

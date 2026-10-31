@@ -92,8 +92,9 @@ Automatic timing is optional and belongs to the chosen runner. See
 connections can stay as they are. Optional [skill links](docs/reference.md) and
 the [shared-tools gateway](docs/gateway.md) are separate from this setup.
 
-Contributors must run `python3 hub.py check` and the Python test suite.
-The installation's `doctor` command does not replace maintainer source checks.
+Source-export contributors run `python3 -B tools/verify_export.py`. See
+[Contributing](CONTRIBUTING.md) for prerequisites and the separate private
+maintainer checks.
 
 ## Auto-pick PreToolUse hook
 

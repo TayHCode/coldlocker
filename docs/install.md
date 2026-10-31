@@ -33,10 +33,11 @@ python3 hub.py doctor
 Every line should start with `PASS` and the command should exit 0. To update an
 existing installation later, follow the [upgrade guide](upgrade.md).
 
-Optional: `python3 -m unittest discover -s tests -v`. No Python packages needed.
-Contributors must also run `python3 hub.py check`, which enforces the
-maintainer commit-email policy. `doctor` checks the installed catalog without
-requiring your own commits to use the maintainer's identity.
+For additional source-export checks, run `python3 -B tools/verify_export.py`.
+This needs Git and symlink permission, but no extra Python packages. Full unittest
+discovery and `hub.py check` require private maintainer files omitted from this
+export. See [Contributing](../CONTRIBUTING.md). `doctor` checks the installed
+catalog without requiring your commits to use a maintainer identity.
 
 ## Platforms
 
