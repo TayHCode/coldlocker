@@ -57,4 +57,4 @@ Seven runtime tests pass, including fresh-process recovery at both boundaries. T
 
 ## Verification scope
 
-The public export intentionally omits private maintainer configuration. Its documented health, safety and MCP endpoint checks plus experiment tests run through `tools/verify_export.py` and the native `.fleet/verify.ps1` recipe. The complete private maintainer suite is not claimed green. No services, credentials, runners or paid Vercel products are changed.
+The public export intentionally omits private maintainer configuration. Its documented health, safety and MCP endpoint checks plus experiment tests run through `python3 -B tools/verify_export.py`, or `python -B tools/verify_export.py` on Windows. The repository-only `.fleet/verify.ps1` adapter invokes that same command and is excluded from source-only archives. The complete private maintainer suite is not claimed green. No services, credentials, runners or paid Vercel products are changed.
