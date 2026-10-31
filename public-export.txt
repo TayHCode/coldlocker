@@ -3,7 +3,9 @@
 .gitattributes
 .github/ISSUE_TEMPLATE/bug_report.md
 .gitignore
+AGENTS.md
 CHANGELOG.md
+CLAUDE.md
 CONTRIBUTING.md
 LICENSE
 README.md
@@ -56,6 +58,7 @@ docs/hosted-later.md
 docs/install.md
 docs/mcp-auth.md
 docs/mcp-gateway.md
+docs/model-routing-evidence-2026-10-31.md
 docs/product-acceptance.md
 docs/reference.md
 docs/related.md
@@ -595,6 +598,7 @@ tests/test_lifecycle.py
 tests/test_local_catalog_proof.py
 tests/test_local_layer.py
 tests/test_manual_import_preservation.py
+tests/test_model_policy.py
 tests/test_noleak.py
 tests/test_oauth_discovery.py
 tests/test_plugin_records.py
@@ -686,7 +690,3 @@ ui/welcome.css
 ui/welcome.js
 ui_auth.py
 verify.py
-AGENTS.md
-CLAUDE.md
-docs/model-routing-evidence-2026-10-31.md
-tests/test_model_policy.py
