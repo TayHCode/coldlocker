@@ -48,6 +48,7 @@ docs/catalog-search.md
 docs/cli.md
 docs/clients.md
 docs/composio.md
+docs/evidence/eve-catalog-eval.json
 docs/executor-connector.md
 docs/factory-overlap.md
 docs/formats.md
@@ -663,8 +664,10 @@ tests/ui_welcome_scanning_smoke.cjs
 tests/ui_welcome_smoke.cjs
 tests/windows_text.py
 tools/build_site.py
+tools/catalog_search.py
 tools/catalog_search_eval.py
 tools/runtime_proofs.py
+tools/verify_export.py
 ui/api.js
 ui/app.js
 ui/connect.css
@@ -692,6 +695,3 @@ ui/welcome.css
 ui/welcome.js
 ui_auth.py
 verify.py
-tools/catalog_search.py
-tools/verify_export.py
-docs/evidence/eve-catalog-eval.json
