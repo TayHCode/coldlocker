@@ -11,6 +11,9 @@ from unittest.mock import patch
 
 
 ROOT = Path(__file__).resolve().parents[1]
+if not (ROOT / '.github/ci.py').is_file():
+    raise unittest.SkipTest('Private maintainer CI helper is excluded from the public export')
+
 spec = importlib.util.spec_from_file_location('ci_gate', ROOT / '.github/ci.py')
 ci = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(ci)

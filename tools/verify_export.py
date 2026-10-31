@@ -19,13 +19,14 @@ def main():
     except OSError:
         sys.exit('INCOMPLETE: tests require symlink permission. On Windows enable Developer Mode or use an account with symbolic-link privilege.')
     commands = [[sys.executable, '-B', 'hub.py', 'doctor']]
-    for pattern in ('test_safety.py', 'test_endpoint.py', 'test_catalog_search.py', 'test_runtime_proofs.py'):
+    for pattern in ('test_safety.py', 'test_endpoint.py', 'test_catalog_search.py', 'test_runtime_proofs.py',
+                    'test_e2e_dogfood.py', 'test_verify_loop.py'):
         commands.append([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'tests', '-p', pattern, '-v'])
     commands.append([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'tests',
                      '-p', 'test_public_export.py', '-k', 'test_export_contains_existing'])
     for command in commands:
         subprocess.run(command, cwd=ROOT, check=True)
-    print('PASS: public export health, safety, MCP endpoint, catalog experiment and runtime proofs', flush=True)
+    print('PASS: public export health, safety, MCP endpoint, catalog experiment, runtime proofs and dogfood replay', flush=True)
 
 
 if __name__ == '__main__':
