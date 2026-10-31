@@ -24,7 +24,9 @@ the proof's offline audit guard. Temporary state is removed after each test.
 
 The Bash and PowerShell recipes both run `tools/verify_export.py`. That script
 includes the new replay and verify-loop regressions alongside the existing public
-export tests. Full unittest discovery is a separate maintainer check, not the
+export tests. Source archives retain the existing export checks and verify-loop
+regressions, but explicitly skip the Git-metadata-dependent dogfood source copy.
+Full unittest discovery is a separate maintainer check, not the
 public-export recipe. `cold verify` currently routes this repository to Windows;
 the Bash command above is the native Linux proof. Changing central host routing
 is outside this task.

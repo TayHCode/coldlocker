@@ -7,7 +7,7 @@ description: Verify the public Coldlocker export through its CLI and MCP endpoin
 
 ## Launch
 
-Use Python 3.11 or later and Git on PATH from the repository root. Tests create temporary repositories even for a source archive without `.git`. Symlink creation must be permitted; on Windows enable Developer Mode or use an account with symbolic-link privilege. The verification command checks both prerequisites. The CLI and stdio MCP server run per invocation; no service, credential or deployment is needed.
+Use Python 3.11 or later and Git on PATH from the repository root. Tests create temporary repositories even for a source archive without `.git`. The dogfood source-copy replay runs only in Git checkouts and reports an explicit skip in archives. Symlink creation must be permitted; on Windows enable Developer Mode or use an account with symbolic-link privilege. The verification command checks both prerequisites. The CLI and stdio MCP server run per invocation; no service, credential or deployment is needed.
 
 ## Doctor
 
