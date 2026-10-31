@@ -745,6 +745,7 @@ def parser():
     from composio_connector import register
     register(commands)
     __import__("routine_enable").register(commands)
+    __import__("orient").register(commands)
     from remote_publisher import register as register_remote
     register_remote(commands)
     lifecycle.register(commands, sys.modules[__name__])

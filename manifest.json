@@ -596,6 +596,16 @@
       "sha256": "29c38cc21be5f309650ad15f3d0a3a0a79787b0f42128fe20214077aa60e5d2c"
     },
     {
+      "name": "merge-when-proven",
+      "path": "rules/merge-when-proven.md",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-16312e94db75",
+        "origin": "authored"
+      },
+      "sha256": "16312e94db7588e60a85f04b19438c9179626a1d5b1a89e4bdb1d2edba2c035d"
+    },
+    {
       "name": "model-routing",
       "path": "rules/model-routing.md",
       "owner": "agentlocker",
@@ -604,6 +614,16 @@
         "origin": "authored"
       },
       "sha256": "ce67b86d017dd7ef96d890aca48983f578ab0c1627b00173d21f3e70610d629d"
+    },
+    {
+      "name": "orient-once",
+      "path": "rules/orient-once.md",
+      "owner": "agentlocker",
+      "provenance": {
+        "source_id": "src-27202983bcb4",
+        "origin": "authored"
+      },
+      "sha256": "27202983bcb4a651c0047230e119164911876ed4aa2a9509b469d598218d80da"
     },
     {
       "name": "shared-policy",

@@ -128,6 +128,7 @@ manifest.json
 mcp/README.md
 mcp/servers/example-server.json
 mcp_endpoint.py
+orient.py
 portable.py
 public-export.txt
 remote/package-lock.json
@@ -155,7 +156,9 @@ routine_schtasks.py
 routines/inventory-digest/routine-prompt.md
 routines/inventory-digest/routine.json
 rules/coldbox-verification.md
+rules/merge-when-proven.md
 rules/model-routing.md
+rules/orient-once.md
 rules/shared-policy.md
 rules/verify-before-merge.md
 safety.py
@@ -595,8 +598,10 @@ tests/test_lifecycle.py
 tests/test_local_catalog_proof.py
 tests/test_local_layer.py
 tests/test_manual_import_preservation.py
+tests/test_merge_rule.py
 tests/test_noleak.py
 tests/test_oauth_discovery.py
+tests/test_orient.py
 tests/test_plugin_records.py
 tests/test_portability.py
 tests/test_private_scan.py
