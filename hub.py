@@ -326,12 +326,12 @@ def import_item(args, root=ROOT):
             owner = content["owner"]
             collection, relative = "routines", f"routines/{item_name}/routine.json"
             prompt_name = content["prompt"]
-            if len(Path(prompt_name).parts) == 1 and prompt_name not in {".", ".."}:
-                candidate = source.parent / prompt_name
-                if candidate.exists() or candidate.is_symlink():
-                    validators.require(candidate.is_file() and not candidate.is_symlink(), "prompt must be an ordinary file")
-                    validators.require(prompt_name != "routine.json", "prompt conflicts with routine definition")
-                    prompt = candidate
+            validators.require(len(Path(prompt_name).parts) == 1 and prompt_name not in {".", ".."},
+                               "prompt must be an ordinary file next to the routine")
+            candidate = source.parent / prompt_name
+            validators.require(candidate.is_file() and not candidate.is_symlink(), "prompt must be an ordinary file")
+            validators.require(prompt_name != "routine.json", "prompt conflicts with routine definition")
+            prompt = candidate
     if kind != "connection":
         files = skill_files if kind == "skill" else texts(source) if kind == "rule" else [("prompt.md", prompt.read_text(encoding="utf-8"))] if prompt else []
         screen(kind, content, files, getattr(args, "approve_risky", False), root)

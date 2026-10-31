@@ -57,7 +57,7 @@ Reimports keep existing source-path bindings while the portable command and args
 python3 hub.py import-routine .scratch/incoming/routine.json --origin authored
 ```
 
-Records a definition only; it never schedules, enables or runs anything. Input needs one owner (a different `--owner` is rejected), one preferred runner from [routines.md](routines.md), a valid schedule (`interval`, `fixed_time`, `cron`, `webhook`), an `overlap` of `skip`, `queue` or `allow`, and `enabled: false`. The definition goes to `.hub-store/catalog/routines/<id>/routine.json`. If `prompt` names an existing ordinary sibling file, it is validated and copied beside the definition.
+Records a definition only; it never schedules, enables or runs anything. Input needs one owner (a different `--owner` is rejected), one preferred runner from [routines.md](routines.md), a valid schedule (`interval`, `fixed_time`, `cron`, `webhook`), an `overlap` of `skip`, `queue` or `allow`, and `enabled: false`. The definition goes to `.hub-store/catalog/routines/<id>/routine.json`. `prompt` must name an existing ordinary sibling file. It is validated and copied beside the definition; a missing prompt is rejected before the catalog changes.
 
 The manifest hash covers `routine.json` only. Prompt files are not hash-indexed, so a same-owner, same-origin update may replace the prompt, including local edits; save those first. A new prompt name cannot overwrite an unrelated sibling, and a new routine cannot adopt an existing routine directory. Renaming a prompt keeps the old file. Definition and prompt bytes are restored on write failure.
 

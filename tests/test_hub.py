@@ -353,6 +353,7 @@ class StubTests(HubCase):
 
     def test_routine_owner_flag_must_match_file(self):
         source = self.write("input.json", self.routine_input())
+        (self.root / "prompt.md").write_text("Summarize the fixture.\n", encoding="utf-8")
         output = self.cli("import-routine", source, "--owner", "someone-else", code=1)
         self.assertIn("owner flag does not match routine owner", output)
         self.assertFalse((self.local / "routines").exists())
@@ -367,6 +368,7 @@ class StubTests(HubCase):
                 self.assertFalse((self.local / "routines").exists())
 
     def test_routine_other_schedule_types(self):
+        (self.root / "prompt.md").write_text("Summarize the fixture.\n", encoding="utf-8")
         schedules = [{"type": "fixed_time", "time_of_day": "09:00", "weekdays": [1, 2, 3, 4, 5]},
                      {"type": "cron", "expression": "0 9 * * *"}, {"type": "webhook"}]
         for schedule in schedules:
