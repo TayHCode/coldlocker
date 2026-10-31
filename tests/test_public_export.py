@@ -1,4 +1,5 @@
 from pathlib import Path, PurePosixPath
+import subprocess
 import unittest
 
 
@@ -49,13 +50,13 @@ class PublicExportTests(unittest.TestCase):
         import json
 
         selected = set((ROOT / 'public-export.txt').read_text().splitlines())
+        tracked = subprocess.check_output(
+            ['git', '-C', str(ROOT), 'ls-files', '-z']).decode().split('\0')[:-1]
         manifest = json.loads((ROOT / 'manifest.json').read_text())
         for collection in ('skills', 'rules', 'mcp_servers', 'routines'):
             for entry in manifest[collection]:
-                target = ROOT / entry['path']
-                files = [target] if target.is_file() else [
-                    path for path in target.rglob('*') if path.is_file()
-                    and '__pycache__' not in path.parts and path.suffix != '.pyc']
+                files = [name for name in tracked
+                         if name == entry['path'] or name.startswith(entry['path'] + '/')]
                 self.assertTrue(files)
                 for name in files:
-                    self.assertIn(name.relative_to(ROOT).as_posix(), selected)
+                    self.assertIn(name, selected)

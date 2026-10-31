@@ -59,4 +59,6 @@ Seven runtime tests pass, including fresh-process recovery at both boundaries. T
 
 ## Verification scope
 
-The public export intentionally omits private maintainer configuration. Its documented health, safety and MCP endpoint checks plus experiment tests run through `python3 -B tools/verify_export.py`, or `python -B tools/verify_export.py` on Windows. The repository-only `.fleet/verify.ps1` adapter invokes that same command and is excluded from source-only archives. The complete private maintainer suite is not claimed green. No services, credentials, runners or paid Vercel products are changed.
+The public export intentionally omits private maintainer configuration. Its documented health, safety and MCP endpoint checks plus experiment tests and export-path validation run through `python3 -B tools/verify_export.py`, or `python -B tools/verify_export.py` on Windows. The repository-only `.fleet/verify.ps1` adapter invokes that same command and is excluded from source-only archives. The complete private maintainer suite is not claimed green. No services, credentials, runners or paid Vercel products are changed.
+
+Archive completeness uses the existing manifest package hashes through `hub.py doctor`. Removing a supporting file and its export-list entry still fails the package hash check. The original Git-index completeness test is unchanged for maintainer checkouts; the archive command does not select that Git-dependent test.

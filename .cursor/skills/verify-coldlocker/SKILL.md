@@ -15,7 +15,7 @@ Run `python3 -B hub.py doctor`. Require all checks to pass before continuing.
 
 ## Drive
 
-Run `python3 -B tools/verify_export.py`. This executes the README's exported-catalog checks plus both experiment test files and the two public export-manifest checks. Endpoint tests drive JSON-RPC discovery and package retrieval, including content hash rejection. Runtime proofs restart a fresh subprocess across both interruption boundaries. On Windows use `python` in place of `python3`; `.fleet/verify.ps1` is the ordinary native verification recipe.
+Run `python3 -B tools/verify_export.py`. This executes the README's exported-catalog checks plus both experiment test files and public export-path validation. Doctor checks the authoritative package hashes, so an archive with an omitted supporting file fails. The original Git-index completeness test remains available in maintainer checkouts. Endpoint tests drive JSON-RPC discovery and package retrieval, including content hash rejection. Runtime proofs restart a fresh subprocess across both interruption boundaries. On Windows use `python` in place of `python3`; `.fleet/verify.ps1` is the ordinary native verification recipe.
 
 The private maintainer suite needs omitted `config/` files. This recipe covers the public export only, and does not claim a full maintainer-suite pass. Worker code is unchanged by this experiment.
 
