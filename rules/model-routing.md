@@ -3,7 +3,7 @@
 Agentfleet's live `models.yaml` is the single source for provider, model ID,
 effort and ordered alternatives. Locate it in the owner's Agentfleet checkout
 alongside `BRIEFING.md` and `rules/harness-routing.md`. Read those files before
-selecting a model. This Coldlocker rule is a reading guide, not another model map.
+selecting a model. This rule records Taylor’s permanent task policy; the live map still owns execution targets.
 Do not copy pinned IDs, effort settings or fallback lists into consuming skills.
 If the live source or a valid route is unavailable, report INCOMPLETE.
 
@@ -42,7 +42,7 @@ authority selects local models and enforces any per-repository launch limits.
 3. Check the active host's capability catalog and pass the resolved target
    explicitly, including provider, model and effort. Follow the live briefing's
    review workflow. Configured alternatives alone may handle unavailable routes;
-   never invent a substitute or impose a separate model-family restriction.
+   never invent a substitute. Apply the subagent restrictions below before dispatch.
 4. Treat unavailable tools, exhausted routes and failed reviews as INCOMPLETE,
    not PASS. Model selection grants no authority to merge, publish, message,
    schedule or deploy. The current task and project still control those actions.
@@ -75,3 +75,48 @@ Leave running work in place; recovery applies to the next dispatch.
 support files for model assignments. Run it before delivering changed instructions.
 
 `fleet` remains a compatibility alias for these routed commands.
+
+## Permanent policy — Taylor, 2026-10-31
+
+Every agent must read this rule before selecting or delegating work. This owner
+instruction supersedes older task-family guidance in skills and briefings.
+It does not change default routing or authorize edits to models.yaml.
+
+- Astra handles big research tasks.
+- Opus handles audits: does it work, does it not, and how can it improve?
+- Haiku and Luna handle light helper work.
+- Sol, Terra and Sonnet build according to the proposal below until Taylor
+  approves a routing change; resolve actual targets from the live map.
+
+Subagents must be strictly lower tier than their parent. The allowed children are:
+
+| Parent | Allowed subagent models |
+| --- | --- |
+| Astra or Opus | Sol, Terra, Sonnet, Haiku, Luna |
+| Sol | Sonnet, Terra, Luna, Haiku |
+| Sonnet or Terra | Haiku, Luna |
+| Haiku or Luna | None |
+
+Sonnet and Terra share a tier; Haiku and Luna share the light tier. Equal-tier
+children, self-delegation and upward delegation are forbidden. A configured
+fallback does not override this rule. If the resolved model is not allowed,
+report that dispatch INCOMPLETE rather than silently substituting.
+
+For an Opus audit or Astra research, start a NEW T3 top-level thread with that
+model, supply the builder’s question and evidence, and feed the result back to
+the builder. Never use Opus or Astra as a subagent. Check the live capability
+catalog and routed launch prerequisites; an incompatible or unavailable route
+is INCOMPLETE, not permission to change routing. This rule grants no permission
+to launch unrelated threads or bypass the host’s orchestration contract.
+
+### Builder split — PROPOSAL, not live routing
+
+| Model | Proposed build responsibility | Basis and limits |
+| --- | --- | --- |
+| Sol | Uncertain implementation, cross-cutting changes and project ownership | Current builder-default/coordinator policy; no paired build evidence establishes Sol superiority. |
+| Sonnet | Bounded small builds and implementation of a known plan; difficult/UI builds only with a concrete reason | Current builder-fast/hard/ui roles and the five-task Sonnet/Terra sample favor small-build latency, not universal quality. |
+| Terra | Known-easy code, mechanical fixes and routine CI diagnosis with explicit acceptance checks | Current builder-cheap/ci roles and the same sample favor economical bounded work; no evidence supports uncertain architecture ownership. |
+
+Evidence and the builder-fast discrepancy are recorded in
+[the routing evidence note](../docs/model-routing-evidence-2026-10-31.md).
+Do not apply this proposal with cold model set or edit models.yaml for this task.

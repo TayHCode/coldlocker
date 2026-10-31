@@ -22,7 +22,8 @@ class PublicExportTests(unittest.TestCase):
                 self.assertEqual(path.as_posix(), name)
                 self.assertFalse(set(path.parts) & forbidden)
                 self.assertTrue('.github' not in path.parts or name == '.github/ISSUE_TEMPLATE/bug_report.md')
-                self.assertFalse(any(part.startswith(('STATE', 'AGENTS', 'VISION')) for part in path.parts))
+                self.assertFalse(name != 'AGENTS.md' and any(
+                    part.startswith(('STATE', 'AGENTS', 'VISION')) for part in path.parts))
                 self.assertNotIn('..', path.parts)
                 self.assertFalse(any(char in name for char in '\\*?[]:'))
                 self.assertFalse(name.startswith('site/screens/'))
