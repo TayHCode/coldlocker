@@ -30,7 +30,8 @@ class DogfoodTests(unittest.TestCase):
                         'kind': 'routine', 'name': 'catalog-sample-routine'}}}])
             item = responses[1]
             self.assertFalse(item['isError'])
-            self.assertIn(original.decode(), json.loads(item['content'][0]['text'])['files'].values())
+            self.assertIn('Read the fixture guide without changes.\n',
+                          json.loads(item['content'][0]['text'])['files'].values())
 
     def test_import_connect_fetch_update_remove(self):
         with proof.Fixture() as fixture:
