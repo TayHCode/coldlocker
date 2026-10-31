@@ -98,5 +98,5 @@ No private policy is restored and no failing maintainer check is weakened.
 
 Deferred items remain private maintainer-suite support, central Linux routing,
 and fresh hosted or native-client acceptance. Those require private inputs,
-out-of-repository changes or authorized live sessions. Publication and PR delivery
-are blocked by the task's prohibition on public effects because origin is public.
+out-of-repository changes or authorized live sessions. Source PR delivery is permitted. Deployments, packages, releases and new
+repositories remain outside this follow-up.
