@@ -17,21 +17,23 @@ python3 hub.py doctor
 python3 hub.py list
 ```
 
-Run these checks before submitting a change:
+Run the source-export checks before submitting a change. These use Python's
+standard library and Git, and require permission to create symbolic links:
 
 ```sh
-python3 hub.py check
-python3 -m unittest discover -s tests -v
-python3 examples/test-servers/local_catalog_proof.py
+python3 -B tools/verify_export.py
 ```
 
-The developer checkout includes its maintainer commit-identity policy under
-`config/`. Use a repository-local Git identity accepted by that policy; ask the
-maintainer to review an addition when contributing with another identity.
-`doctor` remains the installation check for users with their own Git identities.
-Runtime downloads omit maintainer-only inputs and do not promise the complete
-developer suite. Five live-gateway tests skip when the pinned optional gateway
-runtime is absent; the Windows ACL test skips on other platforms.
+This runs doctor and the supported export tests, including the disposable CLI
+and MCP dogfood replay in Git checkouts. Source archives explicitly skip that
+Git-dependent replay. Use the same command on Windows with `python` in place of
+`python3`.
+
+The private maintainer checkout additionally runs `python3 hub.py check` and
+full unittest discovery. Those checks require omitted `config/` policy and
+fixtures, so they are not supported source-export commands. Do not create an
+allowlist or weaken the identity checks to make them pass. `doctor` remains the
+installation check for users with their own Git identities.
 
 For Worker changes, use Node.js 24 and the pinned dependencies:
 
