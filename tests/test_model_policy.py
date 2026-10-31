@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class ModelPolicyTests(unittest.TestCase):
     def test_every_agent_entrypoint_loads_registered_policy(self):
-        self.assertIn('@AGENTS.md', (ROOT / 'CLAUDE.md').read_text())
+        self.assertIn("@AGENTS.md", (ROOT / 'CLAUDE.md').read_text())
         self.assertIn('(rules/model-routing.md)', (ROOT / 'AGENTS.md').read_text())
         entry = next(e for e in json.loads((ROOT / 'manifest.json').read_text())['rules']
                      if e['name'] == 'model-routing')
