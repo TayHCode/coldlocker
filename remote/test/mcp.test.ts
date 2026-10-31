@@ -63,7 +63,7 @@ describe.each(goldenFixtures.map((fixture) => fixture.name))("local dispatch par
 });
 
 describe("tool surface", () => {
-  it("exposes exactly the local tools, all read-only, with no search or fetch", async () => {
+  it("exposes exactly the local tools, all read-only, with only catalog search for skills", async () => {
     await seedFixture(env, fixtureByName("main"));
     const response: any = await dispatch({ jsonrpc: "2.0", id: 1, method: "tools/list" }, env);
     const names = response.result.tools.map((tool: any) => tool.name);
@@ -74,6 +74,7 @@ describe("tool surface", () => {
       "hub_list_routines",
       "hub_list_plugins",
       "hub_list_connections",
+      "hub_search_skills",
       "hub_get_item"
     ]);
     for (const tool of response.result.tools) expect(tool.annotations).toEqual({ readOnlyHint: true });

@@ -223,7 +223,7 @@
          "annotations": {
           "readOnlyHint": true
          },
-         "description": "List every skill in the agentlocker hub with name, description, owner, provenance and content hash. Call this first to discover available skills, then load one with hub_get_item (kind 'skill') only when its description matches the task. An entry with an 'error' field could not be fully read.",
+         "description": "List every skill in the agentlocker hub with name, description, owner, provenance and content hash. Use hub_search_skills first for a short list; call this to see every skill, then load one with hub_get_item (kind 'skill') only when its description matches the task. An entry with an 'error' field could not be fully read.",
          "inputSchema": {
           "additionalProperties": false,
           "properties": {},
@@ -295,7 +295,29 @@
          "annotations": {
           "readOnlyHint": true
          },
-         "description": "Load one skill, rule or routine by name after finding it with the matching hub_list_* tool. For a skill, 'files' maps every relative path (SKILL.md plus references/, scripts/ and assets/) to its UTF-8 text. Files that are not text, symlinks and anything past the 1 MiB text cap are named in 'omitted' with their size and reason, and 'truncated' is true when the cap cut content. Fetch individual ordinary files within 1 MiB with resources/read. A rule is one file; a routine is its routine.json plus its prompt file. The indexed sha256 is verified before anything is returned.",
+         "description": "Find skills by describing the task in a few words. Returns the best three matches (same fields as hub_list_skills), 'searched' (skills considered) and 'remaining' (further matches not shown). An empty 'results' list means no skill matched well enough, not that the catalog is unavailable: fall back to hub_list_skills. Load a match with hub_get_item (kind 'skill') only when its description fits the task.",
+         "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+           "query": {
+            "description": "The task in a few plain words, such as 'monitor pull request CI'.",
+            "maxLength": 500,
+            "minLength": 1,
+            "type": "string"
+           }
+          },
+          "required": [
+           "query"
+          ],
+          "type": "object"
+         },
+         "name": "hub_search_skills"
+        },
+        {
+         "annotations": {
+          "readOnlyHint": true
+         },
+         "description": "Load one skill, rule or routine by name after finding it with hub_search_skills or the matching hub_list_* tool. For a skill, 'files' maps every relative path (SKILL.md plus references/, scripts/ and assets/) to its UTF-8 text. Files that are not text, symlinks and anything past the 1 MiB text cap are named in 'omitted' with their size and reason, and 'truncated' is true when the cap cut content. Fetch individual ordinary files within 1 MiB with resources/read. A rule is one file; a routine is its routine.json plus its prompt file. The indexed sha256 is verified before anything is returned.",
          "inputSchema": {
           "additionalProperties": false,
           "properties": {
@@ -1188,6 +1210,507 @@
       "method": "tools/call",
       "params": {
        "name": "hub_get_item"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 35,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": {
+          "remaining": 0,
+          "results": [
+           {
+            "description": "Summarises release notes",
+            "name": "demo-skill",
+            "owner": "agentlocker",
+            "path": "skills/demo-skill",
+            "provenance": {
+             "origin": "authored",
+             "source_id": "src-d2c431a99777"
+            },
+            "sha256": "d2c431a99777c4c98d14963c41c1118f552f0ca299a6f37350be0edd6e6ea054"
+           }
+          ],
+          "searched": 2
+         },
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "search by description",
+     "request": {
+      "id": 35,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "query": "summarise the release notes"
+       },
+       "name": "hub_search_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 35,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": {
+          "remaining": 0,
+          "results": [
+           {
+            "description": "Has many supporting files",
+            "name": "many-files",
+            "owner": "agentlocker",
+            "path": "skills/many-files",
+            "provenance": {
+             "origin": "authored",
+             "source_id": "src-4b8a77522cd5"
+            },
+            "sha256": "4b8a77522cd51cc2a3a560e344d42653f404ee07e624f3a1b950e7269ad25ff9"
+           }
+          ],
+          "searched": 2
+         },
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "search by name",
+     "request": {
+      "id": 35,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "query": "many files"
+       },
+       "name": "hub_search_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 35,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": {
+          "remaining": 0,
+          "results": [
+           {
+            "description": "Summarises release notes",
+            "name": "demo-skill",
+            "owner": "agentlocker",
+            "path": "skills/demo-skill",
+            "provenance": {
+             "origin": "authored",
+             "source_id": "src-d2c431a99777"
+            },
+            "sha256": "d2c431a99777c4c98d14963c41c1118f552f0ca299a6f37350be0edd6e6ea054"
+           }
+          ],
+          "searched": 2
+         },
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "search with related word",
+     "request": {
+      "id": 35,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "query": "Release NOTES, summarising!"
+       },
+       "name": "hub_search_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 36,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": {
+          "remaining": 0,
+          "results": [],
+          "searched": 2
+         },
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "search below threshold",
+     "request": {
+      "id": 36,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "query": "release"
+       },
+       "name": "hub_search_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 36,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": {
+          "remaining": 0,
+          "results": [],
+          "searched": 2
+         },
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "search with no match",
+     "request": {
+      "id": 36,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "query": "zznonexistentcapabilityzz"
+       },
+       "name": "hub_search_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 36,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": {
+          "remaining": 0,
+          "results": [],
+          "searched": 2
+         },
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "search with only stopwords",
+     "request": {
+      "id": 36,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "query": "what is the"
+       },
+       "name": "hub_search_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 36,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": {
+          "remaining": 0,
+          "results": [
+           {
+            "description": "Has many supporting files",
+            "name": "many-files",
+            "owner": "agentlocker",
+            "path": "skills/many-files",
+            "provenance": {
+             "origin": "authored",
+             "source_id": "src-4b8a77522cd5"
+            },
+            "sha256": "4b8a77522cd51cc2a3a560e344d42653f404ee07e624f3a1b950e7269ad25ff9"
+           }
+          ],
+          "searched": 2
+         },
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "search with unicode",
+     "request": {
+      "id": 36,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "query": "résumé ☃ 日本語 many files"
+       },
+       "name": "hub_search_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 37,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": {
+          "remaining": 0,
+          "results": [
+           {
+            "description": "Has many supporting files",
+            "name": "many-files",
+            "owner": "agentlocker",
+            "path": "skills/many-files",
+            "provenance": {
+             "origin": "authored",
+             "source_id": "src-4b8a77522cd5"
+            },
+            "sha256": "4b8a77522cd51cc2a3a560e344d42653f404ee07e624f3a1b950e7269ad25ff9"
+           }
+          ],
+          "searched": 2
+         },
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "search at the length limit",
+     "request": {
+      "id": 37,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "query": "many files xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+       },
+       "name": "hub_search_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 37,
+      "jsonrpc": "2.0"
+     },
+     "name": "search over the length limit",
+     "request": {
+      "id": 37,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "query": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+       },
+       "name": "hub_search_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 37,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": {
+          "remaining": 0,
+          "results": [
+           {
+            "description": "Has many supporting files",
+            "name": "many-files",
+            "owner": "agentlocker",
+            "path": "skills/many-files",
+            "provenance": {
+             "origin": "authored",
+             "source_id": "src-4b8a77522cd5"
+            },
+            "sha256": "4b8a77522cd51cc2a3a560e344d42653f404ee07e624f3a1b950e7269ad25ff9"
+           }
+          ],
+          "searched": 2
+         },
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "search with astral characters at the limit",
+     "request": {
+      "id": 37,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "query": "many files 😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀"
+       },
+       "name": "hub_search_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 38,
+      "jsonrpc": "2.0"
+     },
+     "name": "search with empty query",
+     "request": {
+      "id": 38,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "query": ""
+       },
+       "name": "hub_search_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 38,
+      "jsonrpc": "2.0"
+     },
+     "name": "search with non-string query",
+     "request": {
+      "id": 38,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "query": 5
+       },
+       "name": "hub_search_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 38,
+      "jsonrpc": "2.0"
+     },
+     "name": "search with missing query",
+     "request": {
+      "id": 38,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {},
+       "name": "hub_search_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 38,
+      "jsonrpc": "2.0"
+     },
+     "name": "search with extra key",
+     "request": {
+      "id": 38,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "query": "many files",
+        "x": 1
+       },
+       "name": "hub_search_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 38,
+      "jsonrpc": "2.0"
+     },
+     "name": "search with list arguments",
+     "request": {
+      "id": 38,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": [
+        "many files"
+       ],
+       "name": "hub_search_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "error": {
+       "code": -32602,
+       "message": "Invalid tool or arguments"
+      },
+      "id": 38,
+      "jsonrpc": "2.0"
+     },
+     "name": "search without arguments",
+     "request": {
+      "id": 38,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "name": "hub_search_skills"
       }
      }
     },
@@ -2957,6 +3480,49 @@
       "params": {
        "arguments": {},
        "name": "hub_list_skills"
+      }
+     }
+    },
+    {
+     "expected": {
+      "id": 5,
+      "jsonrpc": "2.0",
+      "result": {
+       "content": [
+        {
+         "text": {
+          "remaining": 0,
+          "results": [
+           {
+            "description": "Binary and oversized content",
+            "name": "edge-skill",
+            "owner": "agentlocker",
+            "path": "skills/edge-skill",
+            "provenance": {
+             "origin": "authored",
+             "source_id": "src-173b489e1c71"
+            },
+            "sha256": "173b489e1c71e5c16721ab1b56702f71f6bf7ac1f9587c45d0a4472d67fee0e2"
+           }
+          ],
+          "searched": 2
+         },
+         "type": "text"
+        }
+       ],
+       "isError": false
+      }
+     },
+     "name": "search skill",
+     "request": {
+      "id": 5,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+       "arguments": {
+        "query": "binary oversized content"
+       },
+       "name": "hub_search_skills"
       }
      }
     },

@@ -50,8 +50,8 @@ or 2024-11-05), `ping`, `tools/list`, `tools/call`, `prompts/list`,
 `prompts/get`, `resources/list`, `resources/read` and `resources/templates/list`.
 
 - Tools: `hub_list_skills`, `hub_list_rules`, `hub_list_routines`,
-  `hub_list_mcp_servers`, `hub_list_plugins`, `hub_list_connections` and
-  `hub_get_item`. `hub_get_item` returns `files` keyed by repository path (for
+  `hub_list_mcp_servers`, `hub_list_plugins`, `hub_list_connections`,
+  `hub_search_skills` and `hub_get_item`. `hub_get_item` returns `files` keyed by repository path (for
   example `skills/<name>/SKILL.md`) plus `omitted`, `truncated` and `max_bytes`,
   so skills arrive with their supporting files.
 - Each skill is an MCP prompt carrying `SKILL.md` and listing its supporting file

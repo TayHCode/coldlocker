@@ -49,9 +49,9 @@ class EndpointTests(unittest.TestCase):
 
     def test_tool_list_and_all_calls(self):
         tools = self.call("tools/list")["result"]["tools"]
-        self.assertEqual({t["name"] for t in tools}, set(TOOLS) | {"hub_get_item"})
+        self.assertEqual({t["name"] for t in tools}, set(TOOLS) | {"hub_get_item", "hub_search_skills"})
         for tool in tools:
-            if tool["name"] == "hub_get_item":
+            if tool["name"] in ("hub_get_item", "hub_search_skills"):
                 continue
             response = self.call("tools/call", {"name": tool["name"], "arguments": {}})
             values = json.loads(response["result"]["content"][0]["text"])
@@ -116,7 +116,7 @@ class EndpointTests(unittest.TestCase):
                     self.assertNotIn("error", response)
                 self.assertIn("tools", responses[0]["result"]["capabilities"])
                 tools = responses[1]["result"]["tools"]
-                self.assertEqual({t["name"] for t in tools}, {"hub_list_" + k for k in kinds} | {"hub_get_item"})
+                self.assertEqual({t["name"] for t in tools}, {"hub_list_" + k for k in kinds} | {"hub_get_item", "hub_search_skills"})
                 manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
                 for kind, response in zip(kinds, responses[2:]):
                     self.assertIs(response["result"]["isError"], False)
@@ -508,6 +508,8 @@ class ProtocolTests(CatalogCase):
                 self.assertFalse(tool["description"].startswith("List hub "))
                 self.assertGreater(len(tool["description"]), 60)
         self.assertIn("hub_get_item", tools["hub_list_skills"]["description"])
+        self.assertIn("hub_search_skills", tools["hub_list_skills"]["description"])
+        self.assertIn("hub_list_skills", tools["hub_search_skills"]["description"])
         properties = tools["hub_get_item"]["inputSchema"]["properties"]
         for field in ("kind", "name"):
             self.assertTrue(properties[field]["description"])
