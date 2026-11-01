@@ -124,6 +124,7 @@ class ConnectTests(unittest.TestCase):
         self.assertEqual(found['claude'], directory / '.claude.json')
         self.assertEqual(found['opencode'], directory / 'opencode/opencode.json')
 
+    @unittest.skipUnless(sys.platform == 'linux', 'snap packages exist only on Linux')
     def test_snap_codex_connection_lands_where_codex_reads_it(self):
         revision = self.home / 'snap/codex/34'
         revision.mkdir(parents=True)
