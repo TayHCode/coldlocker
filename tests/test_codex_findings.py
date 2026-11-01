@@ -91,6 +91,32 @@ class CodexFindingsTests(unittest.TestCase):
                 codex_findings.build(self.case(), repo, fetch=lambda *_: comment)
         self.assertIn("does not separate bad from fixed", str(raised.exception))
 
+    def test_reports_a_checkout_without_the_historical_commits(self):
+        with tempfile.TemporaryDirectory() as folder:
+            repo, bad = self.make_repo(folder, FIXED_LINE)
+            comment = {**PR3_COMMENT, "original_commit_id": bad}
+            for case, missing in ((dict(self.case(), fixed="2a26412e"), "2a26412e"),
+                                  (self.case(), "b697063ecb78ed8da970460b0878b3a8aafb4ea7")):
+                fetched = comment if missing == "2a26412e" else PR3_COMMENT
+                with self.assertRaises(SystemExit) as raised:
+                    codex_findings.build(case, repo, fetch=lambda *_: fetched)
+                self.assertIn(f"commit {missing} is not in {repo}", str(raised.exception))
+                self.assertIn("--repo-path", str(raised.exception))
+
+    def test_requires_an_explicit_history_checkout(self):
+        with self.assertRaises(SystemExit) as raised:
+            codex_findings.main([])
+        self.assertEqual(raised.exception.code, 2)
+
+    def test_replay_output_is_identical_between_runs_so_reingest_dedupes(self):
+        case = dict(self.case(), command=["python3", "-c", "import sys; print('Ran 1 test in 0.003s'); sys.exit(1 if 'bad' in __import__('os').getcwd() else 0)"],
+                    overlay=[])
+        with tempfile.TemporaryDirectory() as folder:
+            repo, bad = self.make_repo(folder, FIXED_LINE)
+            first = codex_findings.replay(repo, bad, "HEAD", case)
+        self.assertIn("Ran 1 test in <time>", first["bad"]["output"])
+        self.assertNotIn("0.003s", first["bad"]["output"])
+
 
 if __name__ == "__main__":
     unittest.main()

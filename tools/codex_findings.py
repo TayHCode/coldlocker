@@ -46,7 +46,8 @@ def replay(repo_path, bad, fixed, case, overlay_root=ROOT):
                 shutil.copy2(Path(overlay_root) / name, tree / name)
             run = subprocess.run(case["command"], cwd=tree, capture_output=True, text=True,
                                  env={**os.environ, "GIT_CEILING_DIRECTORIES": str(scratch)})
-            results[label] = dict(exit=run.returncode, output=(run.stdout + run.stderr).replace(str(tree), ".").strip())
+            output = re.sub(r"\bin \d+\.\d+s\b", "in <time>", (run.stdout + run.stderr).replace(str(tree), "."))
+            results[label] = dict(exit=run.returncode, output=output.strip())
     if results["bad"]["exit"] == 0 or results["fixed"]["exit"] != 0:
         sys.exit(f"replay does not separate bad from fixed for PR {case['pr']}: {json.dumps(results, indent=2)}")
     return dict(command=case["command"], overlay=case["overlay"], bad=results["bad"], fixed=results["fixed"])
@@ -68,11 +69,21 @@ def fetch_comment(repo, comment_id):
     return json.loads(run.stdout)
 
 
+def resolve_commit(repo_path, rev):
+    run = subprocess.run(["git", "-C", str(repo_path), "rev-parse", "--verify", "--quiet", f"{rev}^{{commit}}"],
+                         capture_output=True, text=True)
+    if run.returncode != 0:
+        sys.exit(f"commit {rev} is not in {repo_path}; pass --repo-path pointing at a checkout with the full "
+                 "TayHCode/coldlocker history")
+    return run.stdout.strip()
+
+
 def build(case, repo_path, fetch=fetch_comment, overlay_root=ROOT):
     finding = parse_finding(fetch(case["repo"], case["comment_id"]))
     if finding is None:
         sys.exit(f"comment {case['comment_id']} is not a Codex P1/P2 finding")
-    fixed = subprocess.run(["git", "-C", str(repo_path), "rev-parse", case["fixed"]], capture_output=True, text=True, check=True).stdout.strip()
+    resolve_commit(repo_path, finding["bad_head"])
+    fixed = resolve_commit(repo_path, case["fixed"])
     ancestor = subprocess.run(["git", "-C", str(repo_path), "merge-base", "--is-ancestor", finding["bad_head"], fixed])
     if ancestor.returncode != 0:
         sys.exit(f"{fixed} does not descend from reviewed head {finding['bad_head']}")
@@ -82,7 +93,7 @@ def build(case, repo_path, fetch=fetch_comment, overlay_root=ROOT):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--cases", default=str(ROOT / "docs/codex-findings/cases.json"))
-    parser.add_argument("--repo-path", default=str(ROOT))
+    parser.add_argument("--repo-path", required=True, help="checkout with the full TayHCode/coldlocker history")
     args = parser.parse_args(argv)
     for case in json.loads(Path(args.cases).read_text(encoding="utf-8")):
         print(json.dumps(build(case, args.repo_path)))

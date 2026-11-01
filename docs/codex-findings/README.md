@@ -4,8 +4,12 @@ Codex P1/P2 inline findings on merged TayHCode/coldlocker PRs that a later head 
 finding; `tools/codex_findings.py` fetches the comment, replays a check against the reviewed head and the fixed
 head, and prints Coldfix ingest events.
 
+The reviewed and fixed commits live only in the private full-history checkout; the exported public history
+does not contain them. `--repo-path` is required and the tool stops with the missing commit if the checkout
+cannot resolve it.
+
 ```
-python3 tools/codex_findings.py > .scratch/events.jsonl
+python3 tools/codex_findings.py --repo-path ~/projects/coldlocker > .scratch/events.jsonl
 python3 coldfix.py --store <store> ingest --input .scratch/events.jsonl
 ```
 
