@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Stop `scan` offering and `scan --import` importing the `agentlocker` and `agentlocker-gateway` entries that `connect` wrote, so the hub no longer lists and proxies itself.
+
 - Stop the delivered `model-routing` rule linking to `../docs/...`, which does not exist in a target repo's `.coldlocker/rules/`.
 
 - Rename the example routine to `example-routine` so the documented `import-routine examples/routine.example.json` no longer fails as a shipped-name collision.
