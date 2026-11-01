@@ -1,0 +1,32 @@
+[
+  {
+    "repo": "TayHCode/coldlocker",
+    "pr": 3,
+    "comment_id": 4432314750,
+    "fixed": "2a26412e",
+    "fix_summary": "Replaced the single-quoted AGENTS.md reference literal in tests/test_model_policy.py with a double-quoted one; the scanner's email pattern accepts an opening apostrophe as a local part, so hub.py check no longer reports email-address at that line.",
+    "covered_by": "hub.py check scans every tracked file with checks/scan.py; tests/replays/scan_file.py runs the same scanner on the finding's file",
+    "command": ["python3", "tests/replays/scan_file.py", "tests/test_model_policy.py"],
+    "overlay": ["tests/replays/scan_file.py"]
+  },
+  {
+    "repo": "TayHCode/coldlocker",
+    "pr": 4,
+    "comment_id": 4432348710,
+    "fixed": "83fc9132",
+    "fix_summary": "tests/test_public_export.py now enumerates manifest files from the filesystem instead of git ls-files, so the documented public-export verification passes in a source archive without .git.",
+    "covered_by": "tests/test_public_export.py::PublicExportTests::test_manifest_items_and_supporting_files_are_included, run from a tree without .git",
+    "command": ["python3", "-B", "-m", "unittest", "tests.test_public_export.PublicExportTests.test_manifest_items_and_supporting_files_are_included"],
+    "overlay": []
+  },
+  {
+    "repo": "TayHCode/coldlocker",
+    "pr": 5,
+    "comment_id": 4432735053,
+    "fixed": "e10b190e",
+    "fix_summary": "tools/verify_export.py schedules the dogfood source-copy replay only when .git exists and prints SKIP otherwise, so verification stays runnable from a source archive.",
+    "covered_by": "tests/replays/verify_export_schedule.py runs tools/verify_export.py from a tree without .git and fails if the dogfood test is scheduled",
+    "command": ["python3", "tests/replays/verify_export_schedule.py"],
+    "overlay": ["tests/replays/verify_export_schedule.py"]
+  }
+]
