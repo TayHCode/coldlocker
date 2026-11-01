@@ -12,6 +12,7 @@ from .common import ERRORS, digest, disabled_names, encoded, read, selected_runn
 
 
 SECRET_KEY = re.compile(r'token|secret|key|password|authorization|credential', re.I)
+HUB_ENTRIES = ('agentlocker', 'agentlocker-gateway')
 SECRET_SHAPES = [pattern for name, pattern in PATTERNS.items() if name != 'home-path']
 
 
@@ -45,6 +46,8 @@ def environment_headers(name, source):
 
 class ServerMixin:
     def server(self, agent, path, name, source, opencode=False, ownership='user', disabled=()):
+        if slug(name) in HUB_ENTRIES:
+            return
         try:
             validators.require(isinstance(source, dict), 'server object required')
             validators.require(name not in disabled and source.get('enabled', True) is True, 'disabled server')
