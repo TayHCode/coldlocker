@@ -144,6 +144,8 @@ class ConnectTests(unittest.TestCase):
         self.assertIn('agentlocker', written['mcp_servers'])
         self.assertEqual((self.home / '.codex/config.toml').read_bytes(), ordinary)
         self.assertIn('already connected', self.output.getvalue())
+        self.assertEqual(connect.detect(self.home, 'win32', env)['codex'], self.home / '.codex/config.toml')
+        self.assertEqual(connect.detect(self.home, 'darwin', env)['codex'], self.home / '.codex/config.toml')
 
     def test_exact_shapes_parse_back(self):
         endpoint = str(ROOT / 'mcp_endpoint.py')

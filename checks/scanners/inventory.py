@@ -34,7 +34,7 @@ class Inventory(ReportMixin, SkillMixin, ServerMixin, PluginMixin, RoutineMixin)
         if env is None and os.path.realpath(self.home) != os.path.realpath(Path.home()):
             self.env.pop('XDG_CONFIG_HOME', None)
             self.env.pop('CODEX_HOME', None)
-        selected_codex_home = codex_home(self.home, self.env)
+        selected_codex_home = codex_home(self.home, self.env, self.platform)
         try:
             ordinary_path(selected_codex_home)
             validators.require(not selected_codex_home.exists() or selected_codex_home.is_dir(),
