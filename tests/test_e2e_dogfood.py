@@ -44,6 +44,14 @@ class DogfoodTests(unittest.TestCase):
             self.assertIn('Read the fixture guide without changes.\n',
                           json.loads(item['content'][0]['text'])['files'].values())
 
+    def test_documented_example_routine_imports(self):
+        with proof.Fixture() as fixture:
+            source = proof.ROOT / 'examples/routine.example.json'
+            fixture.cli('import-routine', source)
+            listing = fixture.cli('list', '--kind', 'routines').stdout
+            example = json.loads(source.read_text())['id']
+            self.assertRegex(listing, rf'{example}\s+\S+\s+\S+\s+imported')
+
     def test_import_connect_fetch_update_remove(self):
         with proof.Fixture() as fixture:
             result = fixture.prove()

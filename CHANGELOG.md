@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Rename the example routine to `example-routine` so the documented `import-routine examples/routine.example.json` no longer fails as a shipped-name collision.
+
 - Add `--stat` to the export diff command for per-path added and removed line counts.
 
 - Add `--show PATH` to the export diff command to show published versus checkout content.
