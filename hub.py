@@ -396,7 +396,11 @@ def link(args):
     from consistency_check import require_consistent
     require_consistent(ROOT)
     home = Path.home().resolve()
-    from connect import SKILLS_REACH
+    from connect import SKILLS_REACH, scratch_part
+    scratch = scratch_part(ROOT)
+    if scratch:
+        location = 'uses Git directory indirection (.git file)' if scratch == '.git' else f'is under {scratch}'
+        print(f'WARNING: {ROOT} {location}; deleting it breaks linked skills. Clone Coldlocker somewhere permanent and rerun.')
     if args.home:
         root = home
     else:
