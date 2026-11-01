@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Stop the delivered `model-routing` rule linking to `../docs/...`, which does not exist in a target repo's `.coldlocker/rules/`.
+
 - Rename the example routine to `example-routine` so the documented `import-routine examples/routine.example.json` no longer fails as a shipped-name collision.
 
 - Add `--stat` to the export diff command for per-path added and removed line counts.

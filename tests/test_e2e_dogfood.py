@@ -1,5 +1,6 @@
 """Replay documented user workflows through real CLI and stdio subprocesses."""
 import json
+import re
 import shutil
 import unittest
 
@@ -17,6 +18,20 @@ class DogfoodTests(unittest.TestCase):
             self.assertIn('WARNING:', result.stdout)
             self.assertIn('deleting it breaks', result.stdout)
             self.assertFalse((project / '.agents').exists())
+
+    def test_delivered_rules_have_no_links_that_dangle_in_the_target_repo(self):
+        with proof.Fixture() as fixture:
+            target = fixture.base / 'target'
+            (target / '.git').mkdir(parents=True)
+            rules = [e['name'] for e in json.loads((fixture.root / 'manifest.json').read_text())['rules']]
+            args = [a for name in rules for a in ('--rule', name)]
+            fixture.cli('deliver-rules', '--target', target, *args)
+            delivered = target / '.coldlocker/rules'
+            self.assertEqual(sorted(p.stem for p in delivered.glob('*.md')), sorted(rules))
+            for rule in delivered.glob('*.md'):
+                for link in re.findall(r'\]\(([^)#\s]+)', rule.read_text(encoding='utf-8')):
+                    if '://' not in link:
+                        self.assertTrue((rule.parent / link).exists(), f'{rule.name} links to missing {link}')
 
     def test_missing_routine_prompt_is_rejected_without_catalog_changes(self):
         with proof.Fixture() as fixture:
