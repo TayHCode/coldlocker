@@ -62,4 +62,4 @@ def execpolicy(inv, path):
 
 
 def searched(inv):
-    return ['CODEX_HOME' if inv.env.get('CODEX_HOME') else inv.home / '.codex']
+    return ['CODEX_HOME' if inv.env.get('CODEX_HOME') else inv.codex_home or inv.home / '.codex']

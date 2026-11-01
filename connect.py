@@ -66,7 +66,7 @@ def detect(home, platform=None, env=None):
         roaming = Path(env['APPDATA'])
         paths['claude_desktop'] = roaming / 'Claude/claude_desktop_config.json'
         paths['vscode'] = roaming / 'Code/User/mcp.json'
-    paths['codex'] = codex_home(home, env) / 'config.toml'
+    paths['codex'] = codex_home(home, env, platform) / 'config.toml'
     if env.get('CLAUDE_CONFIG_DIR'):
         paths['claude'] = Path(env['CLAUDE_CONFIG_DIR']) / '.claude.json'
     if env.get('XDG_CONFIG_HOME'):

@@ -37,6 +37,9 @@ User-level config paths, relative to the selected home:
 
 Detection checks config files and directories and never executes clients.
 `CODEX_HOME`, `CLAUDE_CONFIG_DIR` and `XDG_CONFIG_HOME` select custom locations.
+When `codex` on PATH is the snap launcher and `snap/codex/current` exists, Codex
+reads that snap revision's `config.toml`, so connect and scan use it instead of
+`.codex`.
 `--home DIR` isolates discovery from those overrides and from `APPDATA`;
 `--platform linux|darwin|win32` selects the path table; `--agent claude codex ...`
 filters. Cursor and OpenCode count as detected only when their config file

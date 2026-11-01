@@ -124,6 +124,29 @@ class ConnectTests(unittest.TestCase):
         self.assertEqual(found['claude'], directory / '.claude.json')
         self.assertEqual(found['opencode'], directory / 'opencode/opencode.json')
 
+    @unittest.skipUnless(sys.platform == 'linux', 'snap packages exist only on Linux')
+    def test_snap_codex_connection_lands_where_codex_reads_it(self):
+        revision = self.home / 'snap/codex/34'
+        revision.mkdir(parents=True)
+        (self.home / 'snap/codex/current').symlink_to('34')
+        bin_dir = Path(self.temporary.name) / 'bin'
+        bin_dir.mkdir()
+        (bin_dir / 'snap').write_text('', encoding='utf-8')
+        (bin_dir / 'snap').chmod(0o755)
+        (bin_dir / 'codex').symlink_to(bin_dir / 'snap')
+        env = {'PATH': str(bin_dir)}
+        ordinary = (self.home / '.codex/config.toml').read_bytes()
+        args = SimpleNamespace(home=str(self.home), platform='linux', agent=['codex'], write=True, yes=True)
+        with patch('connect.gateway_connection', return_value=self.gateway):
+            self.assertEqual(connect.run(args, ROOT, env=env, stdin=io.StringIO(), output=self.output), 0)
+            self.assertEqual(connect.run(args, ROOT, env=env, stdin=io.StringIO(), output=self.output), 0)
+        written = connect.toml((revision / 'config.toml').read_text(encoding='utf-8'))
+        self.assertIn('agentlocker', written['mcp_servers'])
+        self.assertEqual((self.home / '.codex/config.toml').read_bytes(), ordinary)
+        self.assertIn('already connected', self.output.getvalue())
+        self.assertEqual(connect.detect(self.home, 'win32', env)['codex'], self.home / '.codex/config.toml')
+        self.assertEqual(connect.detect(self.home, 'darwin', env)['codex'], self.home / '.codex/config.toml')
+
     def test_exact_shapes_parse_back(self):
         endpoint = str(ROOT / 'mcp_endpoint.py')
         for agent in connect.AGENTS:
