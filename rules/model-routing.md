@@ -118,5 +118,5 @@ to launch unrelated threads or bypass the host’s orchestration contract.
 | Terra | Known-easy code, mechanical fixes and routine CI diagnosis with explicit acceptance checks | Current builder-cheap/ci roles and the same sample favor economical bounded work; no evidence supports uncertain architecture ownership. |
 
 Evidence and the builder-fast discrepancy are recorded in
-[the routing evidence note](../docs/model-routing-evidence-2026-10-31.md).
+the coldlocker routing evidence note `docs/model-routing-evidence-2026-10-31.md`.
 Do not apply this proposal with cold model set or edit models.yaml for this task.
