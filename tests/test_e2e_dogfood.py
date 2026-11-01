@@ -7,6 +7,17 @@ from test_local_catalog_proof import proof
 
 
 class DogfoodTests(unittest.TestCase):
+    def test_link_from_worktree_warns_that_removing_source_breaks_links(self):
+        with proof.Fixture() as fixture:
+            (fixture.root / '.git').write_text('gitdir: /fixture/worktree\n', encoding='utf-8')
+            project = fixture.base / 'project'
+            (project / '.git').mkdir(parents=True)
+            result = fixture.cli('link', '--target', project, '--dry-run')
+            self.assertIn('Would link', result.stdout)
+            self.assertIn('WARNING:', result.stdout)
+            self.assertIn('deleting it breaks', result.stdout)
+            self.assertFalse((project / '.agents').exists())
+
     def test_missing_routine_prompt_is_rejected_without_catalog_changes(self):
         with proof.Fixture() as fixture:
             fixture.cli('import-skill', fixture.skill)
