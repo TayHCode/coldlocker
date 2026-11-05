@@ -100,6 +100,8 @@ class ReportMixin:
                         checksum = digest(encoded([value, prompt]))
                     else:
                         value = json_object(read(path).decode())
+                        if kind == 'mcp_server':
+                            value = {key: item for key, item in value.items() if key not in ('env', 'headers') or item}
                         checksum = digest(encoded(value))
                         if kind == 'mcp_server' and isinstance(value.get('args'), list) and validators.credential_args(value['args']):
                             leaky.add((kind, entry['name']))

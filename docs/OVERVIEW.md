@@ -84,7 +84,6 @@ not a guarantee.
 `hub_list_connections` and `hub_get_item`, which returns a skill with all its
 supporting files. Skills are also MCP prompts, and files are `coldlocker://`
 resources. Listing never executes an upstream server or reads secret values.
-The stdio server also offers read-only `vault_search`, `vault_show`, and `vault_status` through `vault-search` on PATH.
 
 The same catalog is served read-only with OAuth at `https://agentlocker.dev/mcp`
 for hosted bots ([remote.md](remote.md)).

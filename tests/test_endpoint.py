@@ -49,9 +49,9 @@ class EndpointTests(unittest.TestCase):
 
     def test_tool_list_and_all_calls(self):
         tools = self.call("tools/list")["result"]["tools"]
-        self.assertEqual({t["name"] for t in tools}, set(TOOLS) | {"hub_get_item", "vault_search", "vault_show", "vault_status"})
+        self.assertEqual({t["name"] for t in tools}, set(TOOLS) | {"hub_get_item"})
         for tool in tools:
-            if tool["name"] in ("hub_get_item", "vault_search", "vault_show", "vault_status"):
+            if tool["name"] == "hub_get_item":
                 continue
             response = self.call("tools/call", {"name": tool["name"], "arguments": {}})
             values = json.loads(response["result"]["content"][0]["text"])
@@ -116,7 +116,7 @@ class EndpointTests(unittest.TestCase):
                     self.assertNotIn("error", response)
                 self.assertIn("tools", responses[0]["result"]["capabilities"])
                 tools = responses[1]["result"]["tools"]
-                self.assertEqual({t["name"] for t in tools}, {"hub_list_" + k for k in kinds} | {"hub_get_item", "vault_search", "vault_show", "vault_status"})
+                self.assertEqual({t["name"] for t in tools}, {"hub_list_" + k for k in kinds} | {"hub_get_item"})
                 manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
                 for kind, response in zip(kinds, responses[2:]):
                     self.assertIs(response["result"]["isError"], False)

@@ -19,7 +19,7 @@ def main():
     except OSError:
         sys.exit('INCOMPLETE: tests require symlink permission. On Windows enable Developer Mode or use an account with symbolic-link privilege.')
     commands = [[sys.executable, '-B', 'hub.py', 'doctor']]
-    for pattern in ('test_safety.py', 'test_import_scan.py', 'test_endpoint.py', 'test_vault_tools.py', 'test_catalog_search.py', 'test_runtime_proofs.py',
+    for pattern in ('test_safety.py', 'test_import_scan.py', 'test_endpoint.py', 'test_catalog_search.py', 'test_runtime_proofs.py',
                     'test_verify_loop.py', 'test_merge_rule.py', 'test_hooks.py', 'test_coldlocker_hook.py', 'test_brand_aliases.py'):
         commands.append([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'tests', '-p', pattern, '-v'])
     if (ROOT / '.git').exists():

@@ -46,6 +46,53 @@ class ConnectTests(unittest.TestCase):
         with patch('connect.gateway_connection', return_value=self.gateway):
             return connect.run(args, ROOT, env={}, stdin=io.StringIO(), output=self.output)
 
+    def test_explicit_legacy_name_migration_backs_up_and_preserves_other_settings(self):
+        for agent, relative, text in (
+                ('claude', '.claude.json', json.dumps({'mcpServers': {
+                    'agentlocker': {'command': 'old'}, 'agentlocker-gateway': {'url': 'http://localhost/mcp'},
+                    'other': {'command': 'kept'}}, 'theme': 'kept'})),
+                ('codex', '.codex/config.toml', 'theme = "kept"\n[mcp_servers.agentlocker]\ncommand = "old"\n'
+                 '[mcp_servers.agentlocker-gateway]\nurl = "http://localhost/mcp"\n'
+                 '[mcp_servers.other]\ncommand = "kept"\n')):
+            with self.subTest(agent=agent):
+                path = self.home / relative
+                path.write_text(text, encoding='utf-8')
+                self.assertEqual(self.run_connect(agent=[agent], write=True, yes=True, migrate_names=True), 0)
+                value = connect.toml(path.read_text()) if agent == 'codex' else json.loads(path.read_text())
+                servers = value['mcp_servers' if agent == 'codex' else 'mcpServers']
+                self.assertEqual(set(servers), {'coldlocker', 'coldlocker-gateway', 'other'})
+                self.assertEqual(servers['coldlocker'], connect.entries(ROOT, agent)['coldlocker'])
+                self.assertEqual(servers['other'], {'command': 'kept'})
+                self.assertEqual(value['theme'], 'kept')
+                self.assertEqual(next(path.parent.glob(path.name + '.*.bak')).read_text(), text)
+                self.assertEqual(self.run_connect(agent=[agent], write=True, yes=True, migrate_names=True), 0)
+
+    def test_codex_name_migration_refuses_inline_and_dotted_registrations_with_guidance(self):
+        path = self.home / '.codex/config.toml'
+        for layout in ('[mcp_servers]\nagentlocker = { command = "old" }\nother = { command = "kept" }\n',
+                       '[mcp_servers]\nagentlocker.command = "old"\n',
+                       'mcp_servers.agentlocker.command = "old"\n',
+                       'mcp_servers = { agentlocker = { command = "old" } }\n'):
+            with self.subTest(layout=layout):
+                path.write_text(layout, encoding='utf-8')
+                errors = io.StringIO()
+                with contextlib.redirect_stderr(errors):
+                    self.assertEqual(self.run_connect(agent=['codex'], write=True, yes=True, migrate_names=True), 1)
+                self.assertEqual(path.read_text(), layout)
+                self.assertFalse(list(path.parent.glob(path.name + '.*.bak')))
+                self.assertIn('rename it manually', errors.getvalue())
+
+    def test_explicit_name_migration_refuses_external_legacy_tool_permissions(self):
+        path = self.home / '.claude.json'
+        path.write_text(json.dumps({'mcpServers': {'agentlocker': {'command': 'old'}}}), encoding='utf-8')
+        policy = self.home / '.claude/settings.json'
+        policy.parent.mkdir(exist_ok=True)
+        policy.write_text(json.dumps({'permissions': {'deny': ['mcp__agentlocker__hub_get_item']}}), encoding='utf-8')
+        before = path.read_bytes()
+        self.assertEqual(self.run_connect(agent=['claude'], write=True, yes=True, migrate_names=True), 1)
+        self.assertEqual(path.read_bytes(), before)
+        self.assertFalse(list(path.parent.glob(path.name + '.*.bak')))
+
     def test_explicit_home_ignores_ambient_appdata(self):
         path = self.home / 'AppData/Roaming/Claude/claude_desktop_config.json'
         path.parent.mkdir(parents=True)

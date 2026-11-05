@@ -29,6 +29,45 @@ def snapshot(root):
             for p in root.rglob('*') if p.is_file() and not p.is_symlink()}
 
 
+class ServerDedupeTests(unittest.TestCase):
+    def test_empty_server_environment_does_not_conflict_across_agents(self):
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        root = Path(temporary.name) / 'locker'
+        home = Path(temporary.name) / 'home'
+        root.mkdir()
+        home.mkdir()
+        local = root / '.hub-store/catalog'
+        (root / 'manifest.json').write_text(json.dumps(validators.empty_manifest()), encoding='utf-8')
+        def scan():
+            return scanner.Inventory(home, (), 'linux', {}, lambda command: '', root, False).discover()
+        server = {'command': 'python3', 'args': ['-m', 'sample']}
+        (home / '.claude.json').write_text(json.dumps({'mcpServers': {
+            'same-server': {**server, 'env': {}}}}), encoding='utf-8')
+        path = home / '.codex/config.toml'
+        path.parent.mkdir(exist_ok=True)
+        path.write_text('[mcp_servers.same-server]\ncommand = "python3"\nargs = ["-m", "sample"]\n',
+                        encoding='utf-8')
+        report = scan()
+        servers = [item for item in report['items'] if item['kind'] == 'mcp_server'
+                   and item['name'] == 'same-server']
+        self.assertEqual([item['status'] for item in servers], ['new', 'duplicate'])
+        result = scanner.apply(root, report, [servers[0]['id']], FileStore(root), home,
+                               platform='linux', env={}, runner=lambda command: '', live=False)
+        self.assertEqual(result['counts'], {'imported': 1, 'rejected': 0})
+        self.assertIn('same-server', [item['name'] for item in mcp_endpoint.inventory(root, 'mcp_servers')])
+        path = local / 'mcp/servers/same-server.json'
+        stored = json.loads(path.read_text())
+        path.write_text(json.dumps({**stored, 'env': {}, 'headers': {}}), encoding='utf-8')
+        manifest_path = local / 'manifest.json'
+        manifest = json.loads(manifest_path.read_text())
+        next(item for item in manifest['mcp_servers'] if item['name'] == 'same-server')['sha256'] = validators.digest(path)
+        manifest_path.write_text(json.dumps(manifest), encoding='utf-8')
+        rescanned = [item for item in scan()['items'] if item['kind'] == 'mcp_server'
+                     and item['name'] == 'same-server']
+        self.assertEqual([item['status'] for item in rescanned], ['already_in_locker', 'already_in_locker'])
+
+
 class ScannerTests(unittest.TestCase):
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory()

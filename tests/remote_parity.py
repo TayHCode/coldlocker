@@ -170,9 +170,6 @@ def run_cases(root, requests):
     cases = []
     for name, request in requests:
         response = mcp_endpoint.dispatch(json.loads(json.dumps(request)), root=root)
-        if isinstance(request, dict) and request.get("method") == "tools/list":
-            response["result"]["tools"] = [tool for tool in response["result"]["tools"]
-                                            if tool["name"] not in ("vault_search", "vault_show", "vault_status")]
         cases.append({"name": name, "request": request, "expected": compact(unwrap_tool_text(response))})
     return cases
 

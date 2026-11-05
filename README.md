@@ -1,9 +1,10 @@
 # Coldlocker
 
-One place to share skills and routine instructions across your AI agents. Scan what
-your agents already have, import it into a private local catalog, and connect each
-agent to that catalog over MCP. Setup needs Python and Git; no Python packages to install.
-The stdio MCP server also offers read-only `vault_search`, `vault_show`, and `vault_status` tools through `vault-search` on PATH.
+Share skills, routine instructions, MCP servers, connections and plugin metadata
+across your AI agents. Scan existing agent setups into a private local catalog,
+then connect each agent over MCP. The optional gateway runs imported MCP servers
+behind one local endpoint. Connections and plugins are listed, not run.
+Catalog setup needs Python and Git. The gateway also needs Node and npm.
 MIT licensed; see [LICENSE](LICENSE).
 
 Release status: unreleased. Local catalog acceptance is recorded; the broader

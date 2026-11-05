@@ -516,12 +516,73 @@ def display(path, home):
         return str(path)
 
 
-def plan(path, agent, servers):
+class MigrationRefused(ValueError):
+    pass
+
+
+def migrate_registration_names(text, agent, policy_directory):
+    if agent not in ('claude', 'codex'):
+        raise ValueError('--migrate-names supports Claude and Codex only')
+    value = (toml(text) if agent == 'codex' else json_object(text)) if text.strip() else {}
+    key = 'mcp_servers' if agent == 'codex' else 'mcpServers'
+    group = value.get(key, {})
+    if not isinstance(group, dict):
+        raise MigrationRefused('invalid MCP collection; existing configuration preserved')
+    original = copy.deepcopy(group)
+    registration_aliases(group, {})
+    aliases = {old: new for old, new in LEGACY_SERVERS.items() if old in group}
+    if not aliases:
+        return text
+    policies = [json.dumps({k: v for k, v in value.items() if k != key})]
+    if agent == 'claude':
+        for name in ('settings.json', 'settings.local.json'):
+            policy = policy_directory / name
+            ordinary(policy)
+            if policy.exists():
+                data = json_object(policy.read_text(encoding='utf-8'))
+                policies.append(json.dumps({k: v for k, v in data.items() if k != 'hooks'}))
+    for old in aliases:
+        pattern = r'mcp__' + re.escape(old) + r'(?=__|["*])|["\s]' + re.escape(old) + r'(?=["_*])'
+        if any(re.search(pattern, policy) for policy in policies):
+            raise MigrationRefused('legacy MCP name is referenced by client policy; reconcile permissions before --migrate-names')
+    edits = []
+    if agent == 'codex':
+        for start, parts in table_headers(text):
+            if len(parts) >= 2 and parts[0] == key and parts[1] in aliases:
+                end = text.find('\n', start)
+                end = len(text) if end == -1 else end
+                header = text[start:end]
+                header = re.sub(r'(\.\s*)' + r'(?:' + re.escape(parts[1]) + r'|[\"\']' + re.escape(parts[1]) + r'[\"\'])'
+                                + r'(?=\s*[.\]])', lambda match: match[1] + aliases[parts[1]], header, count=1)
+                edits.append((start, end, header))
+    else:
+        for name, _, begin, _ in json_members(text, text.index('{'))[0]:
+            if name == key:
+                for name, start, _, _ in json_members(text, begin)[0]:
+                    if name in aliases:
+                        _, end = json.JSONDecoder().raw_decode(text, start)
+                        edits.append((start, end, json.dumps(aliases[name])))
+    for start, end, replacement in sorted(edits, reverse=True):
+        text = text[:start] + replacement + text[end:]
+    if agent == 'codex':
+        expected = {aliases.get(name, name): server for name, server in original.items()}
+        try:
+            migrated = toml(text).get(key)
+        except ValueError:
+            migrated = None
+        if migrated != expected:
+            raise MigrationRefused('legacy MCP registration is not a [mcp_servers.<name>] table; rename it manually')
+    return text
+
+
+def plan(path, agent, servers, migrate_names=False, policy_directory=None):
     ordinary(path)
     if jsonc_only(path, agent):
         raise ValueError('OpenCode JSONC requires manual merge; existing configuration preserved')
     before = path.read_bytes() if path.exists() else None
     text = before.decode('utf-8') if before is not None else ''
+    if migrate_names:
+        text = migrate_registration_names(text, agent, policy_directory or path.parent / '.claude')
     after = merge_toml(text, servers) if agent == 'codex' else merge_json(text, agent, servers)
     return path, before, after.encode('utf-8')
 
@@ -647,7 +708,8 @@ def run(args, root, env=None, stdin=None, output=None):
             elif args.write and jsonc_only(path, agent):
                 print('OpenCode: manual merge (jsonc) - paste this snippet into ' + str(path.with_suffix('.jsonc')), file=output)
             elif args.write:
-                change = plan(path, agent, entries(checkout, agent, gateway))
+                change = plan(path, agent, entries(checkout, agent, gateway), getattr(args, 'migrate_names', False),
+                              Path(environment.get('CLAUDE_CONFIG_DIR') or home / '.claude'))
                 if change[1] == change[2]:
                     print('already connected', file=output)
                 else:
@@ -659,6 +721,9 @@ def run(args, root, env=None, stdin=None, output=None):
             warn(f'{agent}: {error}; {display(path, home)} left unchanged, add the block printed above by hand', output)
             if agent in found:
                 skipped = True
+        except MigrationRefused as error:
+            warn(f'{agent}: {error}; {display(path, home)} left unchanged', output)
+            skipped = True
     if not detected:
         print('No matching configured agents detected.', file=output)
     if not args.agent or 'grok' in requested:
@@ -697,6 +762,7 @@ def register(commands, root):
     command.add_argument('--agent', choices=tuple(dict.fromkeys((*AGENTS, *REMOTE_AGENTS))), nargs='+', action='extend')
     command.add_argument('--remote', action='store_true', help='Print remote OAuth catalog instructions; never reads or writes client settings.')
     command.add_argument('--url', help='Override public_url for --remote with your HTTPS catalog /mcp URL.')
+    command.add_argument('--migrate-names', action='store_true', help='With --write, rename legacy Claude/Codex MCP registrations after checking client policy references.')
     command.add_argument('--write', action='store_true')
     command.add_argument('--yes', action='store_true')
     command.set_defaults(action=lambda args: cli(args, root))

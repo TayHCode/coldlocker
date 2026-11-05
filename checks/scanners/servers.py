@@ -127,6 +127,9 @@ class ServerMixin:
                         reference = 'scan-' + hashlib.sha256(encoded([name, field, key, value])).hexdigest()[:32]
                         stable[reference] = value
                         server[field][key] = 'secret://' + reference
+            for field in ('env', 'headers'):
+                if field in server and not server[field]:
+                    del server[field]
             if indirect:
                 server['headers'] = {**server.get('headers', {}), **{key: 'secret://' + ref for key, ref in indirect.items()}}
                 validators.mcp(server)

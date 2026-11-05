@@ -17,6 +17,11 @@ Existing private registrations keep their aliases so permission and approval
 rules continue to match, including policies stored outside the configuration
 file. Reconnect updates those registrations without adding duplicates. Existing
 duplicate or conflicting aliases require manual reconciliation.
+To rename existing Claude and Codex registrations, use
+`python3 hub.py connect --agent claude codex --write --migrate-names`.
+The rename uses the same backups and preserves unrelated settings. It refuses
+legacy names referenced by policy in the client config or home Claude settings.
+Review project-specific tool permissions before renaming. Hooks are unchanged.
 Other accounts, servers and settings stay. It starts no gateway or upstream
 server, and no entry contains credentials. Executor header references are in
 [executor-connector.md](executor-connector.md). Reload the client afterwards.
@@ -160,7 +165,7 @@ printf '%s\n' \
 Each `tools/call` reply carries the JSON result as text in `result.content[0].text`;
 use `hub_list_routines` and kind `"routine"` for routines.
 
-The second reply lists `hub_list_*`, `hub_get_item`, and the read-only `vault_search`, `vault_show`, and `vault_status` tools, which require `vault-search` on PATH.
+The second reply lists the read-only `hub_list_*` and `hub_get_item` tools.
 `claude mcp list` and `codex mcp
 list` show the configured server only (Codex shows `Auth Unsupported`; Claude
 needs user scope, and project `.mcp.json` servers show `Pending approval`).
