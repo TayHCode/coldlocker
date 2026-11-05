@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "name": "coldlocker",
+  "license": "MIT",
+  "skills": [
+    {
+      "name": "architect",
+      "path": "skills/architect",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-48d151cc3639",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "44dc7db82d8407b9698fbfb0605dba284c79cd957d31190ff757849dae18aaff"
+    },
+    {
+      "name": "arena",
+      "path": "skills/arena",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-77473effbc06",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "1a9bdc8fbf215f5ee9b34dc28c42c6cc9f741ef80eb43e811efe210028ef9764"
+    },
+    {
+      "name": "babysit-pr",
+      "path": "skills/babysit-pr",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-52ea88271235",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "463b8841e0fa3419c506f4db79196cf1b00cc815ef9a1e42252d0314f86dfe2b"
+    },
+    {
+      "name": "benchmark-checklist",
+      "path": "skills/benchmark-checklist",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-60fd45ddfda8",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "2e9f312cb4e998b0afaee12815805354fc53eca4e06b8a385cc621deda940aef"
+    },
+    {
+      "name": "create-verification-skill",
+      "path": "skills/create-verification-skill",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-3492376f16cd",
+        "origin": "upstream"
+      },
+      "sha256": "a5dfa658b98e5c527fe7537fc61b5bab2eb49668d7ae8c46ceb0b4814446f51e"
+    },
+    {
+      "name": "evidence-before-done",
+      "path": "skills/evidence-before-done",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-02064ac6a696",
+        "origin": "authored"
+      },
+      "sha256": "02064ac6a6961e2014a472735938d384535d9b92dd458103a9c69c1effb36a9a"
+    },
+    {
+      "name": "figure-it-out",
+      "path": "skills/figure-it-out",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-bf9ee2564a48",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "2ee430856a2cd0a75178ac19559ba52f0494b9e27836b9311f3229aca3c4c241"
+    },
+    {
+      "name": "file-pr",
+      "path": "skills/file-pr",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-d5439f17da72",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "d7bf63c7b9604eb07744a68b50d844982f7747ff16498a92d1994e072e81c2bb"
+    },
+    {
+      "name": "frontend-design",
+      "path": "skills/frontend-design",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-9c3d9a23968f",
+        "origin": "upstream"
+      },
+      "sha256": "ce7cefc83fe1fbe97f5b8e0d6e0fb6e5a55180621cb84c0af99fe324eef3cb14"
+    },
+    {
+      "name": "full-send",
+      "path": "skills/full-send",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-48adff0cf553",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "d3712e466808c3d92bde935117d0f38e7856ebd8a4b9f294800c3d93f7a612ca"
+    },
+    {
+      "name": "full-stop",
+      "path": "skills/full-stop",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-e553a9766c89",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "f2b8e98f4d84daed805660df8149eb7d7b93b12889c051b7c774868766b57de1"
+    },
+    {
+      "name": "hill-climb",
+      "path": "skills/hill-climb",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-b2a7f0852d68",
+        "origin": "authored"
+      },
+      "sha256": "b2a7f0852d68ee2a30708ecc1e95c02ffe610d948ff2b55eb1065a71566ed2d6"
+    },
+    {
+      "name": "how",
+      "path": "skills/how",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-5e96ce51052e",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "12ab3f82505f759821f8b32f616042be7b1de6bc6802287fbe0dd8c0ad6f329b"
+    },
+    {
+      "name": "hub-discover",
+      "path": "skills/hub-discover",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-5e8605303eae",
+        "origin": "authored"
+      },
+      "sha256": "5e8605303eaefb1f74e680124e5c5a4d00035e5b8f9954ba7b8341eb61f5afc0"
+    },
+    {
+      "name": "i-have-adhd",
+      "path": "skills/i-have-adhd",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-79dd1afe013d",
+        "origin": "local-import"
+      },
+      "sha256": "4f41cf7d897904f6a490400bdc43f7f1876b12e7584f48ab440add49b7b5a969"
+    },
+    {
+      "name": "interrogate",
+      "path": "skills/interrogate",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-e690d89955dd",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "a89aa0464b0484d643d6b0ded8a564841e757857e9a800ede9d93b1f9151124f"
+    },
+    {
+      "name": "leaving-pr-comments",
+      "path": "skills/leaving-pr-comments",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-a6a2bb97cd1b",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "e81b97b6a0275d62b1295a671ac4a45006faf37f21db7d487c48e113239a6e96"
+    },
+    {
+      "name": "maintain-verification-skill",
+      "path": "skills/maintain-verification-skill",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-92a9f9a63cc2",
+        "origin": "upstream"
+      },
+      "sha256": "2c2e2a67343af676e87a4c6fccc590b9bec150221b067c2b183ac9922b6045c0"
+    },
+    {
+      "name": "minimal-diff-review",
+      "path": "skills/minimal-diff-review",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-3c812bf8c03f",
+        "origin": "authored"
+      },
+      "sha256": "3c812bf8c03f52472c41c35442035ff41e366ec7fd7d7fd7d015369d1cf33bf6"
+    },
+    {
+      "name": "no-comments",
+      "path": "skills/no-comments",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-7f163ce4f31a",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "fc6b37e1eb4fc118f76bd7a52e18188f4c664939071426f923f926b72b6114cc"
+    },
+    {
+      "name": "p3-mode",
+      "path": "skills/p3-mode",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-ce3e86d3c08d",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "0f5b5a48c658ff21afafb3ecec460631c5ab8b12bd08b5cfeeb409ba0ce7b466"
+    },
+    {
+      "name": "poteto-mode",
+      "path": "skills/poteto-mode",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-e9563b118ca1",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "8df53947b8da2eec8ba8c958677ccb3654dfcf4f229f21f3ad2a33f8f3095623"
+    },
+    {
+      "name": "principle-attack-the-premise",
+      "path": "skills/principle-attack-the-premise",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-294dbffe1e16",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "3fb2b2e74a89689c87f2ea7008bfc9ce025c35b268bff1d75fe9fb418bfac4dc"
+    },
+    {
+      "name": "principle-boundary-discipline",
+      "path": "skills/principle-boundary-discipline",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-430d95c99798",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "12a89c311857a8a1ab429253ee5e48108cc5f0f687d6a3dce695095b5c421b47"
+    },
+    {
+      "name": "principle-build-the-lever",
+      "path": "skills/principle-build-the-lever",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-90c5222322be",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "bd71bbfd835ee730b1f1e60319fb577006ee9c1bf73b6b8a822f631f7490ceac"
+    },
+    {
+      "name": "principle-encode-lessons-in-structure",
+      "path": "skills/principle-encode-lessons-in-structure",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-3f6c6540764b",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "ec32be503b1e6998d199ded5720b37ccb6cd2f55dea9849412fcb7ebe3be302a"
+    },
+    {
+      "name": "principle-exhaust-the-design-space",
+      "path": "skills/principle-exhaust-the-design-space",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-134afbd4bf2b",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "3e2aa64708ea6885ca57232e02fc01f98c1484608d960fca9f48d40f012457d9"
+    },
+    {
+      "name": "principle-experience-first",
+      "path": "skills/principle-experience-first",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-2da7c654e5ad",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "efe858d9ec47f3780a5c492d65e053b895a55e38839315d3254c8e73a5cd40b4"
+    },
+    {
+      "name": "principle-explain-the-number",
+      "path": "skills/principle-explain-the-number",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-9ee6b77c237a",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "23d48b75e45a09dd35e50e4ef1f633ae00596d05af81751c3045bb6146be14ac"
+    },
+    {
+      "name": "principle-fix-root-causes",
+      "path": "skills/principle-fix-root-causes",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-edef87da02a0",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "090a5b2b833e81aa2456eefd9320da4737cc799cb79d82a7ca8d1e4b6ab4dbbd"
+    },
+    {
+      "name": "principle-foundational-thinking",
+      "path": "skills/principle-foundational-thinking",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-27e7893ce6ac",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "dd17ca9dce78ed3e7e351310d209d567dcdc7ba1c21afcfe34b634b428f9068c"
+    },
+    {
+      "name": "principle-guard-the-context-window",
+      "path": "skills/principle-guard-the-context-window",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-82ab11d99b5e",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "193f9d1a1dd0c60e6f057c8a871f70eb789426526e2e7d0d51228b7ea5f7bbbb"
+    },
+    {
+      "name": "principle-laziness-protocol",
+      "path": "skills/principle-laziness-protocol",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-b436e5be1675",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "7d19de95bf414d2bda30c050c67c27bec65f21f9eca6eaf363efbd7b737423e5"
+    },
+    {
+      "name": "principle-make-operations-idempotent",
+      "path": "skills/principle-make-operations-idempotent",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-42f5066619f1",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "700ee903710ab2ca0515153f223c1ce881a1c771c7f09a7db9c446f11ab5ddc4"
+    },
+    {
+      "name": "principle-migrate-callers-then-delete-legacy-apis",
+      "path": "skills/principle-migrate-callers-then-delete-legacy-apis",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-ce86faf1afab",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "87ae7d80b7c5e67817182de501ca1823d53831ee575fadc4d6eac5955173aca6"
+    },
+    {
+      "name": "principle-minimize-reader-load",
+      "path": "skills/principle-minimize-reader-load",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-3cb119566847",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "6fd81288a6fbdb0b65eb6f5c51084dbb548adbedb0123102bc545ee2dabe67ae"
+    },
+    {
+      "name": "principle-model-the-domain",
+      "path": "skills/principle-model-the-domain",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-904e322fb12d",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "ed448a6ffeadd0d0925fc63941defa89fe2d850223ef256830e2605545462147"
+    },
+    {
+      "name": "principle-never-block-on-the-human",
+      "path": "skills/principle-never-block-on-the-human",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-ce27bf1fc070",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "d16050132df7575e82b544a46156f42953b0bc4ff5de2b2b2b07801a64de2f81"
+    },
+    {
+      "name": "principle-outcome-oriented-execution",
+      "path": "skills/principle-outcome-oriented-execution",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-cba3152ec4ab",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "3c9fc090df279414beebe319cfd641df15f4f5dd12c36f979b8f33402d493710"
+    },
+    {
+      "name": "principle-prove-it-works",
+      "path": "skills/principle-prove-it-works",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-420526bbbb8d",
+        "origin": "upstream"
+      },
+      "sha256": "3d59bcfaa09144800dc502c419ad7ad92436454d72f91b301f9c72381986bf3c"
+    },
+    {
+      "name": "principle-redesign-from-first-principles",
+      "path": "skills/principle-redesign-from-first-principles",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-aca82d4793c7",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "f538f89a94397c94f67c70a735041803fedf3e3d84023e6137d6273971a1ebbe"
+    },
+    {
+      "name": "principle-separate-before-serializing-shared-state",
+      "path": "skills/principle-separate-before-serializing-shared-state",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-8cb9dcb61e6e",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "5ff1b651490ee59367d0c08aad5b983d3c44747432b5cff613936e90e7e1aafd"
+    },
+    {
+      "name": "principle-sequence-verifiable-units",
+      "path": "skills/principle-sequence-verifiable-units",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-3cf5cf477d48",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "206e41b564d1375e1f554b23e5ce0f611062fbdd317d175d39535263dbeef5dd"
+    },
+    {
+      "name": "principle-subtract-before-you-add",
+      "path": "skills/principle-subtract-before-you-add",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-8491b10b380c",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "7c438c8a0405d37d65d2fb313d2dfa805110bcda781f83de7fce15fb5ce24e6d"
+    },
+    {
+      "name": "principle-test-behavior-not-implementation",
+      "path": "skills/principle-test-behavior-not-implementation",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-5cff7713a908",
+        "origin": "upstream"
+      },
+      "sha256": "17d8d5c15fa1685d35037d0b9beb2b3c297a97840dbf85949698c76fca4c88fe"
+    },
+    {
+      "name": "principle-type-system-discipline",
+      "path": "skills/principle-type-system-discipline",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-ac1f3131a635",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "4f57d2efa8e0966254f0a08219acfded0ea8f5e98b0825ab8179c4e22eeb9f3e"
+    },
+    {
+      "name": "reflect",
+      "path": "skills/reflect",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-aaff8f689b77",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "85ac9cd48948e6e89126c623e863966ac4fa661a07715117e3ffa3d308f0038c"
+    },
+    {
+      "name": "setup-p3",
+      "path": "skills/setup-p3",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-b71aa725069d",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "f685f925e5b31e713e8ca8b5f7065a7ed7845fb6d322993177f7709816b1c88d"
+    },
+    {
+      "name": "show-me-your-work",
+      "path": "skills/show-me-your-work",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-10c0c44a5134",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "8083a87c410811cfec5876645c551038b5959480fc773d7d224be2b1e04f62da"
+    },
+    {
+      "name": "sol-loop",
+      "path": "skills/sol-loop",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-3a491d43a6e8",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "d922c6519351e14d860e3db8f6c613adff3292e766bae0d24649d0fcdf2e275f"
+    },
+    {
+      "name": "swarm",
+      "path": "skills/swarm",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-1d0449465572",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "0a8ed507889c52d13362ac4bf7f0f673d61d3fc0e1dee4efec8155b0343a59cb"
+    },
+    {
+      "name": "tdd",
+      "path": "skills/tdd",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-1a9bc927735b",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "e7d2e96092163b69f1c6a46967b28ff03be3c7702aa6340907c14daa7898faec"
+    },
+    {
+      "name": "technical-writing",
+      "path": "skills/technical-writing",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-9a1892320f72",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "2da50793df649ce33deecd76a95dd459aff485b832a18640245b2f6b9713fe1a"
+    },
+    {
+      "name": "typescript-best-practices",
+      "path": "skills/typescript-best-practices",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-790711c3a73b",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "b27fd55832f91270651db6d71c3f72de0193075167668414b52519bfe700e4dc"
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "path": "skills/ui-ux-pro-max",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-0d07d71ac0b1",
+        "origin": "upstream"
+      },
+      "sha256": "beb884e866dfa94b44cb6976e4be60f70570745c456584108b991fec8fb21d91"
+    },
+    {
+      "name": "unslop",
+      "path": "skills/unslop",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-d42a7e7eef67",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "5044331dcfb1a68f1846d9507885b3cb0dab4ed68b3153341db1e8e8beafcc0c"
+    },
+    {
+      "name": "verify-loop",
+      "path": "skills/verify-loop",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-507ef7346605",
+        "origin": "authored"
+      },
+      "sha256": "4f936b9667c383e13cdf8fa9808027ad35cd412f687139ba938910381bd433c2"
+    },
+    {
+      "name": "why",
+      "path": "skills/why",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-608927e16d5d",
+        "origin": "upstream-adapted"
+      },
+      "sha256": "297b6436cd7ae2b825571d88278d482f2ec1bd71301ee8edce997d4944b9d794"
+    }
+  ],
+  "rules": [
+    {
+      "name": "coldbox-verification",
+      "path": "rules/coldbox-verification.md",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-29c38cc21be5",
+        "origin": "authored"
+      },
+      "sha256": "29c38cc21be5f309650ad15f3d0a3a0a79787b0f42128fe20214077aa60e5d2c"
+    },
+    {
+      "name": "merge-when-proven",
+      "path": "rules/merge-when-proven.md",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-16312e94db75",
+        "origin": "authored"
+      },
+      "sha256": "ff37a1564da52ef3b157462aa10bc127de3fa33ad74f00047c5f1985070c0d01"
+    },
+    {
+      "name": "model-routing",
+      "path": "rules/model-routing.md",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-ce67b86d017d",
+        "origin": "authored"
+      },
+      "sha256": "c912cec9f6b71900d378209a5c615857f8622bd1357a3c2a818664f87b19ec6a"
+    },
+    {
+      "name": "shared-policy",
+      "path": "rules/shared-policy.md",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-668d16e87849",
+        "origin": "authored"
+      },
+      "sha256": "9ece02be8ac9999f21dd6654b0c9001ca2ded814d461d71f48b70f280f333eae"
+    },
+    {
+      "name": "verify-before-merge",
+      "path": "rules/verify-before-merge.md",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-bfcd4243a28f",
+        "origin": "authored"
+      },
+      "sha256": "bfcd4243a28f9f8c4b3e0cc425dc3addba9b885cc8409fd7abb369750df0348c"
+    }
+  ],
+  "mcp_servers": [
+    {
+      "name": "example-server",
+      "path": "mcp/servers/example-server.json",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-7d7812452add",
+        "origin": "authored"
+      },
+      "sha256": "25f0d41530799b84bcb295e2150811fbab0ce7ae7f615d0ef268d2280a053b84"
+    }
+  ],
+  "routines": [
+    {
+      "id": "inventory-digest",
+      "path": "routines/inventory-digest/routine.json",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-ef5d563256ed",
+        "origin": "authored"
+      },
+      "sha256": "f6aeb0659d0d7dae447c50565e3eb10d80fd24f577ac210850413e7b9d4c1417"
+    }
+  ],
+  "plugins": [],
+  "connections": []
+}
