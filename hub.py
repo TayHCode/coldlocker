@@ -110,7 +110,8 @@ def screen(kind, payload, files, approve=False, root=ROOT, name=None, record=Tru
         receipt["name"] = name
     identity = name or hashlib.sha256(json.dumps([payload, files], sort_keys=True).encode()).hexdigest()[:12]
     identity = re.sub(r"[^a-zA-Z0-9-]", "-", identity)[:63]
-    if record:
+
+    def save():
         directory = root / ".hub-store/import-receipts"
         ordinary_parents(directory)
         private_store(root)
@@ -124,6 +125,9 @@ def screen(kind, payload, files, approve=False, root=ROOT, name=None, record=Tru
             temporary_path.replace(directory / f"{timestamp.strftime('%Y%m%dT%H%M%S%fZ')}-{kind}-{identity}.json")
         finally:
             temporary_path.unlink(missing_ok=True)
+
+    if record is True or (record == "deferred" and refused):
+        save()
     lines = "; ".join(f"{item['check']} ({item['file']}:{item['line']}): {item['reason']}" for item in findings)
     warnings = [f"WARNING: {item['check']} ({item['file']}:{item['line']}): {item['reason']}"
                 for item in findings if item["severity"] == "warn"]
@@ -133,7 +137,7 @@ def screen(kind, payload, files, approve=False, root=ROOT, name=None, record=Tru
         raise Refused(f"REFUSED: contains a secret; remove it and keep it in the private store. {lines}")
     if refused:
         raise Refused(f"REFUSED: needs review before import. {lines}. Inspect it, then re-run with --approve-risky to import it anyway.")
-    return warnings
+    return save if record == "deferred" else warnings
 
 
 def private_text(text, label):
@@ -255,7 +259,7 @@ def stage_path_bindings(root, staged_root, item_name, bindings, indexed, snapsho
     return operations
 
 
-def publish_import(operations, snapshots):
+def publish_import(operations, snapshots, finish=None):
     prepared = []
     changed = []
     created = []
@@ -287,6 +291,8 @@ def publish_import(operations, snapshots):
                 target.replace(previous)
             if pending:
                 pending.replace(target)
+        if finish:
+            finish()
     except BaseException:
         try:
             for target, previous, existed in reversed(changed):
@@ -370,9 +376,11 @@ def import_item(args, root=ROOT):
             validators.require(candidate.is_file() and not candidate.is_symlink(), "prompt must be an ordinary file")
             validators.require(prompt_name != "routine.json", "prompt conflicts with routine definition")
             prompt = candidate
+    record_receipt = None
     if kind != "connection":
         files = skill_files if kind == "skill" else texts(source) if kind == "rule" else [("prompt.md", prompt.read_text(encoding="utf-8"))] if prompt else texts(source)
-        screen(kind, content, files, getattr(args, "approve_risky", False), root, name=item_name)
+        record_receipt = screen(kind, content, files, getattr(args, "approve_risky", False), root, name=item_name,
+                                record="deferred")
     if kind == "skill":
         skill_package(source, item_name, skill_files)
     if kind == "rule":
@@ -416,8 +424,11 @@ def import_item(args, root=ROOT):
             operations.extend(stage_path_bindings(root, staged_root, item_name,
                                                   getattr(args, "path_bindings", None), entry is not None, snapshots, content))
         operations.append((catalog / "manifest.json", staged_manifest))
+        unchanged = all(target.exists() == (staged is not None) and
+                        (staged is None or validators.digest(target) == validators.digest(staged))
+                        for target, staged in operations)
         with retained(root, collection, item_name, previous):
-            publish_import(operations, snapshots)
+            publish_import(operations, snapshots, None if unchanged else record_receipt)
     print(f"Recorded {collection}: {item_name}")
     return 0
 

@@ -101,7 +101,7 @@ the [shared-tools gateway](docs/gateway.md) are separate from this setup.
 
 Source-export contributors run `python3 -B tools/verify_export.py`. See
 [Contributing](CONTRIBUTING.md) for prerequisites and the separate private
-maintainer checks.
+maintainer checks, `python3 hub.py check` and full unittest discovery.
 
 ## Import scanning
 
@@ -191,9 +191,6 @@ and merge it, keeping other hooks.
 Codex may ask you to review the new hook before it runs. The hook expects a
 status block, so don't install it where replies must be strict JSON. After moving
 the checkout, remove the old Stop entry before reinstalling.
-
-For pinned pull updates, read [Coldlocker sync](docs/coldlocker-sync.md). It previews
-by default and includes private receipts, backups and rollback.
 
 ## Recall hook
 
@@ -296,8 +293,7 @@ The catalog includes the official [frontend-design](skills/frontend-design/SKILL
 skill and its [design QA checklist](skills/frontend-design/references/design-qa.md).
 The optional [UI UX Pro Max](skills/ui-ux-pro-max/SKILL.md) companion supplies
 searchable UX guidance. Fetch either with `hub_get_item` using `kind: "skill"`.
-Their upstream Apache-2.0 and MIT licenses remain with each package. See the
-[import and verification receipt](docs/evidence/coldlocker-design-package.md).
+Their upstream Apache-2.0 and MIT licenses remain with each package.
 
 - [Overview](docs/OVERVIEW.md) and [vision](VISION.md); the MCP endpoint is `mcp_endpoint.py`
 - [Install details](docs/install.md), [upgrade guide](docs/upgrade.md), [commands](docs/cli.md), [imports and links](docs/reference.md), [file formats](docs/formats.md)

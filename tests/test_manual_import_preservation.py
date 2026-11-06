@@ -305,10 +305,10 @@ class ManualImportPreservationTests(HubCase):
                 replacement = b'Concurrent notes\n' if changed.suffix == '.md' else previous + b'\n'
                 expected = {}
 
-                def change_then_publish(operations, snapshots):
+                def change_then_publish(operations, snapshots, *rest):
                     changed.write_bytes(replacement)
                     expected.update(self.tree())
-                    return original(operations, snapshots)
+                    return original(operations, snapshots, *rest)
 
                 try:
                     with patch.object(hub, 'publish_import', change_then_publish), \

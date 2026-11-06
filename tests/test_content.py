@@ -141,9 +141,11 @@ class ContentTests(unittest.TestCase):
         lines = text.splitlines()
         self.assertGreater(len(lines), 0)
         self.assertLess(len(lines), 40)
-        for required in ("GitHub Codex code review", "P0/P1", "P2/P3",
-                         "test and verify the updated head",
-                         "do not request another Codex review"):
+        for required in ("independent code review", "Judge findings by severity",
+                         "If any P0/P1 findings appear, fix them and request another review.",
+                         "If only P2/P3 findings appear, fix them and run the relevant tests and verification",
+                         "Merge when authorized without another review for those fixes.",
+                         "Changes beyond the reviewed work still need review."):
             with self.subTest(required=required):
                 self.assertIn(required, text)
 

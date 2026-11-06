@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest import mock
 
 import hub
 import hub_ui
@@ -133,6 +134,40 @@ class ImportScanTests(unittest.TestCase):
         self.assertEqual([item['name'] for item in value['skills' if kind == 'skill' else 'mcp_servers']], ['sample'])
         destination = local / ('skills/sample/SKILL.md' if kind == 'skill' else 'mcp/servers/sample.json')
         self.assertTrue(destination.is_file())
+
+    def test_failed_receipt_write_rolls_back_the_import_and_retry_records_it(self):
+        root = self.locker()
+        source = self.skill(root, 'set -eu\necho ready\n')
+        receipts = root / '.hub-store/import-receipts'
+        args = argparse.Namespace(command='import-skill', path=str(source), name=None,
+                                  owner='coldlocker', origin='local-import', approve_risky=False)
+        original = tempfile.mkstemp
+
+        def fail_receipt(*positional, **named):
+            if Path(named.get('dir', '')).name == 'import-receipts':
+                raise OSError('injected receipt write failure')
+            return original(*positional, **named)
+
+        with mock.patch.object(hub.tempfile, 'mkstemp', fail_receipt), \
+                contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+            with self.assertRaises(OSError):
+                hub.import_item(args, root)
+        self.assertEqual(list(receipts.glob('*.json')), [])
+        self.assertFalse((root / '.hub-store/catalog/skills/sample').exists())
+        receipt, _ = self.run_import(root, source)
+        self.assertEqual(receipt['outcome'], 'allowed')
+        self.assertTrue((root / '.hub-store/catalog/skills/sample/SKILL.md').is_file())
+
+    def test_unchanged_reimport_records_no_new_receipt(self):
+        root = self.locker()
+        source = self.skill(root, 'set -eu\necho ready\n')
+        self.run_import(root, source)
+        receipts = set((root / '.hub-store/import-receipts').glob('*.json'))
+        args = argparse.Namespace(command='import-skill', path=str(source), name=None,
+                                  owner='coldlocker', origin='local-import', approve_risky=False)
+        with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+            self.assertEqual(hub.import_item(args, root), 0)
+        self.assertEqual(set((root / '.hub-store/import-receipts').glob('*.json')), receipts)
 
     def test_pipe_to_shell_in_support_script(self):
         self.high(download() + ' | sh', 'pipe-to-shell')

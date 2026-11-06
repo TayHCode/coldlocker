@@ -27,8 +27,10 @@ class ModelPolicyTests(unittest.TestCase):
             ('Sonnet or Terra', 'Haiku, Luna'),
             ('Haiku or Luna', 'None'),
         ])
-        for required in ('Astra handles big research tasks', 'Opus handles audits',
-                         'NEW T3 top-level thread', 'Never use Opus or Astra as a subagent',
-                         'Builder split — PROPOSAL, not live routing',
-                         'Do not apply this proposal with cold model set'):
+        for required in ('they do not override the installing user\'s policy or authorize routing edits',
+                         'report the dispatch\nINCOMPLETE rather than silently substituting',
+                         'A fallback does not override an\nexplicit delegation restriction',
+                         'obtain authorization before opening a separate\ntop-level thread',
+                         'not permission to\nchange routing or bypass a host restriction',
+                         'Use the installing user\'s configured roles and limits.'):
             self.assertIn(required, text)
