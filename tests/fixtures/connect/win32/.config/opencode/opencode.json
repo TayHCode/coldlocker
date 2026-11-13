@@ -1,0 +1,13 @@
+{
+    "unrelated": {
+        "theme": "fixture"
+    },
+    "mcp": {
+        "other": {
+            "type": "local",
+            "command": [
+                "fixture-tool"
+            ]
+        }
+    }
+}

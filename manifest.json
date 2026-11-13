@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "name": "coldlocker",
+  "license": "MIT",
+  "skills": [
+    {
+      "name": "evidence-before-done",
+      "path": "skills/evidence-before-done",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-02064ac6a696",
+        "origin": "authored"
+      },
+      "sha256": "02064ac6a6961e2014a472735938d384535d9b92dd458103a9c69c1effb36a9a"
+    },
+    {
+      "name": "frontend-design",
+      "path": "skills/frontend-design",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-9c3d9a23968f",
+        "origin": "upstream"
+      },
+      "sha256": "ce7cefc83fe1fbe97f5b8e0d6e0fb6e5a55180621cb84c0af99fe324eef3cb14"
+    },
+    {
+      "name": "hub-discover",
+      "path": "skills/hub-discover",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-5e8605303eae",
+        "origin": "authored"
+      },
+      "sha256": "5e8605303eaefb1f74e680124e5c5a4d00035e5b8f9954ba7b8341eb61f5afc0"
+    },
+    {
+      "name": "i-have-adhd",
+      "path": "skills/i-have-adhd",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-79dd1afe013d",
+        "origin": "local-import"
+      },
+      "sha256": "4f41cf7d897904f6a490400bdc43f7f1876b12e7584f48ab440add49b7b5a969"
+    },
+    {
+      "name": "minimal-diff-review",
+      "path": "skills/minimal-diff-review",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-3c812bf8c03f",
+        "origin": "authored"
+      },
+      "sha256": "3c812bf8c03f52472c41c35442035ff41e366ec7fd7d7fd7d015369d1cf33bf6"
+    },
+    {
+      "name": "principle-test-behavior-not-implementation",
+      "path": "skills/principle-test-behavior-not-implementation",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-5cff7713a908",
+        "origin": "upstream"
+      },
+      "sha256": "17d8d5c15fa1685d35037d0b9beb2b3c297a97840dbf85949698c76fca4c88fe"
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "path": "skills/ui-ux-pro-max",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-0d07d71ac0b1",
+        "origin": "upstream"
+      },
+      "sha256": "beb884e866dfa94b44cb6976e4be60f70570745c456584108b991fec8fb21d91"
+    }
+  ],
+  "rules": [],
+  "mcp_servers": [
+    {
+      "name": "example-server",
+      "path": "mcp/servers/example-server.json",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-7d7812452add",
+        "origin": "authored"
+      },
+      "sha256": "25f0d41530799b84bcb295e2150811fbab0ce7ae7f615d0ef268d2280a053b84"
+    }
+  ],
+  "routines": [
+    {
+      "id": "inventory-digest",
+      "path": "routines/inventory-digest/routine.json",
+      "owner": "coldlocker",
+      "provenance": {
+        "source_id": "src-ef5d563256ed",
+        "origin": "authored"
+      },
+      "sha256": "f6aeb0659d0d7dae447c50565e3eb10d80fd24f577ac210850413e7b9d4c1417"
+    }
+  ],
+  "plugins": [],
+  "connections": []
+}

@@ -1,0 +1,45 @@
+"""Verify the documented public-export scope; private maintainer tests need config/."""
+from pathlib import Path
+import subprocess
+import shutil
+import tempfile
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from checks import validators
+
+
+def main():
+    if shutil.which('git') is None:
+        sys.exit('INCOMPLETE: install Git and put it on PATH; safety tests create temporary repositories.')
+    try:
+        with tempfile.TemporaryDirectory() as folder:
+            target = Path(folder) / 'target'
+            target.touch()
+            (Path(folder) / 'link').symlink_to(target)
+    except OSError:
+        sys.exit('INCOMPLETE: tests require symlink permission. On Windows enable Developer Mode or use an account with symbolic-link privilege.')
+    commands = [[sys.executable, '-B', 'hub.py', 'doctor']]
+    for pattern in ('test_safety.py', 'test_import_scan.py', 'test_endpoint.py', 'test_catalog_search.py', 'test_runtime_proofs.py',
+                    'test_verify_loop.py', 'test_merge_rule.py', 'test_hooks.py', 'test_coldlocker_hook.py', 'test_brand_aliases.py', 'test_hook_aliases.py'):
+        if not (ROOT / 'tests' / pattern).is_file():
+            if (ROOT / validators.POLICY_PACK).is_file() or not validators.policy_file(f'tests/{pattern}'):
+                sys.exit(f'FAIL: tests/{pattern} is missing')
+            print(f'SKIP: tests/{pattern} belongs to the owner policy pack, which this checkout omits', flush=True)
+            continue
+        commands.append([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'tests', '-p', pattern, '-v'])
+    if (ROOT / '.git').exists():
+        commands.append([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'tests',
+                         '-p', 'test_e2e_dogfood.py', '-v'])
+    else:
+        print('SKIP: dogfood source-copy replay requires Git checkout metadata', flush=True)
+    commands.append([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'tests',
+                     '-p', 'test_public_export.py', '-k', 'test_export_contains_existing'])
+    for command in commands:
+        subprocess.run(command, cwd=ROOT, check=True)
+    print('PASS: public export health, safety, MCP endpoint, catalog experiment, runtime proofs and available dogfood replay', flush=True)
+
+
+if __name__ == '__main__':
+    main()

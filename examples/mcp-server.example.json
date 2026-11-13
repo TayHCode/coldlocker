@@ -1,0 +1,14 @@
+{
+  "name": "example-server",
+  "description": "Illustrative public package; import does not execute it.",
+  "transport": "stdio",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-everything"
+  ],
+  "env": {
+    "API_TOKEN": "secret://example-api-token",
+    "LOG_LEVEL": "info"
+  }
+}

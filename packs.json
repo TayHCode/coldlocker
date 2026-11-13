@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "always": [
+    "hub-discover"
+  ],
+  "packs": {
+    "pstack": [
+      "evidence-before-done",
+      "frontend-design",
+      "i-have-adhd",
+      "minimal-diff-review",
+      "principle-test-behavior-not-implementation",
+      "ui-ux-pro-max"
+    ]
+  }
+}

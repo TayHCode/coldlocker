@@ -1,0 +1,21 @@
+{
+  "exclude": [],
+  "approvals": [],
+  "quickstart": [
+    {
+      "file": "README.md",
+      "line": 99,
+      "argv": ["python3", "hub.py", "doctor"]
+    }
+  ],
+  "checks": [
+    {
+      "role": "tests",
+      "argv": ["python3", "-B", "-m", "unittest", "discover", "-s", "tests", "-p", "test_safety.py", "-v"]
+    },
+    {
+      "role": "tests",
+      "argv": ["python3", "-B", "-m", "unittest", "discover", "-s", "tests", "-p", "test_endpoint.py", "-v"]
+    }
+  ]
+}
